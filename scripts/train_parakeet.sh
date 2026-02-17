@@ -18,12 +18,14 @@ LANGUAGE="et"                          # et or sl
 CONFIG="cv_synth_all_et"               # see dataset configs in training README
 SEED=42
 BATCH_SIZE=32
-LEARNING_RATE=1e-5
-WARMUP_STEPS=200
+LEARNING_RATE=5e-5                     # peak LR for CosineAnnealing
+WARMUP_RATIO=0.10                      # 10% of total steps
 MAX_EPOCHS=100
 EARLY_STOPPING_PATIENCE=10
-PUSH_TO_HUB=true                       # true or false
-HUB_REPO="yuriyvnv/parakeet-tdt-0.6b-v3-${LANGUAGE}"
+
+# Hub — uploads the whole results folder
+PUSH_TO_HUB=true
+HUB_REPO="yuriyvnv/experiments_parakeet"
 
 # Output directory
 OUTPUT_DIR="./results/parakeet_finetune_${LANGUAGE}/${CONFIG}_s${SEED}"
@@ -48,14 +50,16 @@ fi
 # ---------------------------------------------------------------------------
 echo ""
 echo "============================================================"
-echo " Language:    ${LANGUAGE}"
-echo " Config:      ${CONFIG}"
-echo " Seed:        ${SEED}"
-echo " Batch size:  ${BATCH_SIZE}"
-echo " LR:          ${LEARNING_RATE}"
-echo " Max epochs:  ${MAX_EPOCHS}"
-echo " Output:      ${OUTPUT_DIR}"
-echo " Push to Hub: ${PUSH_TO_HUB} -> ${HUB_REPO}"
+echo " Language:       ${LANGUAGE}"
+echo " Config:         ${CONFIG}"
+echo " Seed:           ${SEED}"
+echo " Batch size:     ${BATCH_SIZE}"
+echo " LR:             ${LEARNING_RATE}"
+echo " Warmup ratio:   ${WARMUP_RATIO}"
+echo " Max epochs:     ${MAX_EPOCHS}"
+echo " Early stopping: ${EARLY_STOPPING_PATIENCE} epochs patience"
+echo " Output:         ${OUTPUT_DIR}"
+echo " Push to Hub:    ${PUSH_TO_HUB} -> ${HUB_REPO}"
 echo "============================================================"
 echo ""
 
@@ -71,7 +75,7 @@ uv run python -m src.training.train_parakeet \
     --seed "${SEED}" \
     --batch-size "${BATCH_SIZE}" \
     --learning-rate "${LEARNING_RATE}" \
-    --warmup-steps "${WARMUP_STEPS}" \
+    --warmup-ratio "${WARMUP_RATIO}" \
     --max-epochs "${MAX_EPOCHS}" \
     --early-stopping-patience "${EARLY_STOPPING_PATIENCE}" \
     ${PUSH_FLAGS}

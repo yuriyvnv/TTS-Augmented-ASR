@@ -73,7 +73,7 @@ This project investigates TTS-based data augmentation for ASR in two low-resourc
 All training uses **full fine-tuning at bf16 precision** (no LoRA).
 
 **Whisper-large-v3**: batch=32, lr=1e-5, warmup=500, max_steps=4000, bf16, SDPA attention
-**Parakeet-TDT-0.6B-v3**: batch=32, lr=1e-5, warmup=200, max_epochs=100 (early stopping patience=10), bf16-mixed, CosineAnnealing (NeMo)
+**Parakeet-TDT-0.6B-v3**: batch=32, lr=5e-5, warmup=10%, max_epochs=100 (early stopping patience=10), bf16-mixed, CosineAnnealing (NeMo)
 
 ## Project Structure
 

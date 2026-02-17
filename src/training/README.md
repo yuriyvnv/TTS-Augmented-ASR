@@ -49,7 +49,7 @@ uv run python -m src.training.train_parakeet \
 
 **Key defaults** (H100 80GB):
 - Batch size: 32
-- LR: 1e-5, warmup: 200 steps, cosine annealing (min_lr: 1e-6)
+- LR: 5e-5 peak, warmup: 10% of total steps, cosine annealing to min_lr 1e-6
 - Max epochs: 100, early stopping (patience: 10 on val_wer)
 - bf16-mixed, gradient clipping 1.0
 - Saves top-3 checkpoints by `val_wer`

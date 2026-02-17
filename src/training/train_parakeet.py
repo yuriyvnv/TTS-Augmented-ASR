@@ -150,20 +150,20 @@ def main():
         help="Train batch size (default: 32)",
     )
     parser.add_argument(
-        "--learning-rate", type=float, default=1e-5,
-        help="Learning rate (default: 1e-5)",
+        "--learning-rate", type=float, default=5e-5,
+        help="Peak learning rate (default: 5e-5)",
     )
     parser.add_argument(
-        "--warmup-steps", type=int, default=200,
-        help="Warmup steps (default: 200)",
+        "--warmup-ratio", type=float, default=0.10,
+        help="Warmup as fraction of total steps (default: 0.10 = 10%%)",
     )
     parser.add_argument(
         "--push-to-hub", action="store_true",
         help="Push final model to HuggingFace Hub",
     )
     parser.add_argument(
-        "--hub-repo-id", type=str, default=None,
-        help="HuggingFace repo ID (default: yuriyvnv/parakeet-tdt-0.6b-v3-{language})",
+        "--hub-repo-id", type=str, default="yuriyvnv/experiments_parakeet",
+        help="HuggingFace repo ID to upload results folder (default: yuriyvnv/experiments_parakeet)",
     )
     args = parser.parse_args()
 
@@ -241,7 +241,7 @@ def main():
         "weight_decay": 0.001,
         "sched": {
             "name": "CosineAnnealing",
-            "warmup_steps": args.warmup_steps,
+            "warmup_ratio": args.warmup_ratio,
             "min_lr": 1e-6,
         },
     })
@@ -294,6 +294,7 @@ def main():
     logger.info(f"  Max epochs: {args.max_epochs}")
     logger.info(f"  Early stopping patience: {args.early_stopping_patience}")
     logger.info(f"  Learning rate: {args.learning_rate}")
+    logger.info(f"  Warmup ratio: {args.warmup_ratio}")
     logger.info(f"  Seed: {args.seed}")
 
     trainer.fit(model)
@@ -303,16 +304,22 @@ def main():
     model.save_to(str(final_path))
     logger.info(f"Final model saved to {final_path}")
 
-    # Push to HuggingFace Hub
+    # Push results folder to HuggingFace Hub
     if args.push_to_hub:
-        hub_repo_id = args.hub_repo_id or f"yuriyvnv/parakeet-tdt-0.6b-v3-{args.language}"
-        logger.info(f"Pushing model to {hub_repo_id}...")
-        model.push_to_hf_hub(
+        from huggingface_hub import HfApi
+
+        hub_repo_id = args.hub_repo_id
+        logger.info(f"Pushing results folder to {hub_repo_id}...")
+        api = HfApi()
+        api.create_repo(hub_repo_id, repo_type="model", exist_ok=True)
+        api.upload_folder(
+            folder_path=str(output_dir),
             repo_id=hub_repo_id,
-            pack_nemo_file=True,
-            commit_message=f"Upload fine-tuned Parakeet-TDT for {args.language} ({args.config}, seed {args.seed})",
+            path_in_repo=run_name,
+            commit_message=f"Upload {run_name}",
+            ignore_patterns=["data/*"],
         )
-        logger.info(f"Model pushed to https://huggingface.co/{hub_repo_id}")
+        logger.info(f"Results pushed to https://huggingface.co/{hub_repo_id}")
 
     logger.info("Training complete.")
 
