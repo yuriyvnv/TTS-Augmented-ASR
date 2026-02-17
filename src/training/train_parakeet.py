@@ -25,7 +25,7 @@ import logging
 import os
 from pathlib import Path
 
-import pytorch_lightning as pl
+import lightning.pytorch as pl
 import soundfile as sf
 import torch
 from datasets import Audio, load_dataset
