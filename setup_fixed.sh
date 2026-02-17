@@ -1,80 +1,76 @@
 #!/bin/bash
-# Fixed setup script for speech_transcript_embeddings project
+# =============================================================================
+# Setup script for Parakeet/Whisper fine-tuning on Vast.ai H100
+# =============================================================================
 
-set -e  # Exit on error
+set -e
 
 echo "======================================"
-echo "ASR TUNNING SETUP"
+echo "ASR Fine-Tuning Setup"
 echo "======================================"
 
-# 1. Check Python version
-echo -e "\n[1/7] Checking Python version..."
-python3.11 --version
+# 1. Check Python & CUDA
+echo -e "\n[1/6] Checking environment..."
+python3 --version
+nvidia-smi --query-gpu=name,memory.total --format=csv,noheader
 
-# 2. Install UV Package Manager (if not already installed)
-echo -e "\n[2/7] Installing UV package manager..."
+# 2. Install UV
+echo -e "\n[2/6] Installing UV package manager..."
 if ! command -v uv &> /dev/null; then
     curl -LsSf https://astral.sh/uv/install.sh | sh
     source $HOME/.local/bin/env
 else
-    echo "UV already installed"
+    echo "UV already installed: $(uv --version)"
 fi
 
-# 3. Install Python Packages using pip directly
-echo -e "\n[3/7] Installing Python packages..."
-python3.11 -m pip install --user \
-    torch==2.5.1 \
-    torchaudio==2.5.1 \
-    transformers==4.50.2 \
-    datasets>=3.6.0 \
-    librosa==0.10.1 \
-    matplotlib \
-    numpy \
-    python-dotenv \
-    setuptools==77.0.1 \
-    soundfile==0.12.1 \
-    sox>=1.5.0 \
-    tqdm>=4.67.1 \
-    huggingface-hub \
-    accelerate \
-    sentence-transformers
+# 3. Install dependencies
+echo -e "\n[3/6] Installing Python packages..."
+uv sync
+uv pip install 'nemo_toolkit[asr]'
 
-# 4. Install Screen (if not already installed)
-echo -e "\n[4/7] Checking screen..."
+# 4. Install screen
+echo -e "\n[4/6] Installing screen..."
 if ! command -v screen &> /dev/null; then
-    sudo apt update
-    sudo apt install -y screen
+    apt update && apt install -y screen
 else
     echo "Screen already installed"
 fi
 
-# 5. Git Configuration (optional - skip if already configured)
-echo -e "\n[5/7] Git configuration..."
-if [ -z "$(git config --global user.name)" ]; then
-    read -p "Enter your Git username: " git_username
-    read -p "Enter your Git email: " git_email
-    git config --global user.name "$git_username"
-    git config --global user.email "$git_email"
-    git config --global credential.helper store
+# 5. HuggingFace login
+echo -e "\n[5/6] Setting up HuggingFace..."
+if huggingface-cli whoami > /dev/null 2>&1; then
+    echo "Already logged in as: $(huggingface-cli whoami 2>/dev/null | head -1)"
 else
-    echo "Git already configured for: $(git config --global user.name)"
-fi
-
-# 6. HuggingFace Configuration
-echo -e "\n[6/7] Setting up HuggingFace..."
-if [ -z "$HF_TOKEN" ]; then
-    echo "Please login to HuggingFace:"
     huggingface-cli login
-else
-    echo "HuggingFace token already configured"
 fi
 
-# 7. Create .env file if needed
-echo -e "\n[7/7] Creating .env file..."
-if [ ! -f .env ]; then
-    echo "Creating .env file..."
-    echo "# HuggingFace Token" > .env
-    echo "HF_TOKEN=$HF_TOKEN" >> .env
+# 6. WandB login
+echo -e "\n[6/6] Setting up WandB..."
+if python3 -c "import wandb; assert wandb.api.api_key" > /dev/null 2>&1; then
+    echo "WandB already configured"
 else
-    echo ".env file already exists"
+    wandb login
 fi
+
+# Verify everything
+echo ""
+echo "======================================"
+echo "Verification"
+echo "======================================"
+uv run python -c "
+import torch
+print(f'PyTorch: {torch.__version__}')
+print(f'CUDA: {torch.cuda.is_available()}, GPU: {torch.cuda.get_device_name(0)}')
+import nemo.collections.asr as nemo_asr
+print('NeMo ASR: OK')
+import wandb
+print('WandB: OK')
+from huggingface_hub import HfApi
+print('HF Hub: OK')
+from datasets import load_dataset
+print('Datasets: OK')
+import jiwer
+print('jiwer: OK')
+print()
+print('All good. Run: ./scripts/train_parakeet.sh')
+"

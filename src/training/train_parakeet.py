@@ -215,17 +215,31 @@ def main():
     # -----------------------------------------------------------------------
     # Configure datasets
     # -----------------------------------------------------------------------
-    # Update train dataset config
-    model.cfg.train_ds.manifest_filepath = str(train_manifest)
-    model.cfg.train_ds.batch_size = args.batch_size
-    model.cfg.train_ds.shuffle = True
-    model.cfg.train_ds.num_workers = 4
+    # Disable Lhotse (use standard NeMo dataloader with fixed batch_size)
+    # Lhotse uses dynamic batching by duration which is overkill for small datasets
+    train_ds_cfg = OmegaConf.create({
+        "manifest_filepath": str(train_manifest),
+        "sample_rate": 16000,
+        "batch_size": args.batch_size,
+        "shuffle": True,
+        "num_workers": 4,
+        "pin_memory": True,
+        "max_duration": 20.0,
+        "min_duration": 0.1,
+    })
+    model.cfg.train_ds = train_ds_cfg
 
-    # Update validation dataset config
-    model.cfg.validation_ds.manifest_filepath = str(val_manifest)
-    model.cfg.validation_ds.batch_size = args.batch_size
-    model.cfg.validation_ds.shuffle = False
-    model.cfg.validation_ds.num_workers = 4
+    val_ds_cfg = OmegaConf.create({
+        "manifest_filepath": str(val_manifest),
+        "sample_rate": 16000,
+        "batch_size": args.batch_size,
+        "shuffle": False,
+        "num_workers": 4,
+        "pin_memory": True,
+        "max_duration": 40.0,
+        "min_duration": 0.1,
+    })
+    model.cfg.validation_ds = val_ds_cfg
 
     # Apply dataset configs
     model.setup_training_data(model.cfg.train_ds)
