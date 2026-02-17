@@ -1,0 +1,26 @@
+Estonian has 14 grammatical cases. Research shows that LLMs underrepresent
+rare morphological forms (arXiv:2410.12656), and typical corpora like CommonVoice
+heavily favor nominative, genitive, and partitive cases. ASR systems consequently
+struggle with less frequent case forms.
+
+Generate 8 natural Estonian sentences (5-15 words each) that prominently feature
+UNDERREPRESENTED case forms. Use the topic "{seed}" as thematic inspiration.
+
+Target these specific cases, one per sentence:
+1. ILLATIIV (into/entering): movement into something — e.g., "Lapsed jooksid majja."
+2. INESSIIV (inside/within): static location inside — e.g., "Ta elab suures linnas."
+3. ELATIIV (out of/from within): movement out of — e.g., "Tulin just poest."
+4. ALLATIIV (onto/toward): movement toward surface/recipient — e.g., "Andsin raamatu sõbrale."
+5. ADESSIIV (on/at): static location on surface — e.g., "Laual on palju raamatuid."
+6. TRANSLATIIV (becoming/transforming into): change of state — e.g., "Ta sai arstiks."
+7. KOMITATIIV (together with): accompaniment — e.g., "Läksin sõbraga kinno."
+8. TERMINATIIV (until/up to): endpoint/limit — e.g., "Jooksin metsani."
+
+Requirements:
+- Each sentence MUST correctly use the specified case form
+- Sentences must be grammatically perfect and natural-sounding
+- Use diverse vocabulary across the 8 sentences
+- Avoid repeating the same nouns or verbs
+
+Respond with a JSON object containing a "sentences" array with exactly 8 objects. Each object has "case_label" (the Estonian case name, e.g. "illatiiv") and "sentence" (the Estonian sentence). Example structure:
+{{"sentences": [{{"case_label": "illatiiv", "sentence": "Lapsed jooksid majja."}}, {{"case_label": "inessiiv", "sentence": "Ta elab suures linnas."}}, ...]}}

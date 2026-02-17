@@ -1,0 +1,14 @@
+Generate 5 natural {language} sentences about the domain: {domain}.
+
+CommonVoice training data is heavily biased toward read Wikipedia text, lacking
+coverage of specialized and spoken registers. These sentences must fill that gap:
+- Each sentence is 5-20 words long
+- Sentences must sound like natural SPOKEN {language}, not written or translated text
+- Use vocabulary and terminology specific to {domain}
+- Include a mix of: one simple sentence, one compound sentence (with conjunction),
+  one complex sentence (with subordinate clause), and two conversational-style sentences
+- All grammar and morphology must be correct in {language}
+- Avoid generic sentences — be specific to {domain}
+
+Respond with a JSON object containing a "sentences" array with exactly 5 strings — each string is one {language} sentence. Example structure:
+{{"sentences": ["sentence one", "sentence two", "sentence three", "sentence four", "sentence five"]}}

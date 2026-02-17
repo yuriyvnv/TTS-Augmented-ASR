@@ -1,0 +1,15 @@
+Evaluate the following {language} sentence on these criteria:
+
+1. GRAMMATICAL CORRECTNESS: Is the sentence valid {language}? Check case endings, verb conjugation, number agreement, and word order.
+2. NATURALNESS: Would a native {language} speaker naturally say or write this? Reject translationese or awkward phrasing.
+3. LENGTH: Is it between 5 and 20 words?
+4. LANGUAGE PURITY: Is it entirely in {language} with no foreign words or code-switching?
+
+Sentence: "{sentence}"
+
+Respond with a JSON object containing:
+- "verdict": either "PASS" or "FAIL"
+- "reason": an empty string if PASS, or a brief explanation if FAIL (e.g. "incorrect case ending", "contains English words")
+
+Example PASS: {{"verdict": "PASS", "reason": ""}}
+Example FAIL: {{"verdict": "FAIL", "reason": "incorrect instrumental case ending on the noun"}}
