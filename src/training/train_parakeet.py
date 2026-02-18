@@ -212,6 +212,26 @@ def main():
     logger.info(f"Loading Parakeet from {PARAKEET_MODEL_ID}...")
     model = nemo_asr.models.ASRModel.from_pretrained(PARAKEET_MODEL_ID)
 
+    # Switch TDT loss from numba CUDA kernel to pure PyTorch implementation
+    # (numba's CUDA runtime has context issues on some GPU setups)
+    from nemo.collections.asr.losses.rnnt import RNNTLoss
+    durations = list(model.cfg.model_defaults.tdt_durations)
+    num_extra = model.joint.num_extra_outputs
+    num_classes = model.joint.num_classes_with_blank - 1 - num_extra
+    new_loss = RNNTLoss(
+        num_classes=num_classes,
+        reduction="mean_batch",
+        loss_name="tdt_pytorch",
+        loss_kwargs={
+            "durations": durations,
+            "sigma": 0.0,
+        },
+    )
+    model.loss = new_loss
+    if model.joint.fuse_loss_wer:
+        model.joint.set_loss(new_loss)
+    logger.info(f"Switched to tdt_pytorch loss (durations={durations})")
+
     # -----------------------------------------------------------------------
     # Configure datasets
     # -----------------------------------------------------------------------
