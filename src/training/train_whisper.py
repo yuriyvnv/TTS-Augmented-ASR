@@ -283,7 +283,7 @@ def main():
     logger.info(f"  Learning rate: {args.learning_rate}")
     logger.info(f"  Warmup ratio: {args.warmup_ratio}")
     logger.info(f"  Eval/save every: {args.eval_steps} steps")
-logger.info(f"  Seed: {args.seed}")
+    logger.info(f"  Seed: {args.seed}")
 
     trainer.train()
 
