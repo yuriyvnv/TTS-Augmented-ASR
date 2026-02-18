@@ -89,18 +89,5 @@ echo ""
 echo "=== Training complete ==="
 
 # Stop the vast.ai instance after training + push
-echo "=== Stopping vast.ai instance... ==="
-VASTAI_API_KEY=$(grep VASTAI_API_KEY .env | cut -d '=' -f2)
-if [ -n "${VASTAI_API_KEY}" ]; then
-    INSTANCE_ID=$(cat /var/vast/current_instance 2>/dev/null || curl -s http://metadata.vast.ai/v1/id 2>/dev/null || echo "")
-    if [ -n "${INSTANCE_ID}" ]; then
-        vastai stop instance "${INSTANCE_ID}" --api-key "${VASTAI_API_KEY}"
-        echo "Instance ${INSTANCE_ID} stopped."
-    else
-        echo "WARNING: Could not determine instance ID. Shutting down via system."
-        sudo shutdown -h now
-    fi
-else
-    echo "WARNING: VASTAI_API_KEY not found in .env. Shutting down via system."
-    sudo shutdown -h now
-fi
+echo "=== Stopping instance... ==="
+sudo shutdown -h now
