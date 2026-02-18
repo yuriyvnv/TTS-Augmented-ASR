@@ -87,3 +87,8 @@ uv run python -m src.training.train_whisper \
 
 echo ""
 echo "=== Training complete ==="
+
+# Stop the instance after training + push
+echo "=== Stopping instance in 30 seconds... ==="
+sleep 30
+sudo shutdown -h now
