@@ -406,8 +406,11 @@ def main():
                 f"Del={metrics['deletions']}  Hits={metrics['hits']}"
             )
 
-            # Save results
-            result_path = output_dir / f"{model_label}_{lang}_{test_set}.json"
+            # Save results into model/language subdirectory
+            model_dir = "whisperV3" if args.model == "whisper-large-v3" else "parakeetV3"
+            result_subdir = output_dir / model_dir / lang
+            result_subdir.mkdir(parents=True, exist_ok=True)
+            result_path = result_subdir / f"{model_label}_{lang}_{test_set}.json"
             with open(result_path, "w", encoding="utf-8") as f:
                 json.dump(metrics, f, ensure_ascii=False, indent=2)
             logger.info(f"  Results saved to {result_path}")

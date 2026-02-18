@@ -78,7 +78,7 @@ def parse_result_filename(filename: str) -> dict | None:
 def load_results(results_dir: Path) -> list[dict]:
     """Load all evaluation JSON files and parse metadata from filenames."""
     entries = []
-    for path in sorted(results_dir.glob("*.json")):
+    for path in sorted(results_dir.glob("**/*.json")):
         meta = parse_result_filename(path.name)
         if meta is None:
             continue

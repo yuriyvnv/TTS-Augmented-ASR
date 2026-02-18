@@ -42,10 +42,12 @@ TEST_SETS = ["cv17_test", "fleurs_test"]
 
 def load_per_sentence(results_dir: Path, model_key: str, lang: str, test_set: str) -> dict:
     """Load a result JSON and return the full dict."""
-    path = results_dir / f"{model_key}_{lang}_{test_set}.json"
-    if not path.exists():
-        raise FileNotFoundError(f"Result file not found: {path}")
-    with open(path, "r", encoding="utf-8") as f:
+    filename = f"{model_key}_{lang}_{test_set}.json"
+    # Search recursively to support organized subdirectories
+    matches = list(results_dir.glob(f"**/{filename}"))
+    if not matches:
+        raise FileNotFoundError(f"Result file not found: {filename} in {results_dir}")
+    with open(matches[0], "r", encoding="utf-8") as f:
         return json.load(f)
 
 
