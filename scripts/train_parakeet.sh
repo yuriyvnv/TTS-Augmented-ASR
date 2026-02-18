@@ -15,7 +15,7 @@ set -euo pipefail
 # Settings — edit these
 # ---------------------------------------------------------------------------
 LANGUAGE="et"                          # et or sl
-CONFIG="cv_synth_all_et"               # see dataset configs in training README
+CONFIG="cv_synth_no_morph_et"               # see dataset configs in training README
 SEED=42
 BATCH_SIZE=32
 LEARNING_RATE=5e-5                     # peak LR for CosineAnnealing
@@ -34,11 +34,11 @@ OUTPUT_DIR="./results/parakeet_finetune_${LANGUAGE}/${CONFIG}_s${SEED}"
 # Verify logins
 # ---------------------------------------------------------------------------
 echo "=== Checking HuggingFace login ==="
-if ! huggingface-cli whoami > /dev/null 2>&1; then
+if ! hf auth whoami > /dev/null 2>&1; then 
     echo "ERROR: Not logged in to HuggingFace. Run: huggingface-cli login"
     exit 1
 fi
-echo "  Logged in as: $(huggingface-cli whoami 2>/dev/null | head -1)"
+echo "  Logged in as: $(hf auth whoami 2>/dev/null | head -1)"
 
 echo "=== Checking WandB login ==="
 if ! python -c "import wandb; wandb.api.api_key" > /dev/null 2>&1; then
