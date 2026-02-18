@@ -323,10 +323,18 @@ def main():
 
     trainer.fit(model)
 
-    # Save final model as .nemo
+    # Load best checkpoint weights before saving .nemo
+    best_ckpt = checkpoint_callback.best_model_path
+    if best_ckpt:
+        logger.info(f"Loading best checkpoint: {best_ckpt}")
+        checkpoint = torch.load(best_ckpt, map_location="cpu")
+        model.load_state_dict(checkpoint["state_dict"])
+        logger.info(f"  Best val_wer: {checkpoint_callback.best_model_score:.4f}")
+
+    # Save best model as .nemo
     final_path = output_dir / f"{run_name}.nemo"
     model.save_to(str(final_path))
-    logger.info(f"Final model saved to {final_path}")
+    logger.info(f"Best model saved to {final_path}")
 
     # Push results folder to HuggingFace Hub
     if args.push_to_hub:
@@ -341,7 +349,7 @@ def main():
             repo_id=hub_repo_id,
             path_in_repo=run_name,
             commit_message=f"Upload {run_name}",
-            ignore_patterns=["data/*"],
+            ignore_patterns=["data/*", "wandb/*"],
         )
         logger.info(f"Results pushed to https://huggingface.co/{hub_repo_id}")
 

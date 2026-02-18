@@ -31,6 +31,7 @@ Usage:
 import argparse
 import json
 import logging
+import os
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -45,6 +46,27 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
 )
 logger = logging.getLogger(__name__)
+
+
+def _set_low_priority():
+    """Lower process priority so evaluation yields resources to training."""
+    # Set nice value to 19 (lowest priority) on Unix
+    try:
+        os.nice(19)
+        logger.info("Process priority set to nice=19 (low)")
+    except (OSError, AttributeError):
+        pass  # Windows or permission denied
+
+    # Limit CUDA memory so training gets priority
+    if torch.cuda.is_available():
+        # Reserve at most 30% of GPU memory for evaluation
+        total_mem = torch.cuda.get_device_properties(0).total_memory
+        fraction = 0.30
+        torch.cuda.set_per_process_memory_fraction(fraction, device=0)
+        logger.info(
+            f"CUDA memory limited to {fraction*100:.0f}% "
+            f"({total_mem * fraction / 1e9:.1f} GB / {total_mem / 1e9:.1f} GB)"
+        )
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -100,7 +122,12 @@ def load_test_set(test_set: str, language: str):
     elif test_set == "fleurs_test":
         fleurs_config = FLEURS_CONFIGS[language]
         logger.info(f"Loading FLEURS test ({fleurs_config})...")
-        ds = load_dataset(FLEURS_REPO, fleurs_config, split="test")
+        # FLEURS uses a legacy loading script incompatible with datasets>=3.0.
+        # Load from the auto-converted Parquet branch instead.
+        ds = load_dataset(
+            FLEURS_REPO, fleurs_config, split="test",
+            revision="refs/convert/parquet",
+        )
         ds = ds.rename_column("transcription", "reference")
     else:
         raise ValueError(f"Unknown test set: {test_set}")
@@ -271,6 +298,8 @@ def compute_metrics(references: list[str], hypotheses: list[str]) -> dict:
 
 
 def main():
+    _set_low_priority()
+
     parser = argparse.ArgumentParser(
         description="Evaluate ASR models on CV17 and FLEURS test sets"
     )
