@@ -21,6 +21,7 @@
 |-------|-------------|-------------|--------------|--------------|----------------|----------------|
 | Zero-shot (baseline) | 58.78 | 31.16 | 50.23 | 24.51 | 40.18 | 11.53 |
 | Fine-tuned CV only | 13.75 | 3.25 | 14.08 | 3.45 | 38.57 | 10.30 |
+| Fine-tuned CV + Synth No Morph | 11.62 | 2.64 | 12.22 | 2.93 | 35.05 | 9.68 |
 | Fine-tuned CV + Synth All | **11.30** | **2.61** | **11.56** | **2.87** | **34.71** | **9.75** |
 
 ---
@@ -44,6 +45,7 @@ Normalization: `jiwer.ToLowerCase()` + `jiwer.RemovePunctuation()` applied to bo
 |-------|-------------|-------------|--------------|--------------|----------------|----------------|
 | Zero-shot (baseline) | 57.11 | 31.21 | 48.13 | 24.42 | 24.27 | 7.95 |
 | Fine-tuned CV only | 11.63 | 2.90 | 11.69 | 3.07 | 22.36 | 6.70 |
+| Fine-tuned CV + Synth No Morph | 9.21 | 2.23 | 9.68 | 2.48 | 17.90 | 6.03 |
 | Fine-tuned CV + Synth All | **8.87** | **2.19** | **9.05** | **2.45** | **17.64** | **6.11** |
 
 ---
@@ -73,6 +75,8 @@ Shows how much WER drops when punctuation and casing are removed. Large drops on
 | Zero-shot | FLEURS test | 40.18 | 24.27 | -15.91 |
 | CV only | CV17 test | 14.08 | 11.69 | -2.39 |
 | CV only | FLEURS test | 38.57 | 22.36 | -16.21 |
+| CV + Synth No Morph | CV17 test | 12.22 | 9.68 | -2.54 |
+| CV + Synth No Morph | FLEURS test | 35.05 | 17.90 | -17.15 |
 | CV + Synth All | CV17 test | 11.56 | 9.05 | -2.51 |
 | CV + Synth All | FLEURS test | 34.71 | 17.64 | -17.07 |
 
@@ -91,8 +95,11 @@ Shows how much WER drops when punctuation and casing are removed. Large drops on
 | Estonian | CV only → CV + Synth All | **-1.32** | **-1.31** |
 | Estonian | CV + Synth No Morph → CV + Synth All | -0.21 | -0.12 |
 | Slovenian | Zero-shot → CV only | -36.15 | -1.61 |
+| Slovenian | Zero-shot → CV + Synth No Morph | -38.01 | -5.13 |
 | Slovenian | Zero-shot → CV + Synth All | **-38.67** | **-5.47** |
+| Slovenian | CV only → CV + Synth No Morph | -1.86 | -3.52 |
 | Slovenian | CV only → CV + Synth All | **-2.52** | **-3.86** |
+| Slovenian | CV + Synth No Morph → CV + Synth All | -0.66 | -0.34 |
 
 ## WER Improvement Summary (Normalized)
 
@@ -105,8 +112,11 @@ Shows how much WER drops when punctuation and casing are removed. Large drops on
 | Estonian | CV only → CV + Synth All | **-1.23** | **-1.93** |
 | Estonian | CV + Synth No Morph → CV + Synth All | -0.18 | -0.34 |
 | Slovenian | Zero-shot → CV only | -36.44 | -1.91 |
+| Slovenian | Zero-shot → CV + Synth No Morph | -38.45 | -6.37 |
 | Slovenian | Zero-shot → CV + Synth All | **-39.08** | **-6.63** |
+| Slovenian | CV only → CV + Synth No Morph | -2.01 | -4.46 |
 | Slovenian | CV only → CV + Synth All | **-2.64** | **-4.72** |
+| Slovenian | CV + Synth No Morph → CV + Synth All | -0.63 | -0.26 |
 
 ---
 

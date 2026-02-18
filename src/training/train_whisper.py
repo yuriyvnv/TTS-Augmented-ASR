@@ -8,14 +8,14 @@ splits for each experimental condition.
 Usage:
     uv run python -m src.training.train_whisper \
         --language et \
-        --config cv_synth_all_et \
-        --output-dir ./results/whisper_et_cv_synth_all \
+        --config cv_only_et \
+        --output-dir ./results/whisper_et_cv_only \
         --seed 42
 
     uv run python -m src.training.train_whisper \
         --language sl \
-        --config cv_only_sl \
-        --output-dir ./results/whisper_sl_cv_only \
+        --config cv_synth_all_sl \
+        --output-dir ./results/whisper_sl_cv_synth_all \
         --seed 42
 """
 
@@ -23,6 +23,7 @@ import argparse
 import logging
 import os
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any
 
 import torch
@@ -30,7 +31,7 @@ from datasets import Audio, load_dataset
 from dotenv import load_dotenv
 from transformers import (
     AutoProcessor,
-    Seq2SeqTrainer,
+Seq2SeqTrainer,
     Seq2SeqTrainingArguments,
     WhisperForConditionalGeneration,
 )
@@ -117,20 +118,36 @@ def main():
         help="Random seed for reproducibility (default: 42)",
     )
     parser.add_argument(
-        "--max-steps", type=int, default=4000,
-        help="Maximum training steps (default: 4000)",
+        "--num-train-epochs", type=int, default=5,
+        help="Number of training epochs (default: 5)",
     )
-    parser.add_argument(
+parser.add_argument(
         "--batch-size", type=int, default=32,
         help="Per-device train batch size (default: 32)",
     )
     parser.add_argument(
-        "--learning-rate", type=float, default=1e-5,
-        help="Learning rate (default: 1e-5)",
+        "--eval-batch-size", type=int, default=16,
+        help="Per-device eval batch size (default: 16)",
+    )
+    parser.add_argument(
+        "--learning-rate", type=float, default=5e-5,
+        help="Peak learning rate (default: 5e-5)",
+    )
+    parser.add_argument(
+        "--warmup-ratio", type=float, default=0.1,
+        help="Warmup as fraction of total steps (default: 0.1)",
+    )
+    parser.add_argument(
+        "--eval-steps", type=int, default=50,
+        help="Evaluate every N steps (default: 50)",
     )
     parser.add_argument(
         "--push-to-hub", action="store_true",
         help="Push final model to HuggingFace Hub",
+    )
+    parser.add_argument(
+        "--hub-repo-id", type=str, default="yuriyvnv/experiments_whisper",
+        help="HuggingFace repo ID for upload (default: yuriyvnv/experiments_whisper)",
     )
     args = parser.parse_args()
 
@@ -138,6 +155,9 @@ def main():
     os.environ.setdefault("WANDB_PROJECT", "syntts-asr-whisper")
     run_name = f"whisper-large-v3-{args.config}-seed{args.seed}"
     language = WHISPER_LANGUAGES[args.language]
+
+    output_dir = Path(args.output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     # -----------------------------------------------------------------------
     # Load dataset
@@ -206,29 +226,30 @@ def main():
     # Training
     # -----------------------------------------------------------------------
     training_args = Seq2SeqTrainingArguments(
-        output_dir=args.output_dir,
+        output_dir=str(output_dir),
         run_name=run_name,
         seed=args.seed,
 
         # Batch & optimization
         per_device_train_batch_size=args.batch_size,
-        per_device_eval_batch_size=args.batch_size,
+        per_device_eval_batch_size=args.eval_batch_size,
         gradient_checkpointing=True,
         learning_rate=args.learning_rate,
-        warmup_steps=500,
-        max_steps=args.max_steps,
+        warmup_ratio=args.warmup_ratio,
+        num_train_epochs=args.num_train_epochs,
         bf16=True,
         optim="adamw_torch_fused",
 
-        # Evaluation on val loss only (WER evaluated separately after training)
+        # Evaluation on val loss (WER evaluated separately after training)
         eval_strategy="steps",
-        eval_steps=500,
+        eval_steps=args.eval_steps,
+        predict_with_generate=False,
         metric_for_best_model="eval_loss",
         greater_is_better=False,
 
         # Saving
         save_strategy="steps",
-        save_steps=500,
+        save_steps=args.eval_steps,
         save_total_limit=3,
         load_best_model_at_end=True,
 
@@ -236,8 +257,7 @@ def main():
         logging_steps=25,
         report_to=["wandb"],
 
-        # Hub
-        push_to_hub=args.push_to_hub,
+        # Workers
         dataloader_num_workers=4,
     )
 
@@ -251,20 +271,36 @@ def main():
     )
 
     logger.info(f"Starting training: {run_name}")
-    logger.info(f"  Batch size: {args.batch_size}")
-    logger.info(f"  Max steps: {args.max_steps}")
+    logger.info(f"  Train batch size: {args.batch_size}")
+    logger.info(f"  Eval batch size: {args.eval_batch_size}")
+    logger.info(f"  Epochs: {args.num_train_epochs}")
     logger.info(f"  Learning rate: {args.learning_rate}")
-    logger.info(f"  Seed: {args.seed}")
+    logger.info(f"  Warmup ratio: {args.warmup_ratio}")
+    logger.info(f"  Eval/save every: {args.eval_steps} steps")
+logger.info(f"  Seed: {args.seed}")
 
     trainer.train()
 
-    # Save final model
-    trainer.save_model(args.output_dir)
-    logger.info(f"Model saved to {args.output_dir}")
+    # Save final best model
+    trainer.save_model(str(output_dir))
+    logger.info(f"Model saved to {output_dir}")
 
+    # Push to HuggingFace Hub
     if args.push_to_hub:
-        trainer.push_to_hub()
-        logger.info("Model pushed to HuggingFace Hub")
+        from huggingface_hub import HfApi
+
+        hub_repo_id = args.hub_repo_id
+        logger.info(f"Pushing results to {hub_repo_id}...")
+        api = HfApi()
+        api.create_repo(hub_repo_id, repo_type="model", exist_ok=True)
+        api.upload_folder(
+            folder_path=str(output_dir),
+            repo_id=hub_repo_id,
+            path_in_repo=run_name,
+            commit_message=f"Upload {run_name}",
+            ignore_patterns=["wandb/*", "runs/*"],
+        )
+        logger.info(f"Results pushed to https://huggingface.co/{hub_repo_id}")
 
     logger.info("Training complete.")
 
