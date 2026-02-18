@@ -14,8 +14,8 @@ set -euo pipefail
 # ---------------------------------------------------------------------------
 # Settings — edit these
 # ---------------------------------------------------------------------------
-LANGUAGE="et"                          # et or sl
-CONFIG="cv_synth_no_morph_et"               # see dataset configs in training README
+LANGUAGE="sl"                          # et or sl
+CONFIG="cv_synth_no_morph_sl"               # see dataset configs in training README
 SEED=42
 BATCH_SIZE=32
 LEARNING_RATE=5e-5                     # peak LR for CosineAnnealing
