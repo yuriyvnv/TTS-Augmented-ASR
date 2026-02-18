@@ -212,6 +212,16 @@ def main():
     logger.info(f"Loading Parakeet from {PARAKEET_MODEL_ID}...")
     model = nemo_asr.models.ASRModel.from_pretrained(PARAKEET_MODEL_ID)
 
+    # Disable CUDA graph decoding — workaround for NeMo v2.2.1 bug where
+    # CUDA graphs + bf16-mixed precision corrupt decoder state during
+    # validation, causing repetition loops and inflated WER.
+    # Fixed in NeMo v2.3.0 (PR #12938), but we're on v2.2.1.
+    from omegaconf import open_dict
+    with open_dict(model.cfg):
+        model.cfg.decoding.greedy.use_cuda_graph_decoder = False
+    model.change_decoding_strategy(model.cfg.decoding)
+    logger.info("Disabled CUDA graph decoder (NeMo v2.2.1 bf16 workaround)")
+
     # -----------------------------------------------------------------------
     # Configure datasets
     # -----------------------------------------------------------------------
