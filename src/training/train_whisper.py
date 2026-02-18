@@ -121,13 +121,17 @@ def main():
         "--num-train-epochs", type=int, default=5,
         help="Number of training epochs (default: 5)",
     )
-parser.add_argument(
-        "--batch-size", type=int, default=32,
-        help="Per-device train batch size (default: 32)",
+    parser.add_argument(
+        "--batch-size", type=int, default=16,
+        help="Per-device train batch size (default: 16)",
     )
     parser.add_argument(
-        "--eval-batch-size", type=int, default=16,
-        help="Per-device eval batch size (default: 16)",
+        "--gradient-accumulation-steps", type=int, default=16,
+        help="Gradient accumulation steps (default: 16, effective batch = 16*16 = 256)",
+    )
+    parser.add_argument(
+        "--eval-batch-size", type=int, default=8,
+        help="Per-device eval batch size (default: 8)",
     )
     parser.add_argument(
         "--learning-rate", type=float, default=5e-5,
@@ -233,6 +237,7 @@ parser.add_argument(
         # Batch & optimization
         per_device_train_batch_size=args.batch_size,
         per_device_eval_batch_size=args.eval_batch_size,
+        gradient_accumulation_steps=args.gradient_accumulation_steps,
         gradient_checkpointing=True,
         learning_rate=args.learning_rate,
         warmup_ratio=args.warmup_ratio,
@@ -258,7 +263,7 @@ parser.add_argument(
         report_to=["wandb"],
 
         # Workers
-        dataloader_num_workers=4,
+        dataloader_num_workers=8,
     )
 
     trainer = Seq2SeqTrainer(
@@ -271,7 +276,8 @@ parser.add_argument(
     )
 
     logger.info(f"Starting training: {run_name}")
-    logger.info(f"  Train batch size: {args.batch_size}")
+    effective_batch = args.batch_size * args.gradient_accumulation_steps
+    logger.info(f"  Train batch size: {args.batch_size} x {args.gradient_accumulation_steps} accum = {effective_batch} effective")
     logger.info(f"  Eval batch size: {args.eval_batch_size}")
     logger.info(f"  Epochs: {args.num_train_epochs}")
     logger.info(f"  Learning rate: {args.learning_rate}")

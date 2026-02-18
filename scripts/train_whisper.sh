@@ -17,8 +17,9 @@ set -euo pipefail
 LANGUAGE="et"                          # et or sl
 CONFIG="cv_only_et"                    # cv_only_et, cv_synth_all_et, cv_synth_no_morph_et, etc.
 SEED=42
-BATCH_SIZE=32
-EVAL_BATCH_SIZE=16
+BATCH_SIZE=16
+GRADIENT_ACCUM=16                      # effective batch = 16 * 16 = 256
+EVAL_BATCH_SIZE=8
 LEARNING_RATE=5e-5
 WARMUP_RATIO=0.10
 NUM_EPOCHS=5
@@ -55,7 +56,7 @@ echo " Model:          whisper-large-v3"
 echo " Language:       ${LANGUAGE}"
 echo " Config:         ${CONFIG}"
 echo " Seed:           ${SEED}"
-echo " Batch size:     ${BATCH_SIZE} (train) / ${EVAL_BATCH_SIZE} (eval)"
+echo " Batch size:     ${BATCH_SIZE} x ${GRADIENT_ACCUM} accum = $((BATCH_SIZE * GRADIENT_ACCUM)) effective / ${EVAL_BATCH_SIZE} (eval)"
 echo " LR:             ${LEARNING_RATE}"
 echo " Warmup ratio:   ${WARMUP_RATIO}"
 echo " Epochs:         ${NUM_EPOCHS}"
@@ -76,6 +77,7 @@ uv run python -m src.training.train_whisper \
     --output-dir "${OUTPUT_DIR}" \
     --seed "${SEED}" \
     --batch-size "${BATCH_SIZE}" \
+    --gradient-accumulation-steps "${GRADIENT_ACCUM}" \
     --eval-batch-size "${EVAL_BATCH_SIZE}" \
     --learning-rate "${LEARNING_RATE}" \
     --warmup-ratio "${WARMUP_RATIO}" \
