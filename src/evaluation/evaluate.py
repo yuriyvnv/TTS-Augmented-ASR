@@ -123,11 +123,16 @@ def load_test_set(test_set: str, language: str):
         fleurs_config = FLEURS_CONFIGS[language]
         logger.info(f"Loading FLEURS test ({fleurs_config})...")
         # FLEURS uses a legacy loading script incompatible with datasets>=3.0.
-        # Load from the auto-converted Parquet branch instead.
-        ds = load_dataset(
-            FLEURS_REPO, fleurs_config, split="test",
-            revision="refs/convert/parquet",
-        )
+        # Try trust_remote_code first (works with datasets<3.0, pinned on server),
+        # fall back to the auto-converted Parquet branch for newer versions.
+        try:
+            ds = load_dataset(FLEURS_REPO, fleurs_config, split="test", trust_remote_code=True)
+        except (RuntimeError, ValueError):
+            logger.info("  Falling back to Parquet revision for FLEURS...")
+            ds = load_dataset(
+                FLEURS_REPO, fleurs_config, split="test",
+                revision="refs/convert/parquet",
+            )
         ds = ds.rename_column("transcription", "reference")
     else:
         raise ValueError(f"Unknown test set: {test_set}")
