@@ -18,7 +18,7 @@ SEED=42
 BATCH_SIZE=16
 GRADIENT_ACCUM=16                      # effective batch = 16 * 16 = 256
 EVAL_BATCH_SIZE=8
-LEARNING_RATE=1e-5
+LEARNING_RATE=5e-5
 WARMUP_RATIO=0.10
 NUM_EPOCHS=5
 EVAL_STEPS=50
@@ -29,7 +29,6 @@ HUB_REPO="yuriyvnv/experiments_parakeet"
 EXPERIMENTS=(
     "et cv_only_et"
     "et cv_synth_no_morph_et"
-    "et cv_synth_all_et"
     "sl cv_only_sl"
     "sl cv_synth_no_morph_sl"
     "sl cv_synth_all_sl"
@@ -91,6 +90,11 @@ for EXPERIMENT in "${EXPERIMENTS[@]}"; do
         --num-train-epochs "${NUM_EPOCHS}" \
         --eval-steps "${EVAL_STEPS}" \
         --push-to-hub --hub-repo-id "${HUB_REPO}"
+
+    # Clean up checkpoints to free disk space for next run
+    echo "Cleaning up checkpoints in ${OUTPUT_DIR}..."
+    rm -rf "${OUTPUT_DIR}"/checkpoint-*
+    rm -rf "${OUTPUT_DIR}"/runs
 
     echo ""
     echo "=== [${CURRENT}/${TOTAL}] ${CONFIG} done ==="
