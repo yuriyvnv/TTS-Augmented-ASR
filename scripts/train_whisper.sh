@@ -15,13 +15,13 @@ set -euo pipefail
 # Shared settings
 # ---------------------------------------------------------------------------
 SEED=42
-BATCH_SIZE=16
-GRADIENT_ACCUM=16                      # effective batch = 16 * 16 = 256
+BATCH_SIZE=64
+GRADIENT_ACCUM=2                       # effective batch = 64 * 2 = 128
 EVAL_BATCH_SIZE=8
 LEARNING_RATE=5e-5
 WARMUP_RATIO=0.10
 NUM_EPOCHS=5
-EVAL_STEPS=50
+EVAL_STEPS=25
 
 HUB_REPO="yuriyvnv/experiments_parakeet"
 
