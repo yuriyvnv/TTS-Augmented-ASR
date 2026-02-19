@@ -1,12 +1,12 @@
 # Evaluation Results
 
-## Model: Parakeet-TDT-0.6B-v3
-
 ---
 
-## Raw WER/CER (no text normalization)
+## Model: Parakeet-TDT-0.6B-v3
 
-### Estonian (et)
+### Raw WER/CER (no text normalization)
+
+#### Estonian (et)
 
 | Model | CV17 Val WER | CV17 Val CER | CV17 Test WER | CV17 Test CER | FLEURS Test WER | FLEURS Test CER |
 |-------|-------------|-------------|--------------|--------------|----------------|----------------|
@@ -15,7 +15,7 @@
 | Fine-tuned CV + Synth No Morph | 20.51 | 4.29 | 21.24 | 4.73 | 35.41 | 7.10 |
 | Fine-tuned CV + Synth All | **20.18** | **4.21** | **21.03** | **4.64** | **35.29** | **7.06** |
 
-### Slovenian (sl)
+#### Slovenian (sl)
 
 | Model | CV17 Val WER | CV17 Val CER | CV17 Test WER | CV17 Test CER | FLEURS Test WER | FLEURS Test CER |
 |-------|-------------|-------------|--------------|--------------|----------------|----------------|
@@ -24,13 +24,9 @@
 | Fine-tuned CV + Synth No Morph | 11.62 | 2.64 | 12.22 | 2.93 | 35.05 | 9.68 |
 | Fine-tuned CV + Synth All | **11.30** | **2.61** | **11.56** | **2.87** | **34.71** | **9.75** |
 
----
+### Normalized WER/CER (lowercase + punctuation removal)
 
-## Normalized WER/CER (lowercase + punctuation removal)
-
-Normalization: `jiwer.ToLowerCase()` + `jiwer.RemovePunctuation()` applied to both reference and hypothesis before computing metrics.
-
-### Estonian (et)
+#### Estonian (et)
 
 | Model | CV17 Val WER | CV17 Val CER | CV17 Test WER | CV17 Test CER | FLEURS Test WER | FLEURS Test CER |
 |-------|-------------|-------------|--------------|--------------|----------------|----------------|
@@ -39,7 +35,7 @@ Normalization: `jiwer.ToLowerCase()` + `jiwer.RemovePunctuation()` applied to bo
 | Fine-tuned CV + Synth No Morph | 18.29 | 3.85 | 18.69 | 4.22 | 12.70 | 3.26 |
 | Fine-tuned CV + Synth All | **17.91** | **3.78** | **18.51** | **4.13** | **12.36** | **3.24** |
 
-### Slovenian (sl)
+#### Slovenian (sl)
 
 | Model | CV17 Val WER | CV17 Val CER | CV17 Test WER | CV17 Test CER | FLEURS Test WER | FLEURS Test CER |
 |-------|-------------|-------------|--------------|--------------|----------------|----------------|
@@ -48,43 +44,94 @@ Normalization: `jiwer.ToLowerCase()` + `jiwer.RemovePunctuation()` applied to bo
 | Fine-tuned CV + Synth No Morph | 9.21 | 2.23 | 9.68 | 2.48 | 17.90 | 6.03 |
 | Fine-tuned CV + Synth All | **8.87** | **2.19** | **9.05** | **2.45** | **17.64** | **6.11** |
 
----
+### Statistical Significance — Parakeet (Paired Bootstrap, n=100,000)
 
-## Raw vs Normalized Comparison
+#### Estonian
 
-Shows how much WER drops when punctuation and casing are removed. Large drops on FLEURS indicate the dataset has rich punctuation that the ASR model does not produce.
-
-### Estonian (et)
-
-| Model | Test Set | Raw WER | Norm WER | Diff |
-|-------|----------|---------|----------|------|
-| Zero-shot | CV17 test | 27.19 | 24.58 | -2.61 |
-| Zero-shot | FLEURS test | 39.14 | 18.15 | -20.99 |
-| CV only | CV17 test | 22.35 | 19.74 | -2.61 |
-| CV only | FLEURS test | 36.60 | 14.29 | -22.31 |
-| CV + Synth No Morph | CV17 test | 21.24 | 18.69 | -2.55 |
-| CV + Synth No Morph | FLEURS test | 35.41 | 12.70 | -22.71 |
-| CV + Synth All | CV17 test | 21.03 | 18.51 | -2.52 |
-| CV + Synth All | FLEURS test | 35.29 | 12.36 | -22.93 |
-
-### Slovenian (sl)
-
-| Model | Test Set | Raw WER | Norm WER | Diff |
-|-------|----------|---------|----------|------|
-| Zero-shot | CV17 test | 50.23 | 48.13 | -2.10 |
-| Zero-shot | FLEURS test | 40.18 | 24.27 | -15.91 |
-| CV only | CV17 test | 14.08 | 11.69 | -2.39 |
-| CV only | FLEURS test | 38.57 | 22.36 | -16.21 |
-| CV + Synth No Morph | CV17 test | 12.22 | 9.68 | -2.54 |
-| CV + Synth No Morph | FLEURS test | 35.05 | 17.90 | -17.15 |
-| CV + Synth All | CV17 test | 11.56 | 9.05 | -2.51 |
-| CV + Synth All | FLEURS test | 34.71 | 17.64 | -17.07 |
-
-> **Note:** FLEURS references contain extensive punctuation and mixed casing that Parakeet does not produce, causing a ~15-23% WER inflation in raw scores. CV17 references are closer to ASR-style text with ~2.5% inflation. Normalized WER provides a fairer comparison of actual word recognition accuracy.
+| Comparison | Test Set | Delta WER | 95% CI | p-value | Sig |
+|-----------|----------|-----------|--------|---------|-----|
+| Zero-shot vs CV-only | CV17 test | -4.84 | [-5.35, -4.33] | <1e-05 | *** |
+| Zero-shot vs CV-only | FLEURS test | -2.55 | [-3.12, -1.98] | <1e-05 | *** |
+| Zero-shot vs CV+Synth All | CV17 test | -6.16 | [-6.68, -5.63] | <1e-05 | *** |
+| Zero-shot vs CV+Synth All | FLEURS test | -3.85 | [-4.43, -3.28] | <1e-05 | *** |
+| CV-only vs CV+Synth All | CV17 test | -1.31 | [-1.67, -0.96] | <1e-05 | *** |
+| CV-only vs CV+Synth All | FLEURS test | -1.30 | [-1.76, -0.85] | <1e-05 | *** |
 
 ---
 
-## WER Improvement Summary (Raw)
+## Model: Whisper-large-v3
+
+### Raw WER/CER (no text normalization)
+
+#### Estonian (et)
+
+| Model | CV17 Val WER | CV17 Val CER | CV17 Test WER | CV17 Test CER | FLEURS Test WER | FLEURS Test CER |
+|-------|-------------|-------------|--------------|--------------|----------------|----------------|
+| Zero-shot (baseline) | 33.18 | 7.40 | 34.40 | 8.28 | — | — |
+| Fine-tuned CV + Synth No Morph | 25.87 | 5.63 | 26.50 | 6.20 | — | — |
+| Fine-tuned CV + Synth All | **25.25** | **5.63** | **26.46** | **6.24** | — | — |
+
+#### Slovenian (sl)
+
+| Model | CV17 Val WER | CV17 Val CER | CV17 Test WER | CV17 Test CER | FLEURS Test WER | FLEURS Test CER |
+|-------|-------------|-------------|--------------|--------------|----------------|----------------|
+| Zero-shot (baseline) | 21.36 | 5.46 | 21.20 | 5.59 | 37.02 | 9.37 |
+| Fine-tuned CV only | 19.87 | 4.75 | 19.31 | 4.61 | 46.79 | 14.50 |
+| Fine-tuned CV + Synth No Morph | 15.08 | 3.60 | **15.65** | **3.88** | **40.46** | **11.98** |
+| Fine-tuned CV + Synth All | **15.31** | **3.70** | 16.40 | 4.14 | 41.11 | 11.77 |
+
+> **Note:** Whisper fine-tuning on CV data degrades FLEURS performance for Slovenian. Zero-shot Whisper (37.02%) outperforms all fine-tuned variants on FLEURS raw WER. This is because Whisper's pre-trained model handles FLEURS-style punctuation and casing, which fine-tuning on CV-style data erodes.
+
+### Normalized WER/CER (lowercase + punctuation removal)
+
+#### Estonian (et)
+
+| Model | CV17 Val WER | CV17 Val CER | CV17 Test WER | CV17 Test CER | FLEURS Test WER | FLEURS Test CER |
+|-------|-------------|-------------|--------------|--------------|----------------|----------------|
+| Zero-shot (baseline) | 30.80 | 6.81 | 31.52 | 7.59 | — | — |
+| Fine-tuned CV + Synth No Morph | 23.70 | 5.13 | 24.01 | 5.64 | — | — |
+| Fine-tuned CV + Synth All | **23.11** | **5.15** | **24.00** | **5.69** | — | — |
+
+#### Slovenian (sl)
+
+| Model | CV17 Val WER | CV17 Val CER | CV17 Test WER | CV17 Test CER | FLEURS Test WER | FLEURS Test CER |
+|-------|-------------|-------------|--------------|--------------|----------------|----------------|
+| Zero-shot (baseline) | 18.45 | 4.77 | 18.60 | 5.03 | **19.18** | **5.45** |
+| Fine-tuned CV only | 17.70 | 4.34 | 16.85 | 4.21 | 32.52 | 10.93 |
+| Fine-tuned CV + Synth No Morph | **12.98** | **3.24** | **13.24** | **3.48** | 24.52 | 8.32 |
+| Fine-tuned CV + Synth All | 13.02 | 3.30 | 14.00 | 3.73 | 25.12 | 8.05 |
+
+> **Note:** Even with normalization, Whisper zero-shot (19.18%) outperforms fine-tuned models on FLEURS for Slovenian. However, on CV17 test the synthetic augmentation provides large improvements: -5.36% (CV-only→Synth No Morph) and -2.85% (CV-only→Synth All).
+
+### Statistical Significance — Whisper (Paired Bootstrap, n=100,000)
+
+#### Estonian
+
+| Comparison | Test Set | Delta WER | 95% CI | p-value | Sig |
+|-----------|----------|-----------|--------|---------|-----|
+| Zero-shot vs CV+Synth All | CV17 test | -7.94 | [-8.78, -7.21] | <1e-05 | *** |
+| Zero-shot vs CV+Synth No Morph | CV17 test | -7.90 | [-8.73, -7.17] | <1e-05 | *** |
+
+#### Slovenian
+
+| Comparison | Test Set | Delta WER | 95% CI | p-value | Sig |
+|-----------|----------|-----------|--------|---------|-----|
+| Zero-shot vs CV-only | CV17 test | -1.89 | [-3.28, -0.50] | 0.00401 | ** |
+| Zero-shot vs CV+Synth All | CV17 test | -4.79 | [-6.11, -3.48] | <1e-05 | *** |
+| CV-only vs CV+Synth No Morph | CV17 test | -3.66 | [-4.74, -2.58] | <1e-05 | *** |
+| CV-only vs CV+Synth All | CV17 test | -2.91 | [-4.02, -1.80] | <1e-05 | *** |
+| Zero-shot vs CV-only | FLEURS test | +9.76 | [+8.85, +10.68] | <1e-05 | *** |
+| Zero-shot vs CV+Synth All | FLEURS test | +4.08 | [+3.36, +4.82] | <1e-05 | *** |
+| CV-only vs CV+Synth No Morph | FLEURS test | -6.33 | [-7.18, -5.49] | <1e-05 | *** |
+| CV-only vs CV+Synth All | FLEURS test | -5.68 | [-6.47, -4.89] | <1e-05 | *** |
+
+> **Note:** FLEURS deltas are positive for Zero-shot vs fine-tuned (fine-tuning hurts FLEURS performance). CV17 test deltas are all negative (fine-tuning helps in-domain).
+
+Significance: *** p<0.001, ** p<0.01, * p<0.05. Statistical significance assessed using paired bootstrap resampling (Bisani & Ney, 2004) with 100,000 iterations.
+
+---
+
+## WER Improvement Summary — Parakeet (Raw)
 
 | Language | Comparison | CV17 Test | FLEURS Test |
 |----------|-----------|-----------|-------------|
@@ -101,39 +148,17 @@ Shows how much WER drops when punctuation and casing are removed. Large drops on
 | Slovenian | CV only → CV + Synth All | **-2.52** | **-3.86** |
 | Slovenian | CV + Synth No Morph → CV + Synth All | -0.66 | -0.34 |
 
-## WER Improvement Summary (Normalized)
+## WER Improvement Summary — Whisper (Raw)
 
 | Language | Comparison | CV17 Test | FLEURS Test |
 |----------|-----------|-----------|-------------|
-| Estonian | Zero-shot → CV only | -4.84 | -3.86 |
-| Estonian | Zero-shot → CV + Synth No Morph | -5.89 | -5.45 |
-| Estonian | Zero-shot → CV + Synth All | **-6.07** | **-5.79** |
-| Estonian | CV only → CV + Synth No Morph | -1.05 | -1.59 |
-| Estonian | CV only → CV + Synth All | **-1.23** | **-1.93** |
-| Estonian | CV + Synth No Morph → CV + Synth All | -0.18 | -0.34 |
-| Slovenian | Zero-shot → CV only | -36.44 | -1.91 |
-| Slovenian | Zero-shot → CV + Synth No Morph | -38.45 | -6.37 |
-| Slovenian | Zero-shot → CV + Synth All | **-39.08** | **-6.63** |
-| Slovenian | CV only → CV + Synth No Morph | -2.01 | -4.46 |
-| Slovenian | CV only → CV + Synth All | **-2.64** | **-4.72** |
-| Slovenian | CV + Synth No Morph → CV + Synth All | -0.63 | -0.26 |
-
----
-
-## Statistical Significance (Estonian, Paired Bootstrap, n=100,000)
-
-| Comparison | Test Set | Delta WER | 95% CI | p-value | Sig |
-|-----------|----------|-----------|--------|---------|-----|
-| Zero-shot vs CV-only | CV17 test | -4.84 | [-5.35, -4.33] | <1e-05 | *** |
-| Zero-shot vs CV-only | FLEURS test | -2.55 | [-3.12, -1.98] | <1e-05 | *** |
-| Zero-shot vs CV+Synth | CV17 test | -6.16 | [-6.68, -5.63] | <1e-05 | *** |
-| Zero-shot vs CV+Synth | FLEURS test | -3.85 | [-4.43, -3.28] | <1e-05 | *** |
-| CV-only vs CV+Synth | CV17 test | -1.31 | [-1.67, -0.96] | <1e-05 | *** |
-| CV-only vs CV+Synth | FLEURS test | -1.30 | [-1.76, -0.85] | <1e-05 | *** |
-
-Significance: *** p<0.001, ** p<0.01, * p<0.05
-
-Statistical significance assessed using paired bootstrap resampling (Bisani & Ney, 2004) with 100,000 iterations.
+| Estonian | Zero-shot → CV + Synth No Morph | -7.90 | — |
+| Estonian | Zero-shot → CV + Synth All | **-7.94** | — |
+| Slovenian | Zero-shot → CV only | -1.89 | +9.76 |
+| Slovenian | Zero-shot → CV + Synth No Morph | -5.55 | +3.44 |
+| Slovenian | Zero-shot → CV + Synth All | **-4.80** | +4.09 |
+| Slovenian | CV only → CV + Synth No Morph | **-3.66** | **-6.33** |
+| Slovenian | CV only → CV + Synth All | -2.91 | -5.68 |
 
 ---
 
@@ -147,8 +172,21 @@ Statistical significance assessed using paired bootstrap resampling (Bisani & Ne
 
 ## Training Details
 
+### Parakeet-TDT-0.6B-v3
 - Base model: `nvidia/parakeet-tdt-0.6b-v3`
 - Optimizer: AdamW (lr=5e-5, warmup 10%, cosine annealing)
 - Batch size: 32
 - Early stopping: patience 10 epochs on val_wer
 - Seed: 42
+
+### Whisper-large-v3
+- Base model: `openai/whisper-large-v3`
+- Optimizer: AdamW fused (lr=5e-5, warmup 10%)
+- Effective batch size: 128 (64 x 2 gradient accumulation)
+- Epochs: 5
+- Best model selected by eval_loss
+- Seed: 42
+
+---
+
+Normalization: `jiwer.ToLowerCase()` + `jiwer.RemovePunctuation()` applied to both reference and hypothesis before computing metrics.
