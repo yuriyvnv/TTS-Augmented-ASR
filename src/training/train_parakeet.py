@@ -327,7 +327,7 @@ def main():
     best_ckpt = checkpoint_callback.best_model_path
     if best_ckpt:
         logger.info(f"Loading best checkpoint: {best_ckpt}")
-        checkpoint = torch.load(best_ckpt, map_location="cpu")
+        checkpoint = torch.load(best_ckpt, map_location="cpu", weights_only=False)
         model.load_state_dict(checkpoint["state_dict"])
         logger.info(f"  Best val_wer: {checkpoint_callback.best_model_score:.4f}")
 
