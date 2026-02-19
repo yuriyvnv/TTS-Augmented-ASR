@@ -304,7 +304,7 @@ def main():
             repo_id=hub_repo_id,
             path_in_repo=run_name,
             commit_message=f"Upload {run_name}",
-            ignore_patterns=["wandb/*", "runs/*"],
+            ignore_patterns=["wandb/*", "runs/*", "checkpoint-*"],
         )
         logger.info(f"Results pushed to https://huggingface.co/{hub_repo_id}")
 
