@@ -179,6 +179,7 @@ class WhisperEvaluator:
             feature_extractor=processor.feature_extractor,
             torch_dtype=dtype,
             device=device,
+            chunk_length_s=30,
         )
         self.language = WHISPER_LANGUAGES[language]
         logger.info("  Whisper ready")
