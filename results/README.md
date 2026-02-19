@@ -103,7 +103,7 @@
 
 > **Note:** Even with normalization, Whisper zero-shot (19.18%) outperforms fine-tuned models on FLEURS for Slovenian. However, on CV17 test the synthetic augmentation provides large improvements: -5.36% (CV-only→Synth No Morph) and -2.85% (CV-only→Synth All).
 
-### Statistical Significance — Whisper (Paired Bootstrap, n=100,000)
+### Statistical Significance — Whisper Raw WER (Paired Bootstrap, n=100,000)
 
 #### Estonian
 
@@ -117,15 +117,47 @@
 | Comparison | Test Set | Delta WER | 95% CI | p-value | Sig |
 |-----------|----------|-----------|--------|---------|-----|
 | Zero-shot vs CV-only | CV17 test | -1.89 | [-3.28, -0.50] | 0.00401 | ** |
+| Zero-shot vs CV+Synth No Morph | CV17 test | -5.54 | [-6.86, -4.24] | <1e-05 | *** |
 | Zero-shot vs CV+Synth All | CV17 test | -4.79 | [-6.11, -3.48] | <1e-05 | *** |
 | CV-only vs CV+Synth No Morph | CV17 test | -3.66 | [-4.74, -2.58] | <1e-05 | *** |
 | CV-only vs CV+Synth All | CV17 test | -2.91 | [-4.02, -1.80] | <1e-05 | *** |
+| CV+Synth No Morph vs CV+Synth All | CV17 test | +0.75 | [-0.20, +1.72] | 0.06469 | n.s. |
 | Zero-shot vs CV-only | FLEURS test | +9.76 | [+8.85, +10.68] | <1e-05 | *** |
+| Zero-shot vs CV+Synth No Morph | FLEURS test | +3.43 | [+2.68, +4.19] | <1e-05 | *** |
 | Zero-shot vs CV+Synth All | FLEURS test | +4.08 | [+3.36, +4.82] | <1e-05 | *** |
 | CV-only vs CV+Synth No Morph | FLEURS test | -6.33 | [-7.18, -5.49] | <1e-05 | *** |
 | CV-only vs CV+Synth All | FLEURS test | -5.68 | [-6.47, -4.89] | <1e-05 | *** |
+| CV+Synth No Morph vs CV+Synth All | FLEURS test | +0.65 | [-0.01, +1.32] | 0.02651 | * |
 
-> **Note:** FLEURS deltas are positive for Zero-shot vs fine-tuned (fine-tuning hurts FLEURS performance). CV17 test deltas are all negative (fine-tuning helps in-domain).
+> **Note:** FLEURS deltas are positive for Zero-shot vs fine-tuned (fine-tuning hurts FLEURS performance). CV17 test deltas are all negative (fine-tuning helps in-domain). CV+Synth No Morph vs CV+Synth All is not significant on CV17 (p=0.065) and marginally significant on FLEURS (p=0.027).
+
+### Statistical Significance — Whisper Normalized WER (Paired Bootstrap, n=100,000)
+
+#### Estonian
+
+| Comparison | Test Set | Delta WER | 95% CI | p-value | Sig |
+|-----------|----------|-----------|--------|---------|-----|
+| Zero-shot vs CV+Synth No Morph | CV17 test | -7.51 | [-8.34, -6.79] | <1e-05 | *** |
+| Zero-shot vs CV+Synth All | CV17 test | -7.52 | [-8.36, -6.79] | <1e-05 | *** |
+
+#### Slovenian
+
+| Comparison | Test Set | Delta WER | 95% CI | p-value | Sig |
+|-----------|----------|-----------|--------|---------|-----|
+| Zero-shot vs CV-only | CV17 test | -1.74 | [-3.10, -0.40] | 0.00612 | ** |
+| Zero-shot vs CV+Synth No Morph | CV17 test | -5.36 | [-6.63, -4.11] | <1e-05 | *** |
+| Zero-shot vs CV+Synth All | CV17 test | -4.60 | [-5.88, -3.32] | <1e-05 | *** |
+| CV-only vs CV+Synth No Morph | CV17 test | -3.62 | [-4.66, -2.58] | <1e-05 | *** |
+| CV-only vs CV+Synth All | CV17 test | -2.85 | [-3.92, -1.78] | <1e-05 | *** |
+| CV+Synth No Morph vs CV+Synth All | CV17 test | +0.77 | [-0.18, +1.72] | 0.05832 | n.s. |
+| Zero-shot vs CV-only | FLEURS test | +13.34 | [+12.34, +14.35] | <1e-05 | *** |
+| Zero-shot vs CV+Synth No Morph | FLEURS test | +5.33 | [+4.48, +6.18] | <1e-05 | *** |
+| Zero-shot vs CV+Synth All | FLEURS test | +5.94 | [+5.13, +6.78] | <1e-05 | *** |
+| CV-only vs CV+Synth No Morph | FLEURS test | -8.01 | [-8.96, -7.07] | <1e-05 | *** |
+| CV-only vs CV+Synth All | FLEURS test | -7.40 | [-8.29, -6.52] | <1e-05 | *** |
+| CV+Synth No Morph vs CV+Synth All | FLEURS test | +0.61 | [-0.12, +1.34] | 0.05060 | n.s. |
+
+> **Note:** With normalization, CV+Synth No Morph vs CV+Synth All remains not significant on both CV17 (p=0.058) and FLEURS (p=0.051). The morphological augmentation does not provide additional benefit for Whisper.
 
 Significance: *** p<0.001, ** p<0.01, * p<0.05. Statistical significance assessed using paired bootstrap resampling (Bisani & Ney, 2004) with 100,000 iterations.
 
@@ -155,10 +187,11 @@ Significance: *** p<0.001, ** p<0.01, * p<0.05. Statistical significance assesse
 | Estonian | Zero-shot → CV + Synth No Morph | -7.90 | — |
 | Estonian | Zero-shot → CV + Synth All | **-7.94** | — |
 | Slovenian | Zero-shot → CV only | -1.89 | +9.76 |
-| Slovenian | Zero-shot → CV + Synth No Morph | -5.55 | +3.44 |
-| Slovenian | Zero-shot → CV + Synth All | **-4.80** | +4.09 |
+| Slovenian | Zero-shot → CV + Synth No Morph | **-5.55** | +3.44 |
+| Slovenian | Zero-shot → CV + Synth All | -4.80 | +4.09 |
 | Slovenian | CV only → CV + Synth No Morph | **-3.66** | **-6.33** |
 | Slovenian | CV only → CV + Synth All | -2.91 | -5.68 |
+| Slovenian | CV + Synth No Morph → CV + Synth All | +0.75 (n.s.) | +0.65 (*) |
 
 ---
 

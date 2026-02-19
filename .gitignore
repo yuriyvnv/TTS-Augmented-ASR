@@ -1,3 +1,4 @@
 data/
 .env
 results/parakeet_finetune_et/   
+results/whisperV3/et/whisper-large-v3-cv_synth_all_et-seed42_et_cv17_test.json

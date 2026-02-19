@@ -155,7 +155,9 @@ def main():
     for e in entries:
         logger.info(f"  Computing normalized metrics: {e['model']} / {e['lang']} / {e['test_set']}...")
         norm = compute_normalized(e["refs"], e["hyps"])
+        arch = "Whisper-large-v3" if "whisper" in e["model"] else "Parakeet-TDT-0.6B-v3"
         rows.append({
+            "Architecture": arch,
             "Model": e["model"],
             "Lang": e["lang"],
             "Test Set": e["test_set"],
