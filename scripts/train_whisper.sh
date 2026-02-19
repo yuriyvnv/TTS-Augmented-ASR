@@ -106,6 +106,9 @@ echo "============================================================"
 echo " All ${TOTAL} experiments complete!"
 echo "============================================================"
 
-# Stop the vast.ai container (no systemd in vast.ai containers)
+# Stop the vast.ai instance via API
 echo "=== Stopping instance... ==="
-kill 1
+VASTAI_API_KEY=$(grep VASTAI_API_KEY .env | cut -d '=' -f2)
+INSTANCE_ID=$(grep INSTANCE_ID .env | cut -d '=' -f2)
+vastai stop instance "${INSTANCE_ID}" --api-key "${VASTAI_API_KEY}"
+echo "Instance ${INSTANCE_ID} stopped."
