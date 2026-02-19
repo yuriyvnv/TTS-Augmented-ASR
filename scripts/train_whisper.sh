@@ -106,6 +106,6 @@ echo "============================================================"
 echo " All ${TOTAL} experiments complete!"
 echo "============================================================"
 
-# Stop the vast.ai instance after all training is done
+# Stop the vast.ai container (no systemd in vast.ai containers)
 echo "=== Stopping instance... ==="
-sudo shutdown -h now
+kill 1
