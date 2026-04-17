@@ -74,12 +74,12 @@ def _set_low_priority():
 
 CV17_REPO = "fixie-ai/common_voice_17_0"
 FLEURS_REPO = "google/fleurs"
-FLEURS_CONFIGS = {"et": "et_ee", "sl": "sl_si"}
+FLEURS_CONFIGS = {"et": "et_ee", "sl": "sl_si", "nl": "nl_nl", "pt": "pt_pt", "pl": "pl_pl"}
 
 WHISPER_MODEL_ID = "openai/whisper-large-v3"
 PARAKEET_MODEL_ID = "nvidia/parakeet-tdt-0.6b-v3"
 
-WHISPER_LANGUAGES = {"et": "estonian", "sl": "slovenian"}
+WHISPER_LANGUAGES = {"et": "estonian", "sl": "slovenian", "nl": "dutch", "pt": "portuguese", "pl": "polish"}
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent.parent / "results"
 
@@ -326,8 +326,8 @@ def main():
         "--language",
         type=str,
         required=True,
-        choices=["et", "sl", "both"],
-        help="Language to evaluate",
+        choices=["et", "sl", "nl", "pt", "pl", "all", "both"],
+        help="Language to evaluate ('all' for all languages, 'both' for et+sl)",
     )
     parser.add_argument(
         "--test-sets",
@@ -354,7 +354,12 @@ def main():
     output_dir = Path(args.output_dir) if args.output_dir else RESULTS_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    langs = ["et", "sl"] if args.language == "both" else [args.language]
+    if args.language == "all":
+        langs = ["et", "sl", "nl", "pt", "pl"]
+    elif args.language == "both":
+        langs = ["et", "sl"]
+    else:
+        langs = [args.language]
 
     model_label = args.model
     if args.model_path:

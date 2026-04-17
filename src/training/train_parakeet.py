@@ -1,9 +1,11 @@
 """
-Fine-tune Parakeet-TDT-0.6B-v3 on CommonVoice + synthetic data for Estonian/Slovenian.
+Fine-tune Parakeet-TDT-0.6B-v3 on CommonVoice + synthetic data.
 
-Loads dataset configurations from the HuggingFace dataset repo
-(yuriyvnv/synthetic_asr_et_sl), converts to NeMo manifest format,
-and fine-tunes using PyTorch Lightning via NeMo.
+For Estonian/Slovenian: loads pre-built dataset configurations from
+the HuggingFace dataset repo (yuriyvnv/synthetic_asr_et_sl).
+
+For Dutch: loads fixie-ai/common_voice_17_0 (nl) and
+yuriyvnv/synthetic_transcript_nl separately, combines at runtime.
 
 Usage:
     uv run python -m src.training.train_parakeet \
@@ -13,9 +15,9 @@ Usage:
         --seed 42
 
     uv run python -m src.training.train_parakeet \
-        --language sl \
-        --config cv_only_sl \
-        --output-dir ./results/parakeet_finetune_sl \
+        --language nl \
+        --config cv_synth_nl \
+        --output-dir ./results/parakeet_finetune_nl \
         --seed 42
 """
 
@@ -28,7 +30,7 @@ from pathlib import Path
 import lightning.pytorch as pl
 import soundfile as sf
 import torch
-from datasets import Audio, load_dataset
+from datasets import Audio, Dataset, concatenate_datasets, load_dataset
 from dotenv import load_dotenv
 from omegaconf import OmegaConf
 from tqdm import tqdm
@@ -56,6 +58,27 @@ VALID_CONFIGS = [
     "cv_synth_all_et", "cv_synth_all_sl",
     "cv_synth_no_morph_et", "cv_synth_no_morph_sl",
     "cv_synth_unfiltered_et", "cv_synth_unfiltered_sl",
+    # Dutch — loaded from separate sources at runtime
+    "cv_only_nl", "cv_synth_nl",
+    # Portuguese — loaded from yuriyvnv/synthetic_transcript_pt
+    "mixed_cv_synthetic_pt",
+    # Polish — filtered BIGOS v2 (cased+punctuated sources only)
+    "bigos_cased_pl",
+]
+
+# Dutch-specific dataset sources
+CV17_REPO = "fixie-ai/common_voice_17_0"
+SYNTH_NL_REPO = "yuriyvnv/synthetic_transcript_nl"
+
+# Portuguese dataset
+SYNTH_PT_REPO = "yuriyvnv/synthetic_transcript_pt"
+
+# Polish dataset
+BIGOS_REPO = "amu-cai/pl-asr-bigos-v2"
+BIGOS_CASED_SOURCES = [
+    "mozilla-common_voice_15-23",
+    "mailabs-corpus_librivox-19",
+    "polyai-minds14-21",
 ]
 
 
@@ -115,10 +138,10 @@ def hf_to_nemo_manifest(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Fine-tune Parakeet-TDT-0.6B-v3 for Estonian/Slovenian ASR"
+        description="Fine-tune Parakeet-TDT-0.6B-v3 for Estonian/Slovenian/Dutch ASR"
     )
     parser.add_argument(
-        "--language", type=str, required=True, choices=["et", "sl"],
+        "--language", type=str, required=True, choices=["et", "sl", "nl", "pt", "pl"],
         help="Target language",
     )
     parser.add_argument(
@@ -180,12 +203,80 @@ def main():
     # -----------------------------------------------------------------------
     # Load dataset and convert to NeMo format
     # -----------------------------------------------------------------------
-    logger.info(f"Loading dataset: {DATASET_REPO} / {args.config}")
-    dataset = load_dataset(DATASET_REPO, args.config)
-    dataset = dataset.cast_column("audio", Audio(sampling_rate=16000))
+    if args.language == "nl":
+        # Dutch: load CV17 and synthetic dataset separately, combine
+        logger.info(f"Loading Common Voice 17 (nl) from {CV17_REPO}...")
+        cv_train = load_dataset(CV17_REPO, "nl", split="train")
+        cv_val = load_dataset(CV17_REPO, "nl", split="validation")
+        # Standardise columns: keep audio + rename sentence
+        cv_train = cv_train.select_columns(["audio", "sentence"])
+        cv_val = cv_val.select_columns(["audio", "sentence"])
 
-    logger.info(f"  Train: {len(dataset['train'])} samples")
-    logger.info(f"  Validation: {len(dataset['validation'])} samples")
+        # Cast audio to 16kHz before concatenation to align features
+        cv_train = cv_train.cast_column("audio", Audio(sampling_rate=16000))
+        cv_val = cv_val.cast_column("audio", Audio(sampling_rate=16000))
+
+        if args.config == "cv_synth_nl":
+            logger.info(f"Loading synthetic data from {SYNTH_NL_REPO}...")
+            synth = load_dataset(SYNTH_NL_REPO, split="train")
+            # Rename 'text' -> 'sentence' to match CV schema
+            synth = synth.rename_column("text", "sentence")
+            synth = synth.select_columns(["audio", "sentence"])
+            synth = synth.cast_column("audio", Audio(sampling_rate=16000))
+            train_ds = concatenate_datasets([cv_train, synth])
+            logger.info(f"  CV17 train: {len(cv_train)}, Synthetic: {len(synth)}")
+        else:
+            # cv_only_nl
+            train_ds = cv_train
+
+        logger.info(f"  Train (combined): {len(train_ds)} samples")
+        logger.info(f"  Validation: {len(cv_val)} samples")
+
+        # Wrap in dict-like for uniform access below
+        dataset = {"train": train_ds, "validation": cv_val}
+    elif args.language == "pt":
+        # Portuguese: pre-built config in yuriyvnv/synthetic_transcript_pt
+        logger.info(f"Loading dataset: {SYNTH_PT_REPO} / mixed_cv_synthetic")
+        pt_ds = load_dataset(SYNTH_PT_REPO, "mixed_cv_synthetic")
+        # Rename 'text' -> 'sentence' for NeMo manifest compatibility
+        pt_ds = pt_ds.rename_column("text", "sentence")
+        pt_ds = pt_ds.select_columns(["audio", "sentence"])
+        pt_ds = pt_ds.cast_column("audio", Audio(sampling_rate=16000))
+
+        logger.info(f"  Train: {len(pt_ds['train'])} samples")
+        logger.info(f"  Validation: {len(pt_ds['validation'])} samples")
+
+        dataset = {"train": pt_ds["train"], "validation": pt_ds["validation"]}
+    elif args.language == "pl":
+        # Polish: BIGOS v2 filtered to cased+punctuated sources only
+        logger.info(f"Loading BIGOS v2 (all) from {BIGOS_REPO}...")
+        pl_train = load_dataset(BIGOS_REPO, "all", split="train", trust_remote_code=True)
+        pl_val = load_dataset(BIGOS_REPO, "all", split="validation", trust_remote_code=True)
+
+        logger.info(f"  Filtering to cased sources: {BIGOS_CASED_SOURCES}")
+        pl_train = pl_train.filter(lambda x: x["dataset"] in BIGOS_CASED_SOURCES)
+        pl_val = pl_val.filter(lambda x: x["dataset"] in BIGOS_CASED_SOURCES)
+
+        # Rename ref_orig -> sentence for NeMo manifest compatibility
+        pl_train = pl_train.rename_column("ref_orig", "sentence")
+        pl_val = pl_val.rename_column("ref_orig", "sentence")
+        pl_train = pl_train.select_columns(["audio", "sentence"])
+        pl_val = pl_val.select_columns(["audio", "sentence"])
+        pl_train = pl_train.cast_column("audio", Audio(sampling_rate=16000))
+        pl_val = pl_val.cast_column("audio", Audio(sampling_rate=16000))
+
+        logger.info(f"  Train (filtered): {len(pl_train)} samples")
+        logger.info(f"  Validation (filtered): {len(pl_val)} samples")
+
+        dataset = {"train": pl_train, "validation": pl_val}
+    else:
+        # Estonian / Slovenian: load from pre-built HF dataset
+        logger.info(f"Loading dataset: {DATASET_REPO} / {args.config}")
+        dataset = load_dataset(DATASET_REPO, args.config)
+        dataset = dataset.cast_column("audio", Audio(sampling_rate=16000))
+
+        logger.info(f"  Train: {len(dataset['train'])} samples")
+        logger.info(f"  Validation: {len(dataset['validation'])} samples")
 
     # Check if manifests already exist (resume support)
     train_manifest = data_dir / "train_manifest.jsonl"
@@ -335,6 +426,53 @@ def main():
     final_path = output_dir / f"{run_name}.nemo"
     model.save_to(str(final_path))
     logger.info(f"Best model saved to {final_path}")
+
+    # -----------------------------------------------------------------------
+    # Evaluate on test sets
+    # -----------------------------------------------------------------------
+    import numpy as np
+    from jiwer import cer as compute_cer
+    from jiwer import wer as compute_wer
+
+    def _evaluate_test(test_name, test_ds, ref_col="sentence"):
+        """Run evaluation on a test set and return results dict."""
+        logger.info(f"\nEvaluating best model on {test_name}...")
+        refs = test_ds[ref_col]
+        arrays = [
+            np.array(s["audio"]["array"], dtype=np.float32)
+            for s in tqdm(test_ds, desc=f"Preparing {test_name} audio")
+        ]
+        logger.info(f"Transcribing {len(arrays)} samples...")
+        outs = model.transcribe(arrays, batch_size=args.batch_size)
+        hyps = [o.text.strip() if hasattr(o, "text") else str(o).strip() for o in outs]
+        w = compute_wer(refs, hyps)
+        c = compute_cer(refs, hyps)
+        logger.info(f"  {test_name}: WER={w * 100:.2f}%  CER={c * 100:.2f}%  ({len(refs)} samples)")
+        return {"model": run_name, "language": args.language, "test_set": test_name,
+                "wer": round(w * 100, 2), "cer": round(c * 100, 2), "num_samples": len(refs)}
+
+    all_test_results = []
+
+    # 1) Common Voice 17 test
+    cv_test = load_dataset(CV17_REPO, args.language, split="test")
+    cv_test = cv_test.select_columns(["audio", "sentence"])
+    cv_test = cv_test.cast_column("audio", Audio(sampling_rate=16000))
+    all_test_results.append(_evaluate_test("cv17_test", cv_test))
+
+    # 2) BIGOS v2 test (Polish only — filtered to cased sources)
+    if args.language == "pl":
+        bigos_test = load_dataset(BIGOS_REPO, "all", split="test", trust_remote_code=True)
+        bigos_test = bigos_test.filter(lambda x: x["dataset"] in BIGOS_CASED_SOURCES)
+        bigos_test = bigos_test.rename_column("ref_orig", "sentence")
+        bigos_test = bigos_test.select_columns(["audio", "sentence"])
+        bigos_test = bigos_test.cast_column("audio", Audio(sampling_rate=16000))
+        all_test_results.append(_evaluate_test("bigos_cased_test", bigos_test))
+
+    # Save all test results
+    test_results_path = output_dir / "test_results.json"
+    with open(test_results_path, "w") as f:
+        json.dump(all_test_results, f, indent=2)
+    logger.info(f"\nAll test results saved to {test_results_path}")
 
     # Push results folder to HuggingFace Hub
     if args.push_to_hub:
