@@ -80,6 +80,50 @@ All training uses **full fine-tuning at bf16 precision** (no LoRA).
 **Whisper-large-v3**: batch=32, lr=1e-5, warmup=500, max_steps=4000, bf16, SDPA attention
 **Parakeet-TDT-0.6B-v3**: batch=32, lr=5e-5, warmup=10%, max_epochs=100 (early stopping patience=10), bf16-mixed, CosineAnnealing (NeMo)
 
+## Results
+
+Full tables (validation + test, raw + normalized, per-condition, plus paired-bootstrap significance) live in [`results/README.md`](results/README.md). Headline numbers below are raw WER on the CV17 and FLEURS test splits.
+
+### Paper experiments — Parakeet-TDT-0.6B-v3
+
+| Language | Condition | CV17 Test WER | CV17 Test CER | FLEURS Test WER |
+|---|---|---|---|---|
+| Estonian | Zero-shot | 27.19 | 6.42 | 39.14 |
+| Estonian | CV only | 22.35 | 4.90 | 36.60 |
+| Estonian | CV + Synth No Morph | 21.24 | 4.73 | 35.41 |
+| Estonian | **CV + Synth All** | **21.03** | **4.64** | **35.29** |
+| Slovenian | Zero-shot | 50.23 | 24.51 | 40.18 |
+| Slovenian | CV only | 14.08 | 3.45 | 38.57 |
+| Slovenian | CV + Synth No Morph | 12.22 | 2.93 | 35.05 |
+| Slovenian | **CV + Synth All** | **11.56** | **2.87** | **34.71** |
+
+### Paper experiments — Whisper-large-v3
+
+| Language | Condition | CV17 Test WER | FLEURS Test WER |
+|---|---|---|---|
+| Estonian | Zero-shot | 34.40 | 40.73 |
+| Estonian | CV only | 29.38 | 38.51 |
+| Estonian | CV + Synth No Morph | 26.50 | **36.54** |
+| Estonian | **CV + Synth All** | **26.46** | 36.56 |
+| Slovenian | Zero-shot | 21.20 | **37.02** |
+| Slovenian | CV only | 19.31 | 46.79 |
+| Slovenian | **CV + Synth No Morph** | **15.65** | 40.46 |
+| Slovenian | CV + Synth All | 16.40 | 41.11 |
+
+**Headline finding:** the 0.6B-parameter Parakeet-TDT outperforms the 1.55B-parameter Whisper on both Estonian and Slovenian CV17 test WER after fine-tuning, despite Whisper having a large zero-shot advantage on Slovenian. On FLEURS Slovenian, Whisper fine-tuning causes out-of-domain degradation (WER 37.02 → 41.11), whereas Parakeet generalizes (40.18 → 34.71).
+
+### Add-on models (not part of the paper)
+
+Raw WER/CER on CV17 test; training recipes are in the model cards on HuggingFace.
+
+| Language | Model | Zero-shot WER | Fine-tuned WER | CER | Δ |
+|---|---|---|---|---|---|
+| Dutch | [parakeet-tdt-0.6b-dutch](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-dutch) | 5.99 | **5.33** | 1.46 | -0.66 pp |
+| Portuguese | [parakeet-tdt-0.6b-portuguese](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-portuguese) | 15.86 | **10.71** | 2.69 | -5.15 pp |
+| Polish* | [parakeet-tdt-0.6b-polish](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-polish) | **9.72** | 11.81 | 2.72 | +2.09 pp |
+
+*Polish: fine-tune underperformed zero-shot (BIGOS train data vs CV17 test domain mismatch). Archived on HF but **use the base `nvidia/parakeet-tdt-0.6b-v3` for Polish inference**.
+
 ## Project Structure
 
 ```
@@ -165,16 +209,18 @@ On FAIL: sentence is discarded and regenerated with the failure reason as correc
 - Test set leakage check: dedup against CV17 test + dev + FLEURS test
 - Character set validation: only valid characters for target language
 
-## Known Baselines (Published)
+## External Reference Baselines (third-party, for context)
+
+These are published Estonian / Slovenian ASR numbers from other groups — **not produced by this project**. Reported on FLEURS with their own evaluation settings (often normalized WER), so they are not directly comparable to our raw-WER numbers in the Results section above.
 
 | Model | Estonian FLEURS WER | Slovenian FLEURS WER |
 |---|---|---|
-| Parakeet-TDT-0.6B-v3 (zero-shot) | 17.73% | 24.03% |
-| Parakeet-TDT-0.6B-v3 (CoVoST) | 22.04% | 31.80% |
+| Parakeet-TDT-0.6B-v3 (zero-shot, NVIDIA) | 17.73% | 24.03% |
+| Parakeet-TDT-0.6B-v3 (CoVoST, NVIDIA) | 22.04% | 31.80% |
 | EuroSpeech Whisper-v3-Turbo (zero-shot) | 18.4% | 20.5% |
 | EuroSpeech Whisper-v3-Turbo (fine-tuned) | 9.9% | 13.0% |
-| TalTechNLP whisper-large-et (broadcast) | 6.9% | - |
-| samolego/whisper-small-slovenian (ARTUR) | - | 11.0% |
+| TalTechNLP whisper-large-et (broadcast) | 6.9% | — |
+| samolego/whisper-small-slovenian (ARTUR) | — | 11.0% |
 
 ## Key References
 

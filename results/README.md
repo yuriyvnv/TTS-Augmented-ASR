@@ -67,9 +67,10 @@
 
 | Model | CV17 Val WER | CV17 Val CER | CV17 Test WER | CV17 Test CER | FLEURS Test WER | FLEURS Test CER |
 |-------|-------------|-------------|--------------|--------------|----------------|----------------|
-| Zero-shot (baseline) | 33.18 | 7.40 | 34.40 | 8.28 | — | — |
-| Fine-tuned CV + Synth No Morph | 25.87 | 5.63 | 26.50 | 6.20 | — | — |
-| Fine-tuned CV + Synth All | **25.25** | **5.63** | **26.46** | **6.24** | — | — |
+| Zero-shot (baseline) | 33.18 | 7.40 | 34.40 | 8.28 | 40.73 | — |
+| Fine-tuned CV only | — | — | 29.38 | — | 38.51 | — |
+| Fine-tuned CV + Synth No Morph | 25.87 | 5.63 | 26.50 | 6.20 | 36.54 | — |
+| Fine-tuned CV + Synth All | **25.25** | **5.63** | **26.46** | **6.24** | **36.56** | — |
 
 #### Slovenian (sl)
 
@@ -88,9 +89,10 @@
 
 | Model | CV17 Val WER | CV17 Val CER | CV17 Test WER | CV17 Test CER | FLEURS Test WER | FLEURS Test CER |
 |-------|-------------|-------------|--------------|--------------|----------------|----------------|
-| Zero-shot (baseline) | 30.80 | 6.81 | 31.52 | 7.59 | — | — |
-| Fine-tuned CV + Synth No Morph | 23.70 | 5.13 | 24.01 | 5.64 | — | — |
-| Fine-tuned CV + Synth All | **23.11** | **5.15** | **24.00** | **5.69** | — | — |
+| Zero-shot (baseline) | 30.80 | 6.81 | 31.52 | 7.59 | 18.47 | — |
+| Fine-tuned CV only | — | — | 27.01 | — | 16.84 | — |
+| Fine-tuned CV + Synth No Morph | 23.70 | 5.13 | 24.01 | 5.64 | 13.98 | — |
+| Fine-tuned CV + Synth All | **23.11** | **5.15** | **24.00** | **5.69** | **13.89** | — |
 
 #### Slovenian (sl)
 
@@ -195,13 +197,48 @@ Significance: *** p<0.001, ** p<0.01, * p<0.05. Statistical significance assesse
 
 ---
 
+## Add-on Models (not part of the Interspeech 2026 paper)
+
+After the paper was submitted, the same Parakeet-TDT fine-tuning pipeline was applied to three additional languages. These models are published as community artifacts on HuggingFace (`yuriyvnv/parakeet-tdt-0.6b-{dutch,portuguese,polish}`) and are **outside the scope of the paper's claims**.
+
+All values below are raw WER/CER on the Common Voice 17 test split for each language. Results come from the JSON files in this directory.
+
+### Dutch (nl)
+
+| Model | CV17 Test WER | CV17 Test CER | N |
+|-------|---------------|---------------|---|
+| Zero-shot (baseline) | 5.99 | 1.66 | 11,266 |
+| Fine-tuned CV + Synth (`cv_synth_nl`) | **5.33** | **1.46** | 11,266 |
+
+Training data: `fixie-ai/common_voice_17_0` (nl) + `yuriyvnv/synthetic_transcript_nl` (34.9K OpenAI-TTS samples). Improvement: -0.66pp WER.
+
+### Portuguese (pt)
+
+| Model | CV17 Test WER | CV17 Test CER | N |
+|-------|---------------|---------------|---|
+| Zero-shot (baseline) | 15.86 | 4.62 | 9,467 |
+| Fine-tuned `mixed_cv_synthetic` | **10.71** | **2.69** | 9,467 |
+
+Training data: `yuriyvnv/synthetic_transcript_pt` config `mixed_cv_synthetic` — 21,968 CV17 samples + 19,181 high-quality WAVe-filtered synthetic samples (similarity > 0.5). Improvement: -5.15pp WER.
+
+### Polish (pl) — not recommended
+
+| Model | CV17 Test WER | CV17 Test CER | N |
+|-------|---------------|---------------|---|
+| Zero-shot (baseline) | **9.72** | **1.94** | 9,230 |
+| Fine-tuned `bigos_cased` | 11.81 | 2.72 | 9,230 |
+
+Training data: BIGOS v2 filtered to cased+punctuated sources (`mozilla-common_voice_15-23`, `mailabs-corpus_librivox-19`, `polyai-minds14-21`; ~31,415 samples). **Fine-tuning degraded performance vs. zero-shot** (+2.09pp WER), likely due to domain mismatch between the BIGOS training data (CV v15 + audiobook) and CV17 test. The checkpoint is archived at `yuriyvnv/parakeet-tdt-0.6b-polish` but is not recommended; use the zero-shot Parakeet-TDT-0.6B-v3 base model for Polish instead.
+
+---
+
 ## Test Set Sizes
 
-| Test Set | Estonian | Slovenian |
-|----------|---------|-----------|
-| CV17 validation | 2,653 | 1,232 |
-| CV17 test | 2,653 | 1,242 |
-| FLEURS test | 893 | 834 |
+| Test Set | Estonian | Slovenian | Dutch | Portuguese | Polish |
+|----------|---------|-----------|-------|------------|--------|
+| CV17 validation | 2,653 | 1,232 | — | — | — |
+| CV17 test | 2,653 | 1,242 | 11,266 | 9,467 | 9,230 |
+| FLEURS test | 893 | 834 | — | — | — |
 
 ## Training Details
 
