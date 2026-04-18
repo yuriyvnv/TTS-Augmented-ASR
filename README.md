@@ -1,8 +1,13 @@
 # Synthetic Speech Augmentation for Low-Resource European ASR
 
-**Paper**: "Synthetic Speech Augmentation for Low-Resource European ASR: A Cross-Architecture Comparison for Estonian and Slovenian"
-**Venue**: Interspeech 2026 (4-page short paper + 2 refs)
-**Deadline**: February 25, 2026
+> **Official repository for the paper** "Synthetic Speech Augmentation for Low-Resource European ASR: A Cross-Architecture Comparison for Estonian and Slovenian", submitted to **Interspeech 2026**.
+> A link to the paper will be added here once it becomes available.
+
+## Scope
+
+The paper studies **Estonian (et)** and **Slovenian (sl)** — the two target low-resource European languages for the cross-architecture comparison (Whisper-large-v3 vs Parakeet-TDT-0.6B-v3).
+
+**Add-on experiments (not part of the paper):** after submission, the same training pipeline was applied to **Dutch (nl)**, **Portuguese (pt)**, and **Polish (pl)** to extend the open-source release. Published model cards document per-language results; those models are provided as community artifacts and are **outside the scope of the paper's claims**.
 
 ## Overview
 
@@ -80,37 +85,55 @@ All training uses **full fine-tuning at bf16 precision** (no LoRA).
 ```
 syntts_asr/
 ├── README.md                          # This file
-├── requirements.txt                   # Python dependencies
+├── CLAUDE.md                          # Context for Claude Code assistant sessions
+├── pyproject.toml                     # Python dependencies (uv-managed)
+├── uv.lock
 ├── src/
-│   ├── data_pipeline/                # Data generation, validation, and publishing
-│   │   ├── README.md                 # Pipeline documentation
-│   │   ├── download_data.py          # Download CV17 + FLEURS from HuggingFace
-│   │   ├── text_diversification.py   # 3-category LLM text generation + LLM-as-judge validation
-│   │   ├── tts_synthesis.py          # OpenAI TTS synthesis with voice cycling
-│   │   └── prepare_and_push_dataset.py  # Build and push HuggingFace dataset
-│   ├── evaluation/                   # ASR evaluation on test sets
-│   │   ├── README.md                 # Evaluation documentation
-│   │   └── evaluate.py              # WER/CER evaluation (zero-shot + fine-tuned)
-│   └── training/                     # Model fine-tuning
-│       ├── README.md                 # Training documentation
-│       ├── train_whisper.py          # Whisper-large-v3 full fine-tuning
-│       └── train_parakeet.py         # Parakeet-TDT NeMo fine-tuning
-├── configs/
-│   ├── whisper_large_v3.yaml         # Whisper training hyperparameters
-│   └── parakeet_finetune.yaml        # NeMo training config
-├── prompts/
-│   ├── paraphrase.txt                # Category 1: paraphrase generation
-│   ├── domain.txt                    # Category 2: domain expansion
-│   ├── morphological_et.txt          # Category 3: Estonian morphological diversity
-│   ├── morphological_sl.txt          # Category 3: Slovenian morphological diversity
-│   └── validator.txt                 # LLM-as-judge validation prompt
+│   ├── data_pipeline/                 # Synthetic data generation + HF dataset prep
+│   │   ├── download_data.py
+│   │   ├── text_diversification.py    # 3-category LLM generation + LLM-as-judge validation
+│   │   ├── tts_synthesis.py           # OpenAI TTS synthesis with voice cycling
+│   │   └── prepare_and_push_dataset.py
+│   ├── training/                      # Model fine-tuning
+│   │   ├── train_parakeet.py          # Parakeet-TDT NeMo fine-tuning (et, sl, nl, pt, pl)
+│   │   └── train_whisper.py           # Whisper-large-v3 full fine-tuning
+│   └── evaluation/                    # WER/CER evaluation
+│       ├── evaluate.py                # Zero-shot + fine-tuned on CV17 + FLEURS
+│       ├── significance.py            # Paired bootstrap significance testing
+│       └── report_normalized.py       # Normalized WER/CER comparison
 ├── scripts/
-│   └── train_parakeet.sh            # Run all Parakeet experiments
-├── data/                             # Downloaded and generated data (gitignored)
-├── results/                          # Experiment results and figures
-└── paper/
-    └── interspeech2026.tex           # Paper in Interspeech LaTeX template
+│   ├── train/                         # Training entrypoints (one per language)
+│   │   ├── parakeet.sh                # Generic template (et/sl paper experiments)
+│   │   ├── parakeet_nl.sh             # Dutch add-on
+│   │   ├── parakeet_pt.sh             # Portuguese add-on
+│   │   └── whisper.sh
+│   ├── publish/                       # HF Hub upload + model cards + announcements
+│   │   ├── parakeet_nl.py
+│   │   ├── parakeet_pt.py
+│   │   ├── parakeet_pl.py
+│   │   ├── update_readmes.py
+│   │   ├── create_experiments_repo.py
+│   │   └── hf_post_parakeet.md        # Draft announcement text
+│   ├── evaluate/                      # Batch evaluation + significance testing
+│   │   ├── whisper_all.py
+│   │   ├── whisper_significance.py
+│   │   └── whisper_significance_normalized.py
+│   ├── data/                          # Data prep / model downloads
+│   │   ├── download_and_convert.py
+│   │   └── download_whisper_models.py
+│   ├── setup.sh                       # One-time environment setup
+│   └── README.md                      # How to run each workflow
+├── prompts/
+│   ├── paraphrase.txt
+│   ├── domain.txt
+│   ├── morphological_et.txt
+│   ├── morphological_sl.txt
+│   └── validator.txt
+├── data/                              # Downloaded + generated data (gitignored)
+└── results/                           # Checkpoints, .nemo files, JSON metrics, wandb logs
 ```
+
+See [scripts/README.md](scripts/README.md) for how to run each workflow end-to-end.
 
 ## Text Diversification Pipeline
 
@@ -168,7 +191,25 @@ On FAIL: sentence is discarded and regenerated with the failure reason as correc
 
 ## Open-Source Release
 
-All artifacts will be published on HuggingFace under `yuriyvnv`:
-- **Models**: whisper-large-v3-et, whisper-large-v3-sl, parakeet-tdt-0.6b-v3-et, parakeet-tdt-0.6b-v3-sl
-- **Datasets**: syntts-estonian-6k, syntts-slovenian-6k (text + audio + metadata)
-- **Code**: This repository
+All artifacts are published on HuggingFace under [`yuriyvnv`](https://huggingface.co/yuriyvnv).
+
+### Paper models (Estonian + Slovenian — scope of the Interspeech submission)
+
+| Model | CV17 Test WER | Status |
+|---|---|---|
+| [yuriyvnv/parakeet-tdt-0.6b-estonian](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-estonian) | 21.03% | Published |
+| [yuriyvnv/parakeet-tdt-0.6b-slovenian](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-slovenian) | 11.56% | Published |
+| Whisper-large-v3 Estonian | — | Published (see HF collection) |
+| Whisper-large-v3 Slovenian | — | Published (see HF collection) |
+
+### Add-on models (not part of the paper)
+
+| Model | CV17 Test WER | Status |
+|---|---|---|
+| [yuriyvnv/parakeet-tdt-0.6b-dutch](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-dutch) | 5.33% | Published |
+| [yuriyvnv/parakeet-tdt-0.6b-portuguese](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-portuguese) | 10.71% | Published |
+| Polish (`yuriyvnv/parakeet-tdt-0.6b-polish`) | 11.81% (worse than 9.72% zero-shot) | Internal only — not recommended |
+
+**Datasets**: `syntts-estonian-6k`, `syntts-slovenian-6k` (text + audio + metadata); plus `synthetic_transcript_nl` and `synthetic_transcript_pt` for the add-on languages.
+
+**Code**: this repository.

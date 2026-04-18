@@ -78,8 +78,10 @@ FLEURS_CONFIGS = {"et": "et_ee", "sl": "sl_si", "nl": "nl_nl", "pt": "pt_pt", "p
 
 WHISPER_MODEL_ID = "openai/whisper-large-v3"
 PARAKEET_MODEL_ID = "nvidia/parakeet-tdt-0.6b-v3"
+QWEN_MODEL_ID = "Qwen/Qwen3-ASR-1.7B"
 
 WHISPER_LANGUAGES = {"et": "estonian", "sl": "slovenian", "nl": "dutch", "pt": "portuguese", "pl": "polish"}
+QWEN_LANGUAGES = {"et": "Estonian", "sl": "Slovenian", "nl": "Dutch", "pt": "Portuguese", "pl": "Polish"}
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent.parent / "results"
 
@@ -250,6 +252,45 @@ class ParakeetEvaluator:
         return hypotheses
 
 
+class Qwen3ASREvaluator:
+    """Qwen3-ASR-1.7B evaluation via the qwen-asr package (transformers backend)."""
+
+    def __init__(self, language: str, model_path: str | None = None, batch_size: int = 16):
+        from qwen_asr import Qwen3ASRModel
+
+        model_id = model_path or QWEN_MODEL_ID
+        device, _ = get_device_and_dtype()
+        device_map = device if device.startswith("cuda") else "cpu"
+
+        logger.info(f"Loading Qwen3-ASR from {model_id} on {device_map} (bfloat16)...")
+        self.model = Qwen3ASRModel.from_pretrained(
+            model_id,
+            dtype=torch.bfloat16,
+            device_map=device_map,
+            max_inference_batch_size=batch_size,
+            max_new_tokens=256,
+        )
+        self.language = QWEN_LANGUAGES[language]
+        logger.info(f"  Qwen3-ASR ready (language={self.language})")
+
+    def transcribe(self, dataset, batch_size: int = 16) -> list[str]:
+        """Transcribe all samples in a dataset. Returns list of hypothesis strings."""
+        import numpy as np
+
+        hypotheses = []
+        for i in tqdm(range(0, len(dataset), batch_size), desc="Qwen3-ASR transcribe"):
+            batch = dataset[i : i + batch_size]
+            audio_inputs = [
+                (np.array(a["array"], dtype=np.float32), a["sampling_rate"])
+                for a in batch["audio"]
+            ]
+            langs = [self.language] * len(audio_inputs)
+            results = self.model.transcribe(audio=audio_inputs, language=langs)
+            hypotheses.extend([r.text.strip() for r in results])
+
+        return hypotheses
+
+
 # ---------------------------------------------------------------------------
 # Metrics
 # ---------------------------------------------------------------------------
@@ -313,7 +354,7 @@ def main():
         "--model",
         type=str,
         required=True,
-        choices=["whisper-large-v3", "parakeet-tdt-0.6b-v3"],
+        choices=["whisper-large-v3", "parakeet-tdt-0.6b-v3", "qwen3-asr-1.7b"],
         help="Model to evaluate",
     )
     parser.add_argument(
@@ -374,6 +415,11 @@ def main():
     for lang in langs:
         if args.model == "whisper-large-v3":
             evaluator = WhisperEvaluator(lang, args.model_path)
+        elif args.model == "qwen3-asr-1.7b":
+            if evaluator is None:
+                evaluator = Qwen3ASREvaluator(lang, args.model_path, args.batch_size)
+            else:
+                evaluator.language = QWEN_LANGUAGES[lang]
         elif evaluator is None:
             evaluator = ParakeetEvaluator(lang, args.model_path)
 
@@ -413,7 +459,11 @@ def main():
             )
 
             # Save results into model/language subdirectory
-            model_dir = "whisperV3" if args.model == "whisper-large-v3" else "parakeetV3"
+            model_dir = {
+                "whisper-large-v3": "whisperV3",
+                "parakeet-tdt-0.6b-v3": "parakeetV3",
+                "qwen3-asr-1.7b": "qwenV3",
+            }[args.model]
             result_subdir = output_dir / model_dir / lang
             result_subdir.mkdir(parents=True, exist_ok=True)
             result_path = result_subdir / f"{model_label}_{lang}_{test_set}.json"
