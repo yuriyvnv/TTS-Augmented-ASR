@@ -1,6 +1,6 @@
 # Synthetic Speech Augmentation for Low-Resource European ASR
 
-> **Official repository for the paper** "Synthetic Speech Augmentation for Low-Resource European ASR: A Cross-Architecture Comparison for Estonian and Slovenian", submitted to **Interspeech 2026**.
+> **Official repository for the paper** "Synthetic Speech Augmentation for Low-Resource European ASR: Comparing Parakeet-TDT and Whisper, submitted to **Interspeech 2026**.
 > A link to the paper will be added here once it becomes available.
 
 ## Scope
