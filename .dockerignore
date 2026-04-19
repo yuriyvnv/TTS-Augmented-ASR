@@ -1,0 +1,31 @@
+# Don't send these into the build context — they're either big, local-only,
+# or would be mounted at runtime anyway.
+.venv/
+.git/
+.gitignore
+
+# Outputs / caches
+results/
+wandb/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+
+# Local environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS cruft
+.DS_Store
+
+# Data caches (mounted at runtime via `-v ~/.cache/...:/root/.cache/...`)
+data/
+4.48.3/
+=*
+
+# PyAV ffmpeg symlinks from the host workaround (not needed in Docker)
+av.libs/

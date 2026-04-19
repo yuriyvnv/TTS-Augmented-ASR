@@ -1,0 +1,3 @@
+=== Checking HuggingFace login ===
+=== Checking WandB login ===
+ERROR: WandB not configured. Run: uv run wandb login

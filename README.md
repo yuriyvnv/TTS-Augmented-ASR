@@ -7,7 +7,7 @@
 
 The paper studies **Estonian (et)** and **Slovenian (sl)** — the two target low-resource European languages for the cross-architecture comparison (Whisper-large-v3 vs Parakeet-TDT-0.6B-v3).
 
-**Add-on experiments (not part of the paper):** after submission, the same training pipeline was applied to **Dutch (nl)**, **Portuguese (pt)**, and **Polish (pl)** to extend the open-source release. Published model cards document per-language results; those models are provided as community artifacts and are **outside the scope of the paper's claims**.
+**Add-on experiments (not part of the paper):** after submission, the same training pipeline was applied to **Dutch (nl)**, **Portuguese (pt)**, and **Polish (pl)** for Parakeet, and to **Portuguese (pt)** (with Dutch in progress) for Qwen3-ASR-1.7B. Published model cards document per-language results; those models are provided as community artifacts and are **outside the scope of the paper's claims**.
 
 ## Overview
 
@@ -148,25 +148,34 @@ syntts_asr/
 ├── scripts/
 │   ├── train/                         # Training entrypoints (one per language)
 │   │   ├── parakeet.sh                # Generic template (et/sl paper experiments)
-│   │   ├── parakeet_nl.sh             # Dutch add-on
-│   │   ├── parakeet_pt.sh             # Portuguese add-on
+│   │   ├── parakeet_nl.sh             # Dutch Parakeet add-on
+│   │   ├── parakeet_pt.sh             # Portuguese Parakeet add-on
+│   │   ├── qwen_pt.sh                 # Qwen3-ASR-1.7B Portuguese (Docker)
+│   │   ├── qwen_nl.sh                 # Qwen3-ASR-1.7B Dutch    (Docker)
 │   │   └── whisper.sh
+│   ├── docker/                        # Containerised workflow for Qwen3-ASR
+│   │   ├── up.sh / down.sh / shell.sh / attach.sh / logs.sh
+│   │   ├── train.sh                   # tmux-launched training in container
+│   │   └── README.md
 │   ├── publish/                       # HF Hub upload + model cards + announcements
 │   │   ├── parakeet_nl.py
 │   │   ├── parakeet_pt.py
 │   │   ├── parakeet_pl.py
+│   │   ├── qwen_pt.py                 # Qwen3-ASR-1.7B-PT model card
 │   │   ├── update_readmes.py
 │   │   ├── create_experiments_repo.py
 │   │   └── hf_post_parakeet.md        # Draft announcement text
 │   ├── evaluate/                      # Batch evaluation + significance testing
 │   │   ├── whisper_all.py
 │   │   ├── whisper_significance.py
-│   │   └── whisper_significance_normalized.py
+│   │   ├── whisper_significance_normalized.py
+│   │   └── qwen_pt_zero_shot_baseline.py    # apples-to-apples baseline for the Qwen card
 │   ├── data/                          # Data prep / model downloads
 │   │   ├── download_and_convert.py
 │   │   └── download_whisper_models.py
 │   ├── setup.sh                       # One-time environment setup
 │   └── README.md                      # How to run each workflow
+├── Dockerfile                         # CUDA 12.8 + flash-attn for Qwen3-ASR runs
 ├── prompts/
 │   ├── paraphrase.txt
 │   ├── domain.txt
@@ -248,11 +257,23 @@ All artifacts are published on HuggingFace under [`yuriyvnv`](https://huggingfac
 
 ### Add-on models (not part of the paper)
 
+**Parakeet-TDT-0.6B-v3 fine-tunes:**
+
 | Model | CV17 Test WER | Status |
 |---|---|---|
 | [yuriyvnv/parakeet-tdt-0.6b-dutch](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-dutch) | 5.33% | Published |
 | [yuriyvnv/parakeet-tdt-0.6b-portuguese](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-portuguese) | 10.71% | Published |
 | [`yuriyvnv/parakeet-tdt-0.6b-polish`] | 11.81% (worse than 9.72% zero-shot) | Internal only — not recommended |
+
+**Qwen3-ASR-1.7B fine-tunes** (apples-to-apples with the zero-shot base; both eval'd via the same `evaluate_model` path with normalised refs):
+
+| Model | Test set | Zero-shot WER | Fine-tuned WER | Δ rel | Status |
+|---|---|---|---|---|---|
+| [yuriyvnv/Qwen3-ASR-1.7B-PT](https://huggingface.co/yuriyvnv/Qwen3-ASR-1.7B-PT) | CV17-pt test | 12.63% | **8.40%** | -33.5% | Published |
+| [yuriyvnv/Qwen3-ASR-1.7B-PT](https://huggingface.co/yuriyvnv/Qwen3-ASR-1.7B-PT) | CV22-pt test | 12.91% | **8.72%** | -32.5% | Published |
+| `yuriyvnv/Qwen3-ASR-1.7B-NL` | — | — | — | — | Training in progress |
+
+The Qwen3-ASR runs use the Docker workflow ([scripts/docker/](scripts/docker/)) — flash-attn 2 and matched CUDA 12.8 nvcc are required and not present on the host.
 
 **Datasets**: `syntts-estonian-6k`, `syntts-slovenian-6k` (text + audio + metadata); plus `synthetic_transcript_nl` and `synthetic_transcript_pt` for the add-on languages.
 

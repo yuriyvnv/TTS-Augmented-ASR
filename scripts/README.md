@@ -10,7 +10,8 @@ All scripts must be run from the **repository root** (not from inside `scripts/`
 | [`publish/`](publish/) | HF Hub upload + model cards + announcements |
 | [`evaluate/`](evaluate/) | Batch evaluation + significance testing |
 | [`data/`](data/) | Data downloads + format conversion |
-| [`setup.sh`](setup.sh) | One-time environment setup |
+| [`docker/`](docker/) | Containerised workflow for Qwen3-ASR fine-tuning (survives SSH disconnects). See [`docker/README.md`](docker/README.md). |
+| [`setup.sh`](setup.sh) | One-time environment setup (native, non-Docker) |
 
 ---
 
@@ -54,6 +55,18 @@ Valid Parakeet configs for paper experiments:
 bash scripts/train/parakeet_nl.sh    # Dutch: CV17 + synthetic_transcript_nl
 bash scripts/train/parakeet_pt.sh    # Portuguese: mixed_cv_synthetic config
 ```
+
+### Qwen3-ASR-1.7B fine-tunes (Docker only)
+
+These run inside the Docker container ([`docker/README.md`](docker/README.md)) because they need flash-attn + ffmpeg + matched CUDA, none of which are available natively on this host.
+
+```bash
+bash scripts/docker/up.sh                   # start container (one-time per session)
+bash scripts/docker/train.sh pt             # → scripts/train/qwen_pt.sh
+bash scripts/docker/train.sh nl             # → scripts/train/qwen_nl.sh
+```
+
+Each `qwen_*.sh` calls `python -m src.training.train_qwen3_asr` with hyperparameters fixed at the top of the script. Both apply written-form normalisation (`normalize_written_form`) to train / val / test references and auto-push the best checkpoint to `yuriyvnv/Qwen3-ASR-1.7B-{LANG}`.
 
 For Polish there is no shell script (the add-on run used BIGOS v2 filtered; the Polish model underperformed zero-shot, so it's not published). To reproduce:
 
@@ -112,6 +125,15 @@ uv run python scripts/evaluate/whisper_significance.py              # raw text
 uv run python scripts/evaluate/whisper_significance_normalized.py   # jiwer-normalized
 ```
 
+### Qwen3-ASR zero-shot baseline
+
+Re-measures the un-fine-tuned base model on CV17 + CV22 test sets with the SAME code path the fine-tuned eval uses (`evaluate_model` from `train_qwen3_asr.py`, normalised refs, greedy decode). Required for an apples-to-apples comparison in the model card. Output JSONs land in `results/qwenV3/<lang>/qwen3-asr-1.7b_<lang>_<set>_baseline.json` and are picked up automatically by the publish script.
+
+```bash
+docker exec qwen-training bash -c \
+    "cd /workspace && uv run python scripts/evaluate/qwen_pt_zero_shot_baseline.py"
+```
+
 ---
 
 ## 4. Publishing to HuggingFace Hub
@@ -130,6 +152,16 @@ uv run python scripts/publish/parakeet_pl.py
 
 ```bash
 uv run python scripts/publish/update_readmes.py
+```
+
+### Upload / refresh the Qwen3-ASR model card
+
+`qwen_pt.py` reads `results/qwen3_finetune_pt/<run>/test_results.json` plus any `results/qwenV3/pt/*_baseline.json` files and renders a friendly model card (badges, comparison table, normalisation explainer, acknowledgements). Used after the in-training auto-push if you want to refresh the README only.
+
+```bash
+uv run python scripts/publish/qwen_pt.py --dry-run        # preview rendered README
+uv run python scripts/publish/qwen_pt.py --readme-only    # push README, no weights
+uv run python scripts/publish/qwen_pt.py                  # push README + weights
 ```
 
 ### Draft HuggingFace announcement post

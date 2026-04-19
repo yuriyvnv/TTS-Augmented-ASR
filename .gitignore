@@ -1,4 +1,68 @@
-data/
+# --- Secrets / data ---
 .env
-results/parakeet_finetune_et/   
+.env.*
+!.env.example
+data/
+
+# --- Python build / cache ---
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.egg
+build/
+dist/
+.venv/
+venv/
+.python-version
+.ipynb_checkpoints/
+
+# --- Editor / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.claude/
+
+# --- Model weights & training artefacts (large) ---
+# Block any model/optimiser/checkpoint binary anywhere in the repo.
+# These files are >100 MB so GitHub rejects them on push.
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.nemo
+*.onnx
+*.gguf
+*.h5
+
+# Training scratch directories produced by HF Trainer / NeMo / wandb /
+# tensorboard. They contain the binaries above PLUS optimizer states,
+# RNG state, etc. — keep them off git entirely.
+**/checkpoint-*/
+**/wandb/
+**/runs/
+wandb/
+runs/
+logs/
+
+# --- Per-run output dirs (whole training trees) ---
+# Keep the small JSONs (results/qwenV3, results/whisperV3, results/parakeetV3,
+# test_results.json) but block the giant fine-tune directories that hold
+# weights + checkpoints + logs.
+results/qwen3_finetune_*/
+results/parakeet_finetune_*/
+results/whisper_finetune_*/
+
+# Old per-language dirs already ignored by name in the previous .gitignore —
+# keep the explicit forms for clarity, even though the patterns above also
+# cover them.
+results/parakeet_finetune_et/
 results/whisperV3/et/whisper-large-v3-cv_synth_all_et-seed42_et_cv17_test.json
+
+# --- Junk from accidental "pip install ..." commands at repo root ---
+# A previous run pasted version constraints to the shell with a stray space,
+# which created files literally named "=0.0.6", "4.48.3", etc.
+=*
+4.48.3
