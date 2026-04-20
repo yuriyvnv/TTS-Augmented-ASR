@@ -253,7 +253,7 @@ All artifacts are published on HuggingFace under [`yuriyvnv`](https://huggingfac
 | Model | CV17 Test WER | Status |
 |---|---|---|
 | [yuriyvnv/parakeet-tdt-0.6b-estonian](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-estonian) | 21.03% | Published |
-| [yuriyvnv/parakeet-tdt-0.6b-slovenian](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-slovenian) | 11.56% | 
+| [yuriyvnv/parakeet-tdt-0.6b-slovenian](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-slovenian) | 11.56% | Published |
 
 ### Add-on models (not part of the paper)
 
@@ -263,7 +263,7 @@ All artifacts are published on HuggingFace under [`yuriyvnv`](https://huggingfac
 |---|---|---|
 | [yuriyvnv/parakeet-tdt-0.6b-dutch](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-dutch) | 5.33% | Published |
 | [yuriyvnv/parakeet-tdt-0.6b-portuguese](https://huggingface.co/yuriyvnv/parakeet-tdt-0.6b-portuguese) | 10.71% | Published |
-| [`yuriyvnv/parakeet-tdt-0.6b-polish`] | 11.81% (worse than 9.72% zero-shot) | Internal only — not recommended |
+| [`yuriyvnv/parakeet-tdt-0.6b-polish`] | 11.81% (worse than 9.72% zero-shot) | Internal only — not recommended | Published |
 
 **Qwen3-ASR-1.7B fine-tunes** (apples-to-apples with the zero-shot base; both eval'd via the same `evaluate_model` path with normalised refs):
 
@@ -275,7 +275,7 @@ All artifacts are published on HuggingFace under [`yuriyvnv`](https://huggingfac
 
 The Qwen3-ASR runs use the Docker workflow ([scripts/docker/](scripts/docker/)) — flash-attn 2 and matched CUDA 12.8 nvcc are required and not present on the host.
 
-**Datasets**: `syntts-estonian-6k`, `syntts-slovenian-6k` (text + audio + metadata); plus `synthetic_transcript_nl` and `synthetic_transcript_pt` for the add-on languages.
+**Datasets**: `yutiyvnv/synthetic_transcript_nl` and `yutiyvnvsynthetic_transcript_pt` for the add-on languages available on Hugging Face. 
 
 **Relevant Paper**
 @article{perezhohin2024enhancing,
