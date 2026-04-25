@@ -54,6 +54,7 @@ docker run \
     --restart unless-stopped \
     --env-file .env \
     --env PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
+    --env WANDB_DISABLE_STATS=true \
     --volume "$(pwd)/src:/workspace/src" \
     --volume "$(pwd)/scripts:/workspace/scripts" \
     --volume "$(pwd)/prompts:/workspace/prompts" \

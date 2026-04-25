@@ -77,7 +77,12 @@ logger = logging.getLogger(__name__)
 # Constants
 # ---------------------------------------------------------------------------
 
-QWEN_MODEL_ID = "Qwen/Qwen3-ASR-1.7B"
+QWEN_MODEL_ID = "Qwen/Qwen3-ASR-1.7B"   # default; overridable via --base-model
+
+
+def _model_short_name(base_model_id: str) -> str:
+    """'Qwen/Qwen3-ASR-1.7B' -> 'Qwen3-ASR-1.7B'."""
+    return base_model_id.split("/")[-1]
 CV22_REPO = "fsicoli/common_voice_22_0"
 CV17_REPO = "fixie-ai/common_voice_17_0"
 SYNTH_PT_REPO = "yuriyvnv/synthetic_transcript_pt"  # CV17-PT filtered by WAVe-embedding quality
@@ -519,27 +524,37 @@ class WERCallback(TrainerCallback):
             pass
 
 
-def _load_qwen_zero_shot_baseline(language_code: str) -> list[dict]:
+def _load_qwen_zero_shot_baseline(language_code: str, base_model: str = QWEN_MODEL_ID) -> list[dict]:
     """Load the project's zero-shot Qwen3-ASR eval JSONs (results/qwenV3/<lang>/)
     so the README comparison table can show before/after WER. Silently returns
-    an empty list if no baseline exists — the README still renders fine."""
+    an empty list if no baseline exists — the README still renders fine.
+
+    The filename stem is derived from ``base_model`` (lowercased short name) so
+    a 0.6B fine-tune compares against a 0.6B zero-shot baseline, and likewise
+    for 1.7B. Falls back to the legacy hardcoded "qwen3-asr-1.7b" prefix if the
+    base-specific file is absent — keeps older runs renderable."""
     repo_root = Path(__file__).resolve().parent.parent.parent
     base_dir = repo_root / "results" / "qwenV3" / language_code
     if not base_dir.is_dir():
         return []
     out: list[dict] = []
+    short = _model_short_name(base_model).lower()       # "qwen3-asr-0.6b" / "qwen3-asr-1.7b"
     # Prefer the *_baseline.json files (produced by
     # scripts/evaluate/qwen_pt_zero_shot_baseline.py with the same protocol as
     # the in-training fine-tuned eval: normalized refs + raw model.generate).
-    # Fall back to the older qwen-asr-package baseline if the new one is absent.
+    # Fall back to the older qwen-asr-package baseline (same model size) if
+    # the new one is absent. We deliberately do NOT fall back to a
+    # different-model-size baseline (e.g. 0.6B run reading 1.7B baselines)
+    # because that would silently produce a misleading comparison in the
+    # README — better to emit no comparison row than a wrong one.
     candidates_per_set = {
         "cv17_test": [
-            f"qwen3-asr-1.7b_{language_code}_cv17_test_baseline.json",
-            f"qwen3-asr-1.7b_{language_code}_cv17_test.json",
+            f"{short}_{language_code}_cv17_test_baseline.json",
+            f"{short}_{language_code}_cv17_test.json",
         ],
         "cv22_test": [
-            f"qwen3-asr-1.7b_{language_code}_cv22_test_baseline.json",
-            f"qwen3-asr-1.7b_{language_code}_cv22_test.json",
+            f"{short}_{language_code}_cv22_test_baseline.json",
+            f"{short}_{language_code}_cv22_test.json",
         ],
     }
     for ts_label, fnames in candidates_per_set.items():
@@ -586,12 +601,23 @@ def _dataset_card_meta(dataset_key: str, language_code: str) -> tuple[str, str, 
             "concatenated with the Common Voice 22 {language_name} train split, "
             "shuffled with the run seed",
         )
+    if dataset_key == "mixed_pt_full":
+        return (
+            "yuriyvnv/synthetic_transcript_pt + fsicoli/common_voice_22_0 (pt)",
+            "https://huggingface.co/datasets/yuriyvnv/synthetic_transcript_pt",
+            "Common Voice 22 {language_name} train + validation combined with "
+            "synthetic_transcript_pt (cv_high_quality, WAVe-filtered CV17-{language_name}), "
+            "shuffled with the run seed",
+        )
     return (dataset_key, "", "the {language_name} training set")
 
 
-def _build_simple_readme(language_code: str, language_name: str, base_model: str) -> str:
+def _build_simple_readme(language_code: str, language_name: str, base_model: str,
+                         model_repo_id: str | None = None) -> str:
     """Minimal README uploaded alongside weights immediately after training so
     the repo is usable for inference even before the final eval completes."""
+    short = _model_short_name(base_model)              # e.g. "Qwen3-ASR-1.7B"
+    repo_id = model_repo_id or f"yuriyvnv/{short}-{language_code.upper()}"
     return f"""---
 language:
   - {language_code}
@@ -609,7 +635,7 @@ base_model: {base_model}
 pipeline_tag: automatic-speech-recognition
 ---
 
-# Qwen3-ASR-1.7B {language_name}
+# {short} — {language_name}
 
 Fine-tuned [{base_model}](https://huggingface.co/{base_model}) for {language_name} automatic speech recognition.
 
@@ -622,7 +648,7 @@ import torch
 from qwen_asr import Qwen3ASRModel
 
 model = Qwen3ASRModel.from_pretrained(
-    "yuriyvnv/Qwen3-ASR-1.7B-{language_code.upper()}",
+    "{repo_id}",
     dtype=torch.bfloat16,
     device_map="cuda:0",
 )
@@ -645,8 +671,12 @@ def _build_full_readme(
     train_dataset_name: str = "fsicoli/common_voice_22_0",
     train_dataset_url: str = "https://huggingface.co/datasets/fsicoli/common_voice_22_0",
     train_dataset_blurb: str = "Common Voice 22 ({language_name} subset)",
+    update_note: str = "",
+    model_repo_id: str | None = None,
 ) -> str:
     """Full model card with evaluation results, training details, usage."""
+    short = _model_short_name(base_model)              # "Qwen3-ASR-1.7B" or "Qwen3-ASR-0.6B"
+    repo_id = model_repo_id or f"yuriyvnv/{short}-{language_code.upper()}"
 
     TEST_SET_LABELS = {
         "cv17_test": "Common Voice 17 (test)",
@@ -734,6 +764,13 @@ def _build_full_readme(
     # Encode language name for shields.io badge URL
     language_badge = language_name.replace(" ", "%20")
 
+    # Parameters badge — pull "1.7B" / "0.6B" from the base-model short name.
+    # Falls back to "?" if the convention changes; harmless cosmetic.
+    import re as _re
+    _m = _re.search(r"(\d+(?:\.\d+)?B)", short)
+    params_label = _m.group(1) if _m else "?"
+    base_badge = short.replace("-", "--")              # shields.io needs "--" for literal "-"
+
     return f"""---
 language:
   - {language_code}
@@ -754,19 +791,19 @@ datasets:
 base_model: {base_model}
 pipeline_tag: automatic-speech-recognition
 model-index:
-  - name: Qwen3-ASR-1.7B-{language_code.upper()}
+  - name: {short}-{language_code.upper()}
     results:
 {model_index_block}
 ---
 
-# 🎙️ Qwen3-ASR-1.7B-{language_code.upper()} — {language_name} Speech Recognition
+# 🎙️ {short}-{language_code.upper()} — {language_name} Speech Recognition
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Parameters-1.7B-red" alt="1.7B Parameters">
+  <img src="https://img.shields.io/badge/Parameters-{params_label}-red" alt="{params_label} Parameters">
   <img src="https://img.shields.io/badge/Modality-Speech%20%E2%86%92%20Text-purple" alt="Speech to Text">
   <img src="https://img.shields.io/badge/Language-{language_badge}-green" alt="{language_name}">
   <img src="https://img.shields.io/badge/Task-ASR-blue" alt="Automatic Speech Recognition">
-  <img src="https://img.shields.io/badge/Base-Qwen3--ASR--1.7B-orange" alt="Base model">
+  <img src="https://img.shields.io/badge/Base-{base_badge}-orange" alt="Base model">
   <img src="https://img.shields.io/badge/Precision-bf16-lightgrey" alt="bf16">
   <img src="https://img.shields.io/badge/License-Apache--2.0-yellow" alt="Apache-2.0">
 </div>
@@ -778,6 +815,7 @@ fine-tuned from [{base_model}](https://huggingface.co/{base_model}). It outputs
 cased, punctuated {language_name} text and works as a drop-in replacement for
 the base model.
 
+{("> **Update.** " + update_note + "\n") if update_note else ""}
 {headline_line}
 
 ---
@@ -844,7 +882,7 @@ import torch
 from qwen_asr import Qwen3ASRModel
 
 model = Qwen3ASRModel.from_pretrained(
-    "yuriyvnv/Qwen3-ASR-1.7B-{language_code.upper()}",
+    "{repo_id}",
     dtype=torch.bfloat16,
     device_map="cuda:0",
 )
@@ -900,7 +938,7 @@ loss.
 This model would not exist without the work of others. Thank you to:
 
 - **The Qwen team at Alibaba Cloud** for releasing
-  [Qwen3-ASR-1.7B](https://huggingface.co/{base_model}) — the backbone of
+  [{short}](https://huggingface.co/{base_model}) — the backbone of
   this fine-tune — together with a clean, reproducible
   [SFT recipe](https://github.com/QwenLM/Qwen3-ASR/tree/main/finetuning) and
   the [Qwen3-ASR Technical Report](https://arxiv.org/abs/2601.21337).
@@ -927,7 +965,7 @@ If this model is useful in your work, please cite the base Qwen3-ASR report:
 And, if relevant, this {language_name} fine-tune:
 
 ```
-yuriyvnv/Qwen3-ASR-1.7B-{language_code.upper()} — {language_name} fine-tune of Qwen3-ASR-1.7B
+{repo_id} — {language_name} fine-tune of {short}
                                   trained on Common-Voice-derived data with WAVe-based
                                   quality filtering.
 ```
@@ -979,13 +1017,21 @@ def main():
     )
     parser.add_argument("--language", required=True, choices=["pt", "nl"])
     parser.add_argument(
+        "--base-model", default=QWEN_MODEL_ID,
+        help=f"Base Qwen3-ASR checkpoint to fine-tune from. "
+             f"Default: {QWEN_MODEL_ID}. Pass Qwen/Qwen3-ASR-0.6B to fine-tune the smaller variant.",
+    )
+    parser.add_argument(
         "--dataset", default="cv22",
-        choices=["cv22", "synthetic_pt_high_quality", "mixed_nl"],
+        choices=["cv22", "synthetic_pt_high_quality", "mixed_nl", "mixed_pt_full"],
         help="Training dataset source. 'cv22' = fsicoli/common_voice_22_0 (per --language). "
              "'synthetic_pt_high_quality' = yuriyvnv/synthetic_transcript_pt subset "
              "cv_high_quality (~48k rows, CV17-pt filtered by WAVe embedding similarity). "
              "'mixed_nl' = yuriyvnv/synthetic_transcript_nl (all 34,898 synthetic) + "
-             "fsicoli/common_voice_22_0 nl train, concatenated and shuffled.",
+             "fsicoli/common_voice_22_0 nl train, concatenated and shuffled. "
+             "'mixed_pt_full' = CV22-pt train + synthetic_pt_high_quality + CV22-pt val "
+             "concatenated and shuffled (final PT run; no held-out val for selection — "
+             "use --no-best-checkpoint).",
     )
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--seed", type=int, default=42)
@@ -1020,6 +1066,13 @@ def main():
     parser.add_argument("--attn-implementation", default="sdpa",
                         choices=["sdpa", "flash_attention_2", "eager"],
                         help="flash_attention_2 needs `uv add flash-attn --no-build-isolation`")
+    parser.add_argument("--no-best-checkpoint", action="store_true",
+                        help="Disable load_best_model_at_end. Save last checkpoint "
+                             "instead. Use this when the in-training eval set is "
+                             "also a reporting set (no biased model selection).")
+    parser.add_argument("--update-note", type=str, default="",
+                        help="Short note to show at the top of the generated "
+                             "model card, e.g. 'v2: trained on train+val combined'.")
     parser.add_argument("--push-to-hub", action="store_true")
     parser.add_argument("--hub-repo-id", default="yuriyvnv/Qwen3-ASR-1.7B-PT",
                         help="Public model card repo. Gets (1) model weights + simple README "
@@ -1034,7 +1087,9 @@ def main():
     args = parser.parse_args()
 
     os.environ.setdefault("WANDB_PROJECT", "syntts-asr-qwen3")
-    run_name = f"qwen3-asr-1.7b-{args.dataset}-{args.language}-seed{args.seed}"
+    # run_name reflects the actual base model so wandb / output dirs aren't
+    # misleading when fine-tuning the 0.6B variant.
+    run_name = f"{_model_short_name(args.base_model).lower()}-{args.dataset}-{args.language}-seed{args.seed}"
     language_name = LANGUAGE_NAMES[args.language]
 
     output_dir = Path(args.output_dir)
@@ -1067,24 +1122,46 @@ def main():
         )
         train_ds = concatenate_datasets([synth, cv22_train]).shuffle(seed=args.seed)
         val_ds = load_cv22(args.language, "validation")
+    elif args.dataset == "mixed_pt_full":
+        if args.language != "pt":
+            raise ValueError("mixed_pt_full only supports --language pt")
+        synth = load_synthetic_pt("cv_high_quality", "train")
+        cv22_train = load_cv22(args.language, "train")
+        cv22_val = load_cv22(args.language, "validation")
+        logger.info(
+            f"  Combining synthetic_pt_high_quality ({len(synth):,}) + "
+            f"CV22-pt train ({len(cv22_train):,}) + CV22-pt val ({len(cv22_val):,}) "
+            f"→ {len(synth)+len(cv22_train)+len(cv22_val):,} samples"
+        )
+        train_ds = concatenate_datasets([synth, cv22_train, cv22_val]).shuffle(seed=args.seed)
+        # No separate validation set left — use CV22-pt test for in-training eval.
+        # This makes the final CV22-pt test WER very slightly optimistic (best
+        # checkpoint is picked on the same set), but over 4 epochs the bias is
+        # minimal and we still get the strongest checkpoint. CV17-pt test stays
+        # fully held out.
+        val_ds = load_cv22(args.language, "test")
+        logger.info(
+            "  mixed_pt_full: CV22-pt test used as in-training eval set "
+            "(best-checkpoint-by-eval_loss selection). CV17-pt test remains held out."
+        )
     else:
         raise ValueError(f"Unknown dataset: {args.dataset}")
 
     # -----------------------------------------------------------------------
     # Model + processor
     # -----------------------------------------------------------------------
-    logger.info(f"Loading processor from {QWEN_MODEL_ID}...")
-    processor = AutoProcessor.from_pretrained(QWEN_MODEL_ID)
+    logger.info(f"Loading processor from {args.base_model}...")
+    processor = AutoProcessor.from_pretrained(args.base_model)
     # Note: right-padding is forced per-call in DataCollatorQwen3ASR (see comment
     # there). Setting processor.tokenizer.padding_side has no effect because
     # Qwen3ASRProcessor rebuilds text_kwargs defaults on every __call__.
 
     logger.info(
-        f"Loading model from {QWEN_MODEL_ID} "
+        f"Loading model from {args.base_model} "
         f"(bfloat16, attn_implementation={args.attn_implementation})..."
     )
     model = Qwen3ASRForTraining.from_pretrained(
-        QWEN_MODEL_ID,
+        args.base_model,
         dtype=torch.bfloat16,
         attn_implementation=args.attn_implementation,
         low_cpu_mem_usage=True,
@@ -1155,13 +1232,13 @@ def main():
         max_grad_norm=1.0,
         eval_strategy="steps",
         eval_steps=args.eval_steps,
-        metric_for_best_model="eval_loss",
+        metric_for_best_model=None if args.no_best_checkpoint else "eval_loss",
         greater_is_better=False,
         save_strategy="steps",
         save_steps=args.save_steps,
         save_total_limit=3,
         save_safetensors=True,
-        load_best_model_at_end=True,
+        load_best_model_at_end=not args.no_best_checkpoint,
         logging_steps=args.logging_steps,
         report_to=["wandb"],
         dataloader_num_workers=4,
@@ -1170,7 +1247,7 @@ def main():
         ddp_find_unused_parameters=False,
     )
 
-    callbacks = [MakeEveryCheckpointInferableCallback(base_model_path=QWEN_MODEL_ID)]
+    callbacks = [MakeEveryCheckpointInferableCallback(base_model_path=args.base_model)]
     if args.wer_eval_samples >= 0:
         if args.wer_eval_samples == 0:
             wer_eval_set = val_ds  # full val
@@ -1240,7 +1317,10 @@ def main():
             ],
         )
         # Upload a minimal README so the repo renders immediately
-        simple_readme = _build_simple_readme(args.language, language_name, QWEN_MODEL_ID)
+        simple_readme = _build_simple_readme(
+            args.language, language_name, args.base_model,
+            model_repo_id=args.hub_repo_id,
+        )
         api.upload_file(
             path_or_fileobj=simple_readme.encode("utf-8"),
             path_in_repo="README.md",
@@ -1308,7 +1388,7 @@ def main():
         }
         # Load zero-shot baseline if available so the README can show
         # before/after numbers automatically.
-        baseline_results = _load_qwen_zero_shot_baseline(args.language)
+        baseline_results = _load_qwen_zero_shot_baseline(args.language, args.base_model)
 
         train_dataset_name, train_dataset_url, train_dataset_blurb = _dataset_card_meta(
             args.dataset, args.language
@@ -1317,7 +1397,7 @@ def main():
         full_readme = _build_full_readme(
             language_code=args.language,
             language_name=language_name,
-            base_model=QWEN_MODEL_ID,
+            base_model=args.base_model,
             test_results=test_results,
             train_samples=len(train_ds),
             val_samples=len(val_ds),
@@ -1326,6 +1406,8 @@ def main():
             train_dataset_name=train_dataset_name,
             train_dataset_url=train_dataset_url,
             train_dataset_blurb=train_dataset_blurb,
+            update_note=args.update_note,
+            model_repo_id=args.hub_repo_id,
         )
         api.upload_file(
             path_or_fileobj=full_readme.encode("utf-8"),

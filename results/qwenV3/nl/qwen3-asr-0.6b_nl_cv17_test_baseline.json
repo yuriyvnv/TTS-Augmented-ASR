@@ -1,0 +1,9 @@
+{
+  "wer": 12.42,
+  "cer": 4.06,
+  "num_samples": 11266,
+  "model": "Qwen/Qwen3-ASR-0.6B (zero-shot, normalized refs)",
+  "language": "nl",
+  "test_set": "cv17_test",
+  "protocol": "train_qwen3_asr.evaluate_model + normalize_written_form"
+}
