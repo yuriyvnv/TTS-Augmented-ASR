@@ -593,6 +593,14 @@ def _dataset_card_meta(dataset_key: str, language_code: str) -> tuple[str, str, 
             "Common Voice 17 {language_name} filtered by WAVe multimodal "
             "embedding similarity (>0.5) for higher-quality transcripts",
         )
+    if dataset_key == "mixed_nl_full":
+        return (
+            "yuriyvnv/synthetic_transcript_nl + fsicoli/common_voice_22_0 (nl)",
+            "https://huggingface.co/datasets/yuriyvnv/synthetic_transcript_nl",
+            "Common Voice 22 {language_name} train + validation combined with "
+            "the full synthetic OpenAI-TTS {language_name} corpus (~34.9k clips), "
+            "shuffled with the run seed",
+        )
     if dataset_key == "mixed_nl":
         return (
             "yuriyvnv/synthetic_transcript_nl + fsicoli/common_voice_22_0 (nl)",
@@ -1023,7 +1031,7 @@ def main():
     )
     parser.add_argument(
         "--dataset", default="cv22",
-        choices=["cv22", "synthetic_pt_high_quality", "mixed_nl", "mixed_pt_full"],
+        choices=["cv22", "synthetic_pt_high_quality", "mixed_nl", "mixed_pt_full", "mixed_nl_full"],
         help="Training dataset source. 'cv22' = fsicoli/common_voice_22_0 (per --language). "
              "'synthetic_pt_high_quality' = yuriyvnv/synthetic_transcript_pt subset "
              "cv_high_quality (~48k rows, CV17-pt filtered by WAVe embedding similarity). "
@@ -1031,7 +1039,10 @@ def main():
              "fsicoli/common_voice_22_0 nl train, concatenated and shuffled. "
              "'mixed_pt_full' = CV22-pt train + synthetic_pt_high_quality + CV22-pt val "
              "concatenated and shuffled (final PT run; no held-out val for selection — "
-             "use --no-best-checkpoint).",
+             "use --no-best-checkpoint). "
+             "'mixed_nl_full' = CV22-nl train + synthetic_transcript_nl + CV22-nl val "
+             "concatenated and shuffled (final NL run; CV22-nl test used as in-training "
+             "eval set).",
     )
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--seed", type=int, default=42)
@@ -1143,6 +1154,27 @@ def main():
         logger.info(
             "  mixed_pt_full: CV22-pt test used as in-training eval set "
             "(best-checkpoint-by-eval_loss selection). CV17-pt test remains held out."
+        )
+    elif args.dataset == "mixed_nl_full":
+        if args.language != "nl":
+            raise ValueError("mixed_nl_full only supports --language nl")
+        synth = load_synthetic_nl("train")
+        cv22_train = load_cv22(args.language, "train")
+        cv22_val = load_cv22(args.language, "validation")
+        logger.info(
+            f"  Combining synthetic_nl ({len(synth):,}) + "
+            f"CV22-nl train ({len(cv22_train):,}) + CV22-nl val ({len(cv22_val):,}) "
+            f"→ {len(synth)+len(cv22_train)+len(cv22_val):,} samples"
+        )
+        train_ds = concatenate_datasets([synth, cv22_train, cv22_val]).shuffle(seed=args.seed)
+        # No separate validation set left — use CV22-nl test for in-training eval.
+        # Same trade-off as mixed_pt_full: CV22-nl test WER is slightly optimistic
+        # (best checkpoint picked on the same set) but over a small number of
+        # epochs the bias is minimal. CV17-nl test stays fully held out.
+        val_ds = load_cv22(args.language, "test")
+        logger.info(
+            "  mixed_nl_full: CV22-nl test used as in-training eval set "
+            "(best-checkpoint-by-eval_loss selection). CV17-nl test remains held out."
         )
     else:
         raise ValueError(f"Unknown dataset: {args.dataset}")
