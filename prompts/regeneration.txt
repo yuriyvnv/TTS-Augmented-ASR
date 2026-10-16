@@ -1,0 +1,10 @@
+The following {language} sentence was rejected by a quality assessor:
+Sentence: "{original}"
+Rejection reason: {fail_reason}
+
+Generate ONE corrected {language} sentence that fixes the identified issue.
+The sentence must be 5-20 words, grammatically correct, and sound natural to a native speaker.
+Preserve the general topic and intent of the original sentence.
+
+Respond with a JSON object containing a "corrected_sentence" field with the fixed sentence as a string.
+Example: {{"corrected_sentence": "The corrected sentence in {language} goes here."}}

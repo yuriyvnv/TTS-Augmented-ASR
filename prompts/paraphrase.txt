@@ -1,0 +1,14 @@
+Rewrite the following {language} sentence in 3 different ways.
+
+Following the methodology of lexical-syntactic diversification for ASR augmentation,
+each rewrite must maximize linguistic distance from the original:
+- Substitute at least 2 content words with synonyms or semantically equivalent alternatives (lexical diversity)
+- Change the sentence structure: reorder clauses, switch between active/passive, use different subordination patterns (syntactic diversity)
+- Maintain grammatical correctness in {language}
+- Keep length between 5 and 20 words
+- Sound natural to a native {language} speaker — avoid translationese
+
+Original: "{sentence}"
+
+Respond with a JSON object containing a "sentences" array with exactly 3 strings — each string is one paraphrased sentence in {language}. Example structure:
+{{"sentences": ["first rewrite", "second rewrite", "third rewrite"]}}

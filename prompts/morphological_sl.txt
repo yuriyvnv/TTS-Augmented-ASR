@@ -1,0 +1,30 @@
+Slovenian uniquely retains the DUAL grammatical number alongside singular and
+plural — a feature found in very few living European languages. Research shows
+that LLMs underrepresent rare morphological forms (arXiv:2410.12656), and the
+dual number is severely underrepresented in typical corpora like CommonVoice.
+ASR systems consequently struggle with dual agreement patterns.
+
+Generate 8 natural Slovenian sentences (5-15 words each) that prominently
+feature UNDERREPRESENTED grammatical forms. Use the topic "{seed}" as
+thematic inspiration.
+
+4 sentences featuring DUAL number with different cases:
+1. DUAL IMENOVALNIK (nominative): e.g., "Dva študenta sta prišla na predavanje."
+2. DUAL RODILNIK (genitive): e.g., "Ni bilo dveh študentov."
+3. DUAL DAJALNIK (dative): e.g., "Dal sem obema študentoma knjigo."
+4. DUAL ORODNIK (instrumental): e.g., "Pogovarjal sem se z dvema študentoma."
+
+4 sentences featuring less common case forms in singular/plural:
+5. ORODNIK SINGULAR (instrumental sg): e.g., "Pisal je s svinčnikom."
+6. MESTNIK SINGULAR (locative sg): e.g., "Govoril je o novem projektu."
+7. ORODNIK PLURAL (instrumental pl): e.g., "Delali so z novimi orodji."
+8. MESTNIK PLURAL (locative pl): e.g., "Govoril je o različnih temah."
+
+Requirements:
+- Dual sentences MUST use correct dual agreement on nouns, adjectives, AND verbs
+- Each sentence must be grammatically perfect and natural-sounding
+- Use diverse vocabulary across the 8 sentences
+- Avoid repeating the same nouns or verbs
+
+Respond with a JSON object containing a "sentences" array with exactly 8 objects. Each object has "case_label" (the grammatical form label, e.g. "dual imenovalnik") and "sentence" (the Slovenian sentence). Example structure:
+{{"sentences": [{{"case_label": "dual imenovalnik", "sentence": "Dva študenta sta prišla na predavanje."}}, {{"case_label": "dual rodilnik", "sentence": "Ni bilo dveh študentov."}}, ...]}}

@@ -1,0 +1,242 @@
+{
+ "whisper-large-v3-cv_synth_all_et-seed42__16vetpii": {
+  "state": "finished",
+  "cols": [
+   "eval/steps_per_second",
+   "eval/loss",
+   "eval/runtime",
+   "train/loss",
+   "train/global_step",
+   "train/learning_rate",
+   "train/grad_norm",
+   "eval/samples_per_second",
+   "_step",
+   "train/epoch"
+  ],
+  "n": 29
+ },
+ "whisper-large-v3-cv_only_et-seed42__zh2zm56e": {
+  "state": "finished",
+  "cols": [
+   "eval/steps_per_second",
+   "train/loss",
+   "train/epoch",
+   "train/grad_norm",
+   "eval/samples_per_second",
+   "_step",
+   "eval/runtime",
+   "train/learning_rate",
+   "eval/loss",
+   "train/global_step"
+  ],
+  "n": 11
+ },
+ "whisper-large-v3-cv_synth_no_morph_et-seed42__3nv8eukg": {
+  "state": "finished",
+  "cols": [
+   "train/loss",
+   "eval/runtime",
+   "train/grad_norm",
+   "train/global_step",
+   "train/learning_rate",
+   "_step",
+   "train/epoch",
+   "eval/loss",
+   "eval/steps_per_second",
+   "eval/samples_per_second"
+  ],
+  "n": 23
+ },
+ "whisper-large-v3-cv_only_sl-seed42__aibl7ahh": {
+  "state": "finished",
+  "cols": [
+   "eval/steps_per_second",
+   "_step",
+   "eval/runtime",
+   "train/grad_norm",
+   "eval/samples_per_second",
+   "train/epoch",
+   "train/global_step",
+   "train/loss",
+   "train/learning_rate",
+   "eval/loss"
+  ],
+  "n": 5
+ },
+ "whisper-large-v3-cv_synth_no_morph_sl-seed42__4c1r9549": {
+  "state": "finished",
+  "cols": [
+   "train/global_step",
+   "train/grad_norm",
+   "eval/samples_per_second",
+   "eval/loss",
+   "train/learning_rate",
+   "train/loss",
+   "train/epoch",
+   "eval/steps_per_second",
+   "_step",
+   "eval/runtime"
+  ],
+  "n": 17
+ },
+ "whisper-large-v3-cv_synth_all_sl-seed42__uog2rrti": {
+  "state": "finished",
+  "cols": [
+   "train/epoch",
+   "eval/runtime",
+   "_step",
+   "eval/loss",
+   "train/loss",
+   "train/grad_norm",
+   "eval/steps_per_second",
+   "train/global_step",
+   "train/learning_rate",
+   "eval/samples_per_second"
+  ],
+  "n": 23
+ },
+ "whisper-large-v3-cv_synth_unfiltered_et-seed42__4gy849u4": {
+  "state": "finished",
+  "cols": [
+   "eval/steps_per_second",
+   "eval/samples_per_second",
+   "_step",
+   "eval/loss",
+   "train/learning_rate",
+   "train/global_step",
+   "train/loss",
+   "eval/runtime",
+   "train/epoch",
+   "train/grad_norm"
+  ],
+  "n": 29
+ },
+ "whisper-large-v3-cv_synth_unfiltered_sl-seed42__45fjwpiq": {
+  "state": "finished",
+  "cols": [
+   "eval/steps_per_second",
+   "_step",
+   "train/loss",
+   "eval/runtime",
+   "train/grad_norm",
+   "train/learning_rate",
+   "eval/samples_per_second",
+   "train/epoch",
+   "train/global_step",
+   "eval/loss"
+  ],
+  "n": 23
+ },
+ "parakeet-tdt-cv_synth_all_et-seed42__izgersg0": {
+  "state": "failed",
+  "cols": [
+   "global_step",
+   "training_batch_wer",
+   "trainer/global_step",
+   "_step",
+   "epoch",
+   "val_wer",
+   "learning_rate",
+   "train_loss"
+  ],
+  "n": 1043
+ },
+ "parakeet-tdt-cv_only_et-seed42__553x6bmj": {
+  "state": "failed",
+  "cols": [
+   "trainer/global_step",
+   "train_loss",
+   "training_batch_wer",
+   "epoch",
+   "_step",
+   "val_wer",
+   "global_step",
+   "learning_rate"
+  ],
+  "n": 277
+ },
+ "parakeet-tdt-cv_synth_no_morph_et-seed42__zbdzuqs3": {
+  "state": "finished",
+  "cols": [
+   "global_step",
+   "train_loss",
+   "training_batch_wer",
+   "epoch",
+   "trainer/global_step",
+   "learning_rate",
+   "_step",
+   "val_wer"
+  ],
+  "n": 735
+ },
+ "parakeet-tdt-cv_synth_all_sl-seed42__ihq25oy7": {
+  "state": "finished",
+  "cols": [
+   "global_step",
+   "epoch",
+   "learning_rate",
+   "_step",
+   "training_batch_wer",
+   "trainer/global_step",
+   "val_wer",
+   "train_loss"
+  ],
+  "n": 816
+ },
+ "parakeet-tdt-cv_only_sl-seed42__znstkld9": {
+  "state": "finished",
+  "cols": [
+   "learning_rate",
+   "training_batch_wer",
+   "val_wer",
+   "_step",
+   "trainer/global_step",
+   "epoch",
+   "global_step",
+   "train_loss"
+  ],
+  "n": 91
+ },
+ "parakeet-tdt-cv_synth_no_morph_sl-seed42__ktveztyi": {
+  "state": "finished",
+  "cols": [
+   "global_step",
+   "trainer/global_step",
+   "_step",
+   "training_batch_wer",
+   "epoch",
+   "learning_rate",
+   "val_wer",
+   "train_loss"
+  ],
+  "n": 440
+ },
+ "parakeet-tdt-cv_synth_unfiltered_sl-seed42__wut8m9un": {
+  "state": "failed",
+  "cols": [
+   "train_loss",
+   "learning_rate",
+   "trainer/global_step",
+   "epoch",
+   "global_step",
+   "training_batch_wer",
+   "_step",
+   "val_wer"
+  ],
+  "n": 870
+ },
+ "parakeet-tdt-cv_synth_unfiltered_et-seed42__39dj1k0s": {
+  "state": "finished",
+  "cols": [
+   "trainer/global_step",
+   "global_step",
+   "learning_rate",
+   "_step",
+   "val_wer",
+   "training_batch_wer",
+   "epoch",
+   "train_loss"
+  ],
+  "n": 811
+ }
+}

@@ -1,0 +1,6228 @@
+{
+  "wer": 16.4,
+  "cer": 4.14,
+  "substitutions": 925,
+  "insertions": 77,
+  "deletions": 155,
+  "hits": 5973,
+  "ref_word_count": 7053,
+  "per_sentence": [
+    {
+      "reference": "Ne prodajaj kožuha, dokler medved še v brlogu spi.",
+      "hypothesis": "Ne prodajaj kožuha, dokler medved še v berlogu spi.",
+      "wer": 11.11
+    },
+    {
+      "reference": "Pri kosti je mesa zadosti.",
+      "hypothesis": "Kosti je mesa zadostni.",
+      "wer": 60.0
+    },
+    {
+      "reference": "Za vas je branje res nesmisel?",
+      "hypothesis": "Za vas imranje resne smisel?",
+      "wer": 66.67
+    },
+    {
+      "reference": "Ja, tako sem tudi razmišljal.",
+      "hypothesis": "Tako sem tudi razmišljal.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Lepo te je bilo spoznati.",
+      "hypothesis": "Lepo te je bilo spoznati.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Hej, kaj je narobe?",
+      "hypothesis": "Hej, kaj narobe?",
+      "wer": 25.0
+    },
+    {
+      "reference": "Junak umre, toda njegove zaobljube ostanejo.",
+      "hypothesis": "Junak umre, toda njegove zaobljube ostane.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Pa vendar ste krivi vi vseh teh govoric!",
+      "hypothesis": "Pa vendar ste krivi li vseh govoric.",
+      "wer": 37.5
+    },
+    {
+      "reference": "Dejanja so sadje, besede so le listje.",
+      "hypothesis": "Dejanja so sadje, besede so le listje.A če se sajka najče ni dan?",
+      "wer": 100.0
+    },
+    {
+      "reference": "V vladarjevi navzočnosti je tudi najduhovitejši šaljivec nem.",
+      "hypothesis": "V nadarjenem zdolžnostmu se ljudi najdo pometih, če njiveč sanj.",
+      "wer": 112.5
+    },
+    {
+      "reference": "Si lahko sposodim nekaj tvojih risank?",
+      "hypothesis": "Si lahko sposodim nekaj tvojih risank?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zakaj nisi ugovarjal, ko si še lahko?",
+      "hypothesis": "Zakaj nisi ugovarjal, ko si šele lahko?",
+      "wer": 14.29
+    },
+    {
+      "reference": "Kakšen človek je on?",
+      "hypothesis": "Kakšen človek je on?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nisem je povabil na zmenek.",
+      "hypothesis": "Nisem je povabil na zmenek.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Znak je bil spremenjen.",
+      "hypothesis": "Znak je bil spremenjen.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zakaj niste pri njemu?",
+      "hypothesis": "No zakaj niste pri njemu?",
+      "wer": 50.0
+    },
+    {
+      "reference": "Potem predlagam, da sprejmeš povabilo.",
+      "hypothesis": "Potim predlagam, da sprejmoš povabilo.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Ko v ljubezni začutiš verige, se poslovi.",
+      "hypothesis": "Ko ljubezni začutiš, verjige, zaposlovi.",
+      "wer": 71.43
+    },
+    {
+      "reference": "Lakomnemu vedno nekaj manjka.",
+      "hypothesis": "Lakomnemu vedno nekaj manjka.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Poskrbite, da boste dobili zdravniško spričevalo!",
+      "hypothesis": "Poskrbite, da boste dobili zdravniško spričevalo.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Izgubljeni čas se nikoli več ne najde.",
+      "hypothesis": "Izgubljeni čas se nikoli več ne najde.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ja, ampak zakaj to počneš na stopnicah?",
+      "hypothesis": "Ja, ampak zakaj to počneš na stopnicah?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Iz zapora je izhod, iz smrti ni vrnitve.",
+      "hypothesis": "Iz zapora je izhod, iz smrti ni vrnitve.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pri tujcu se nam zdi dišava močnejša.",
+      "hypothesis": "Pritujci se nam zdi dišava močnejša.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Ali ni tako?",
+      "hypothesis": "Ali ni tako?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zdrav hiti h grobu, bolni od njega beži.",
+      "hypothesis": "Zdrav hitih grob v bolnjo od njega beži.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Kje je moj čevelj?",
+      "hypothesis": "Kje je moj čebel?",
+      "wer": 25.0
+    },
+    {
+      "reference": "Hrast ne pade po prvem udarcu.",
+      "hypothesis": "Hrast ne pade po prvem udarcu.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Bodite previdni pri krokodilu.",
+      "hypothesis": "Bodite previdni pri krokodilu!",
+      "wer": 25.0
+    },
+    {
+      "reference": "No, kaj več povej o tem?",
+      "hypothesis": "No, kaj več povaj o tem?",
+      "wer": 16.67
+    },
+    {
+      "reference": "Brez muje se še čevelj ne obuje.",
+      "hypothesis": "Brez muje se šečeval ne obuje.",
+      "wer": 28.57
+    },
+    {
+      "reference": "V mojem stanovanju, ko sem spala?",
+      "hypothesis": "V mojem stanovanju, ko sem spala.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Resnica se počasi jasni, tako kot se počasi dani.",
+      "hypothesis": "Resnica se počasi jasni, tako kot se počasi dani.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kakšna je?",
+      "hypothesis": "Kakšna je?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kakšen je vaš status?",
+      "hypothesis": "Kakšen je vaš status?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor išče resnico, jo mora znati prenesti.",
+      "hypothesis": "Kdor išča resnico, jo mora znati prenenstij.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Glava se hitreje strga kot noge.",
+      "hypothesis": "Glava se hitreje strga kot noge.",
+      "wer": 0.0
+    },
+    {
+      "reference": "In kako si prišel ven?",
+      "hypothesis": "In kako si prišel ven?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ta akt pomeni, da je igre konec.",
+      "hypothesis": "Ta akt pomeni, da igre konen.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Zakaj pa ne greš v kavarno?",
+      "hypothesis": "Zakaj pa ne greš v kavarno?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj je pomen tega?",
+      "hypothesis": "Kaj je pomen tega?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Prišlo bo torej pohištvo?",
+      "hypothesis": "Prišlo bo torej pohištvo?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Torej, sva zmenjena.",
+      "hypothesis": "Torej, sva zmenjena.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zelo pomembno je, da se spomnite.",
+      "hypothesis": "Zelo pomembno je, da se spolnite.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Kdo je častni gospod!",
+      "hypothesis": "Kdo je časni gospod?",
+      "wer": 50.0
+    },
+    {
+      "reference": "Odlične novice.",
+      "hypothesis": "Odlične novice.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Je vse v redu?",
+      "hypothesis": "Je vse v redu?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Hude nevihte ne trajajo dolgo.",
+      "hypothesis": "Hude nevište ne trajajo dolgo.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Lepega vremena in sitega trebuha se človek naveliča.",
+      "hypothesis": "Lepega vremena in sitega trepuha se človek nabeliča.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Obesite kozarce na obe veji.",
+      "hypothesis": "Obesite kozarce na OBVI.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Izgubila je vid v avtomobilski nesreči.",
+      "hypothesis": "Izgubila je vid v avtomobilski nesreči.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Otroci so se naučili kako raste trava.",
+      "hypothesis": "Otroci so se naučili, kako raste prava.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Točno to sem enkrat sanjal.",
+      "hypothesis": "Točno to sem enkrat sanjal.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Počakaj, ljubica.",
+      "hypothesis": "Počakaj, lubica.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Ne vem kaj naj rečem.",
+      "hypothesis": "Ne vem, kaj naj rečem.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Veliko srečo spremlja zavist.",
+      "hypothesis": "Veliko srečo spremlja zavist.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Sosedstvo je vzajemna reč.",
+      "hypothesis": "Sosedstvo je vzajemna rič.",
+      "wer": 25.0
+    },
+    {
+      "reference": "V katerem vesolju?",
+      "hypothesis": "V katerem je solil?",
+      "wer": 66.67
+    },
+    {
+      "reference": "To tukaj je moja kartica.",
+      "hypothesis": "To tukaj je moja kartica.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Greva sedaj.",
+      "hypothesis": "Grava se daje.",
+      "wer": 150.0
+    },
+    {
+      "reference": "Morava od tukaj.",
+      "hypothesis": "Morava od tukaj.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor se na druge zanaša, v situ vodo prenaša.",
+      "hypothesis": "Kdor se na druge zamaša, vsi to vodo premaša.",
+      "wer": 44.44
+    },
+    {
+      "reference": "Nevihta lahko pride tudi mirno.",
+      "hypothesis": "Nevihta lahko pridejo tudi mirno.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Kadar nič ne pomaga, samo glasba obriše solze in opogumi srce.",
+      "hypothesis": "Kadar nič ne pomaga, samo glasba obriša solzej in opogumi srce.",
+      "wer": 18.18
+    },
+    {
+      "reference": "Ko denar poide, pamet pride.",
+      "hypothesis": "Ko denar pojede, pamet pride.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Ne vem, če sta vidva dobra.",
+      "hypothesis": "Ne vem, če je stavidva dobra.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Aljaž se je zasmejal.",
+      "hypothesis": "Aljač se je zasmejal.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Kdor se hoče povzpeti na drevo, začne spodaj, ne pri vrhu.",
+      "hypothesis": "Kdor se hoče povzpeti na drevo, začne s podej, ne pri varku.",
+      "wer": 27.27
+    },
+    {
+      "reference": "Še ne vem.",
+      "hypothesis": "Še ne vem.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Še tako dolga pot se začne s prvim korakom.",
+      "hypothesis": "Še tako dolga pot se začne s prvim korakom.",
+      "wer": 0.0
+    },
+    {
+      "reference": "V jezeru so našli potapljača.",
+      "hypothesis": "V jezeru so našli potopljača.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Ni bilo smiselno.",
+      "hypothesis": "Ni bilo smiselno.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zakaj to spet počnemo?",
+      "hypothesis": "Zakaj to spet počnemo?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vino ni dobro za želodec.",
+      "hypothesis": "Vino ni dobro za želodec.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Da se resnica prav spozna, treba je slišati dva zvona.",
+      "hypothesis": "Da se resnica prav spozna, treba je slišati dva zvona.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Si videl moj USB ključ?",
+      "hypothesis": "Si videl moj USB ključ?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kateri del je to?",
+      "hypothesis": "Kateri del je to?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Da, ampak vsebuje stripovskega junaka in njegovo čarobno dvigalo.",
+      "hypothesis": "Da, ampak vsebuje stripovskega junaka in njegovo čarobno dvigalo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Biti en dan pijan pomeni deset dni se za glavo držati.",
+      "hypothesis": "Biti en dan pijan pomeni deset dni se za glavo držati.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne otežuj mi stvari.",
+      "hypothesis": "Ne odtežuj mi stvari!",
+      "wer": 50.0
+    },
+    {
+      "reference": "Preveč si pikolovski.",
+      "hypothesis": "Preveč si pikolovski!",
+      "wer": 33.33
+    },
+    {
+      "reference": "Jeza in sovraštvo ovirajo dobro svetovanje.",
+      "hypothesis": "Jeza in sovraštvo obirajo dobro svetovanje.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Dekle je nosila sijajne hlačne nogavice.",
+      "hypothesis": "Dekle je nosila sijajna hlačna nogavice.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Med tatovi ni nobene časti.",
+      "hypothesis": "Met tatovi ni nobene časti.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Ene pesmi so peli na vsaki zabavi.",
+      "hypothesis": "Ene pesmi so peli na vsaki zabavi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ljubezen in sovraštvo sta človeški čustvi.",
+      "hypothesis": "Ljubezen in sovraštvo sta človeški čustvi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kontekst je vedno potreben.",
+      "hypothesis": "Kontekst je vedno potreben.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj je storila?",
+      "hypothesis": "Kaj je storila?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne, pa nimata.",
+      "hypothesis": "Ne, pa njimata.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Zgodbe, ki so jih povedali, so bile napačne.",
+      "hypothesis": "Zgodbe, ki so jih povedali, so bile napačne.",
+      "wer": 0.0
+    },
+    {
+      "reference": "O božiču zeleno, o veliki noči sneženo.",
+      "hypothesis": "Obožiču zeleno o veliki noči sneženo.",
+      "wer": 42.86
+    },
+    {
+      "reference": "Bog te obvaruj zlih sosedov in začetnika na violini.",
+      "hypothesis": "Bog te obvaruj zlih sosedov in začetnika na violini.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Prepozno kesanje prinese novo škodo.",
+      "hypothesis": "Prepozno kesanje prinese novo škodo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdo bi lahko bil?",
+      "hypothesis": "Kdor bi lahko bil?",
+      "wer": 25.0
+    },
+    {
+      "reference": "Ta drog bil pripravljen za hojo.",
+      "hypothesis": "Ta drog bil pripravljen za hojo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vsebuje arašidovo olje?",
+      "hypothesis": "Vsebuje arašidovo olje?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor živi od laži, ga laž pokoplje.",
+      "hypothesis": "Kdor živi odlaži, ga laž pokoplje.",
+      "wer": 28.57
+    },
+    {
+      "reference": "S časom se celo čas obrne.",
+      "hypothesis": "S časom se celo čas obrne.",
+      "wer": 0.0
+    },
+    {
+      "reference": "V bolnišnici sem srečal zelo lepo medicinsko sestro.",
+      "hypothesis": "V bolj blišnjiči se nasreča zelo lepo medicinsko sestro.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Kje si bil?",
+      "hypothesis": "Kje si bil?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nikomur koristen, nikomur drag.",
+      "hypothesis": "Nikomur koristen, nikomur drag.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pravljice morajo biti zabavne za branje.",
+      "hypothesis": "Pravlice morajo biti zabavne za branje.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Ne, to ni dobra rešitev.",
+      "hypothesis": "Ne, to ni dobra rešitev.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če si bogat, si vsem trn v peti.",
+      "hypothesis": "Če si bogat, si vsem trn vpeti.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Biti zunaj mode je biti zunaj sveta.",
+      "hypothesis": "Biti zunaj mode je biti zunaj sveta.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Za tajsko hrano jih ne potrebuješ.",
+      "hypothesis": "Za tajsko hrano jih ne potrebuješ.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Prazni sodi so najbolj hrupni.",
+      "hypothesis": "Prazni sodi so najbolj hrupni.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Naročnik je imel dovolj sprememb.",
+      "hypothesis": "Naročnik je imel dovolj sprememb.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Malih črk pri branju ne vidim.",
+      "hypothesis": "Malih črk pri branju ne vidim.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Tega nikoli ne bo storila.",
+      "hypothesis": "Tega nikoli ne bo storila.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To je vse, kar vem.",
+      "hypothesis": "To je vse, kar vem.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Molči zdaj in odgovarjaj, kar te bom vprašal!",
+      "hypothesis": "Moči, zdaj ne odgovarjaj, kar te bom vprašal.",
+      "wer": 37.5
+    },
+    {
+      "reference": "Nič ni vedela.",
+      "hypothesis": "Nič ni vedela.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Koliko si star?",
+      "hypothesis": "Koliko si star?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Preprosto preberite na glas, kar ste napisali.",
+      "hypothesis": "Preprosto preberite naglas, kar ste napisali.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Kakšno veselje je imeti psa v življenju?",
+      "hypothesis": "Kakšno veselje imeti psa v življenju?",
+      "wer": 14.29
+    },
+    {
+      "reference": "To ni njegov nabiralnik.",
+      "hypothesis": "To ni njegov nabiralnik.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kako ji je bilo ime?",
+      "hypothesis": "Kako ji je bilo ime?",
+      "wer": 0.0
+    },
+    {
+      "reference": "To je moja žena zbrana družba.",
+      "hypothesis": "To je moja žena zbrana družba?",
+      "wer": 16.67
+    },
+    {
+      "reference": "V slamnatem gnezdu je bilo pet golobov.",
+      "hypothesis": "V slamnatem gnezdu je bilo pet golobov.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ampak tega ne bom storil.",
+      "hypothesis": "Ampak tega ne bom storil.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj hočeš s tem?",
+      "hypothesis": "Kaj hočeš s tem?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne vemo, kaj imamo, dokler ne izgubimo.",
+      "hypothesis": "Ne vemo, kaj imamo, dokler ne izgubimo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če jo nočeš zbuditi, govori z nižjim glasom.",
+      "hypothesis": "Kdor te močeš zbuditi, govori z nižjim glasom.",
+      "wer": 37.5
+    },
+    {
+      "reference": "Za srečo ni tablet.",
+      "hypothesis": "Za srečo ni kablet.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Tudi vas je bilo lepo spoznati.",
+      "hypothesis": "Tudi vas je bilo lepo spoznati.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Izzivam te, da ga vprašaš za robček.",
+      "hypothesis": "Izivam te, da ga vprašaš za robček.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Svetloba je plesala čez jezero.",
+      "hypothesis": "Svetloba je plesala čez jezero.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Čisti vrat pomeni čeden ovratnik.",
+      "hypothesis": "Čisti vrat pomeni čeden ovratnik.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kakšen čudovit dan!",
+      "hypothesis": "Kakšen čudovit dan!",
+      "wer": 0.0
+    },
+    {
+      "reference": "Čutim ostro bolečino v levi roki.",
+      "hypothesis": "Čutim ostro bolečino v levi roki.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Rabljen plug se sveti, stoječa voda zaudarja.",
+      "hypothesis": "Rabljen pluk se sveti, stoječa voda zaudarja.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Ne delaj tega.",
+      "hypothesis": "Ne delaj tega!",
+      "wer": 33.33
+    },
+    {
+      "reference": "Zavesa se je razprla, predstava se je začela.",
+      "hypothesis": "Zavesa se je razprla, predstava se je začela.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ljubezen je kot rosa; pade tako na vrtnico kakor na koprivo.",
+      "hypothesis": "Ljubezen je kot rosa — pade tako na vrtnico, kako enako privo.",
+      "wer": 54.55
+    },
+    {
+      "reference": "Bil sem edini bolnik v čakalnici.",
+      "hypothesis": "Bil sem edini bolnik v čakalnice.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Dal si mi le razlago.",
+      "hypothesis": "Dolg si mi le razlaga.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Mislim, da se je kar slikovito izrazil.",
+      "hypothesis": "Mislim, da se je kar slikovito izrazil.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kako je bilo?",
+      "hypothesis": "Kako je bilo?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oh, torej, dobro zanj.",
+      "hypothesis": "Oh, torej, dobro zan!",
+      "wer": 25.0
+    },
+    {
+      "reference": "Tukaj sem, ob tebi.",
+      "hypothesis": "Tukaj sem, ob tebi!",
+      "wer": 25.0
+    },
+    {
+      "reference": "Zakaj bi poležaval, če lahko čistiš.",
+      "hypothesis": "Zakaj bi poležal, če lahko čistiš?",
+      "wer": 33.33
+    },
+    {
+      "reference": "Zdi se, da mi nobena kategorija ne ustreza.",
+      "hypothesis": "Zdi se, da mi nobena kategorija ne ustreza.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ampak to je bilo tako.",
+      "hypothesis": "Ampak to je bilo tako.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Torej je tukaj zate še ena cvetka.",
+      "hypothesis": "Torej je tukaj, zato še ena cvetka.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Kaj naj on naredi?",
+      "hypothesis": "Kaj naj on naredi?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kratka pamet ima dolg jezik.",
+      "hypothesis": "Kratka pamet ima dolg jezik.",
+      "wer": 0.0
+    },
+    {
+      "reference": "A veš, kdo bi lahko bil notri?",
+      "hypothesis": "A veš, kdo bi lahko bil notri?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mislim, da je izpustila en korak.",
+      "hypothesis": "Mislim, da je izpustila en korak.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Poiščite sliko starejšo od petih tednov.",
+      "hypothesis": "Pojišite sliko starejša od petih tednov.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Kakšna je bila hrana?",
+      "hypothesis": "Kakšna je bila hrana?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Norec pelje, modri človek potuje.",
+      "hypothesis": "Norec pelje modri človek tuje.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Nič drugega ni bilo mogoče storiti.",
+      "hypothesis": "Nič drugega ni bilo mogoče storiti.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Samo slabotno umre mlado.",
+      "hypothesis": "Samo slabotno umre mlado.",
+      "wer": 0.0
+    },
+    {
+      "reference": "V sodu vina se skriva kup čudes.",
+      "hypothesis": "Vso dobina se skriva v čudes.",
+      "wer": 57.14
+    },
+    {
+      "reference": "Počakaj minuto!",
+      "hypothesis": "Počakaj minuto.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Napako delaš.",
+      "hypothesis": "Napako delaš.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kakšen je?",
+      "hypothesis": "Kakšen je?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zamrznjen zrak je šel skozi plašč.",
+      "hypothesis": "Zamrznjen zrak je šel skozi plašč.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vsako lepo poslopje še ni tempelj.",
+      "hypothesis": "Vsako lepo poslopje še ni temple.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Ste kaj videli moj ključ?",
+      "hypothesis": "Si se kaj videli moj ključ?",
+      "wer": 40.0
+    },
+    {
+      "reference": "Dober ugled je poštena lastnina.",
+      "hypothesis": "Dobr ogled je poštena lastnina.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Prosim, nikoli ne vrzite pice v morje.",
+      "hypothesis": "Prosim, nikoli ne verzite pico v morje.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Povej mi še kaj o tem.",
+      "hypothesis": "Povej miše, kaj o tem!",
+      "wer": 50.0
+    },
+    {
+      "reference": "Bodo že počakali.",
+      "hypothesis": "Bodo že počakali.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Obstajajo pravila.",
+      "hypothesis": "Obstajajo pravila.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vi se šalite gospa!",
+      "hypothesis": "Vi se šalite gospam?",
+      "wer": 25.0
+    },
+    {
+      "reference": "Misliš, da ve, da sva midva odgovorna?",
+      "hypothesis": "Misliš, da vete so mi dva odgorna?",
+      "wer": 71.43
+    },
+    {
+      "reference": "Dovolite mi, da jo spoznam.",
+      "hypothesis": "Dovolite mi, da jo spoznam.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ko bosta dosegla naravno točko zaustavljanja se bi rad z vama pogovoril.",
+      "hypothesis": "Ko bosta dosegla naravno točko zaostavljanja, se bi rad z vama pogovoril.",
+      "wer": 8.33
+    },
+    {
+      "reference": "Sedaj imava nagnjeno ravnino.",
+      "hypothesis": "Sedaj imava nagnjena ravnina.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Tale piščanec pa je precej dober.",
+      "hypothesis": "Tala piščanec pa je precej dober.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Opiši mi sistem, kjer odobravajo pladnje na kavču.",
+      "hypothesis": "Opiši mi sistem, kjer odobravajo pladne na kavču.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Razdelite si torto, a ne pozabite na otroke.",
+      "hypothesis": "Razdelite si torto, a ne pozabite na otroke.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Bog naj reši njeno dušo!",
+      "hypothesis": "Bog nareši njeno dušo.",
+      "wer": 60.0
+    },
+    {
+      "reference": "Moj oče jo je postavil.",
+      "hypothesis": "Moj oče jo je postavil.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj če je naredil novo različico?",
+      "hypothesis": "Kaj, če je naredil novo različico?",
+      "wer": 16.67
+    },
+    {
+      "reference": "Ljubezen ne modruje; če pa modruje, to ni ljubezen.",
+      "hypothesis": "Ljubezen namodruje, čepar modruje, to ni ljubezen.",
+      "wer": 44.44
+    },
+    {
+      "reference": "Kakšen človek je bil?",
+      "hypothesis": "Kakšen človek je bil?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Avtomobili in avtobusi so zastali v snežnih zametih.",
+      "hypothesis": "Avtomobili in avtobusi so zastali v snežnih zametih.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vse je dobro.",
+      "hypothesis": "Vse je dobro.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mislim, da je to šele naslednji teden v torek ob šestih.",
+      "hypothesis": "Mislim, da je to šele naslednji teden v torek ob šestih.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Življenje se začne pri štiridesetih.",
+      "hypothesis": "Življenje se začne pri štiridesetih.",
+      "wer": 0.0
+    },
+    {
+      "reference": "V omari so bile obleke zložene od leve proti desni.",
+      "hypothesis": "V omarju so bile obleke zložene od leve proti desni.",
+      "wer": 10.0
+    },
+    {
+      "reference": "Kako vam lahko pomagam gospa?",
+      "hypothesis": "Kako vam lahko pomagam, gospa?",
+      "wer": 20.0
+    },
+    {
+      "reference": "Všeč mi je tvoj klobuk.",
+      "hypothesis": "Všeč mi je tvoj klobuk.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ljubezen je slepa na eno oko, samoljubje pa na obe očesi.",
+      "hypothesis": "Ljubezen je slepa na eno oko, samoljub je pa na obe očesi.",
+      "wer": 18.18
+    },
+    {
+      "reference": "Če se avgusta po gorah kadi, kupi si kožuh za zimske noči.",
+      "hypothesis": "Če se avgusta po gorah kadi, kupi si kožuh za zimske noči.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pomagajte šibkim, da ohranijo svojo moč.",
+      "hypothesis": "Pomagajte šibkim, da ohranijo svojo moč.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Trava in grmovje sta bila mokra.",
+      "hypothesis": "Trava in grmovje sta bila mokra.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Njegova internetna povezava je bila prepočasna.",
+      "hypothesis": "Njegova internetna povezava je bila prepočasna.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Papirnica je polna papirja.",
+      "hypothesis": "Papirnica je polna papirja.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kako dolgo boš odsoten?",
+      "hypothesis": "Kako dolgo moš odsoten?",
+      "wer": 25.0
+    },
+    {
+      "reference": "Žal mi je zaradi tega.",
+      "hypothesis": "Žal mi je zaradi tega.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zakaj ne bi pisali vladi?",
+      "hypothesis": "No zakaj me bi pisali vladi?",
+      "wer": 60.0
+    },
+    {
+      "reference": "Stresite si prah iz čevljev, tujec.",
+      "hypothesis": "Straj si, da si prah iz čevljev tujec.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Ali je to skrivnost?",
+      "hypothesis": "Ali je to skrivnost?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Modrost je boljša od moči.",
+      "hypothesis": "Modrost je boljša od moči.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dokler je rosa, reže sama kosa.",
+      "hypothesis": "Mdoklerje rosa reže sama kosa.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Deluješ torej kot, prinašalka ogljikovih hidratov.",
+      "hypothesis": "Deluješ torej kot prinašalka oglikovih hidrato.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Srečen si, ko verjameš v srečo.",
+      "hypothesis": "Srečen si, ko verjameš v srečo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne boš uničil tega!",
+      "hypothesis": "Ne boš uničil tega.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Starost je bolnišnica, ki sprejema vse bolezni.",
+      "hypothesis": "Starost je bolnišnica, ki sprejema vse bolezni.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Imam ga tukaj.",
+      "hypothesis": "Imam ga tukaj.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če hočeš izgubiti prijatelja, mu posodi denar.",
+      "hypothesis": "Če hočeš izgubiti prijatelja, mu posodi denar.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mislim, da je bolje, če si predstavljaš moško vlogo.",
+      "hypothesis": "Mislim, da je bolje, če si predstavljaš moškov vlogo.",
+      "wer": 11.11
+    },
+    {
+      "reference": "Številka mojega pina je tri, sedem, dva, šest.",
+      "hypothesis": "Številka mojega pina je 3, 7, 2, 6.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Moja pisarna se nahaja v nadstropju petnajst.",
+      "hypothesis": "Moja pisarna se nahaja v nadstropju petnajst.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ostani na vezi.",
+      "hypothesis": "Ostani na vezi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To pa res ni nič takšnega.",
+      "hypothesis": "To pa res ni nič tačnega.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Ja, zakaj pa ne?",
+      "hypothesis": "Ja, zakaj pa ne?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kako naj vem, da se nekdo ne dotika moje hrane?",
+      "hypothesis": "Kako naj vem, da se nekdo ne dotika moje hrane?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Jabolka so najbolj cenjena, ko jih zmanjka.",
+      "hypothesis": "Jabolka so najbolj cenjena, ko jih zmanjka.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Tudi najpametnejša mačka zaman išče miši tam, kjer jih ni.",
+      "hypothesis": "Tudi najpametnejša mačka zaman išče miši tam, kjer jih ni.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdaj boš tam?",
+      "hypothesis": "Kdaj boš tam?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Torej, imata veliko skupnega.",
+      "hypothesis": "To je imata veliko skupnega.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Niso vsi srečni, ki imajo srečo.",
+      "hypothesis": "Niso vsi srečniki in imajo srečo.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Jabolko ne pade daleč od drevesa.",
+      "hypothesis": "Jabolko ne pade daleč od drevesa.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Poglej! Ivo je prečkal ulico.",
+      "hypothesis": "Poglej, ivo je prečko ulico.",
+      "wer": 60.0
+    },
+    {
+      "reference": "Prestrašil se je in je pospešil korak.",
+      "hypothesis": "Prestraša se je in je pospešil korak.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Potem se je vstal in odšel.",
+      "hypothesis": "Po tem se je vstal inoča.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Ne skrbi zame.",
+      "hypothesis": "Ne skrbi za me.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Pogledal sem ga iz oči v nos.",
+      "hypothesis": "Pogledal sem ga iz oči v nos.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oznaka Ž se uporablja za ženske.",
+      "hypothesis": "Oznaka Ž se uporablja za ženske.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Poglej, mama je dodala še spominsko kartico.",
+      "hypothesis": "Poglej, mama je dodala še spominsko kartico.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne bodi tako neumen!",
+      "hypothesis": "Ne bodi tako neumen.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Kaplja se izlije v morje in živi dalje.",
+      "hypothesis": "Kaplja se izlije v morje in živi dalje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor je božji, je sit.",
+      "hypothesis": "Kdor je Božji, je sit.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Kdor prej pride, prej melje.",
+      "hypothesis": "Kdor prej pride, prej melja.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Brez krompirja ni kosila.",
+      "hypothesis": "Brez krompirja ni kosila.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Tako pa res ne morem delati.",
+      "hypothesis": "Tako pa res ne morem delati.",
+      "wer": 0.0
+    },
+    {
+      "reference": "V bistvu, sem to prebrala.",
+      "hypothesis": "V bistvu sem to prebrala.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Halja ne naredi meniha.",
+      "hypothesis": "Halja ne naredi menjiha.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Mladi muzikanti, stari berači.",
+      "hypothesis": "Mlani mojzikanti, stari berači.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Jaz bom ostal tukaj.",
+      "hypothesis": "Jaz bom vstal tukaj.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Med ljubeznijo in sovraštvom obstaja tanka črta.",
+      "hypothesis": "Med ljubeznjo in sovraštvo obstaja tanka črta.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Kakšna je formula za ovinek?",
+      "hypothesis": "Kakšna je formula za ovinek?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor veliko stvari začne, jih malo dokonča.",
+      "hypothesis": "Kdor veliko stvari začne, jih malo dokonča.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kako pa je bilo s popotnikom?",
+      "hypothesis": "Kako pa je bilo s popotnikom?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oh Gospod, daj mi potrpljenje - takoj!",
+      "hypothesis": "Oh gospod, daj mi potrpljenje, takoj!",
+      "wer": 42.86
+    },
+    {
+      "reference": "Pametnega kočijaža tudi slepi konj pripelje domov.",
+      "hypothesis": "Pametnega kočjaža, kdor slepi konj pripelje domov.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Uporabite svinčnik, da napišete prvi osnutek.",
+      "hypothesis": "Uporabite svinčnik, da napišete prvi odnotek.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Če je naporno, se ne splača.",
+      "hypothesis": "Če je naporno, se ne splača.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Jedrska energija je prihodnost.",
+      "hypothesis": "Jedrska energija je prihodnost.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Moram iti v sobo za nujne primere.",
+      "hypothesis": "Moram iti v sobo za nujne primere.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vem kaj razmišljaš.",
+      "hypothesis": "Vem, kaj razmišljaš.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Oba brata nosita majico enake velikosti.",
+      "hypothesis": "Oba brata nosita majica enake velikosti.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Pa ne tepi me tako močno!",
+      "hypothesis": "Pa naj te pima tako močno!",
+      "wer": 50.0
+    },
+    {
+      "reference": "Seveda poslušam.",
+      "hypothesis": "Sreda pozlašaj!",
+      "wer": 100.0
+    },
+    {
+      "reference": "Milo lahko umije večino umazanije.",
+      "hypothesis": "Milo lahko umije večinom umazanje.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Temen lonček je visel v sprednji omari.",
+      "hypothesis": "Temen lonček je visel v sprednji omari.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Čeden čevelj pogosto brcne nogo.",
+      "hypothesis": "Čeden čivel pogusto brcne nogo.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Ne, ne, ti spi v postelji.",
+      "hypothesis": "Ne, ne, ti spi opozdil je.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Kdor se nad starši jezi, tega sreča samo duši.",
+      "hypothesis": "Kdor se nadstarši jezi, tega sreča samo duši.",
+      "wer": 22.22
+    },
+    {
+      "reference": "Luna je odgovorna za plimovanje morja.",
+      "hypothesis": "Luna je odgovorna za plimovanje morja.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj si rekel?",
+      "hypothesis": "Kaj si rekel?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Svetloba je izdala črno mačko.",
+      "hypothesis": "Svetloba je izdala črtno mačko.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Kdor bi rad bil dolgo star, mora zgodaj začeti.",
+      "hypothesis": "Kdor bi rad bil dolgo star, mora zgodaj začeti.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pa naj bo.",
+      "hypothesis": "Pa naj bo!",
+      "wer": 33.33
+    },
+    {
+      "reference": "Lahko izklopite luč?",
+      "hypothesis": "Lahko izklopite luči?",
+      "wer": 33.33
+    },
+    {
+      "reference": "Kje so paličice?",
+      "hypothesis": "Kje so paličice?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Torej, ne naroči kokic.",
+      "hypothesis": "Torej ne naroči kopic.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Kaj je šef?",
+      "hypothesis": "Kaj je šef?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Wow, to je lepa miza!",
+      "hypothesis": "Wau, to je lepa miza!",
+      "wer": 20.0
+    },
+    {
+      "reference": "Odpravljaš se torej na pot?",
+      "hypothesis": "Odpravljaš se torej na pot?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oprosti, moram iti.",
+      "hypothesis": "Prosti, moram iti.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Čisti pudri imajo malo nečistoč.",
+      "hypothesis": "Čisti pudri imajo malo nečistoč.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zakaj ne govoriš?",
+      "hypothesis": "Zakaj ne govoriš?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če bi bila sreča res slepa, bi se dala večkrat ujeti.",
+      "hypothesis": "Če bi bila sreča res sleba, bi se dala večkrat ujeti.",
+      "wer": 9.09
+    },
+    {
+      "reference": "Lahko noč.",
+      "hypothesis": "Ahko noč.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Imel sem se lepo.",
+      "hypothesis": "Imel sem se lepo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ali to razumete?",
+      "hypothesis": "Ali to razumete?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Še zmeraj me ne zanima.",
+      "hypothesis": "Čezmeraj me ne zanima.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Hvala tebi.",
+      "hypothesis": "Kvala tebi!",
+      "wer": 100.0
+    },
+    {
+      "reference": "In za kakšen namen?",
+      "hypothesis": "In zakakšen namen?",
+      "wer": 50.0
+    },
+    {
+      "reference": "Priznam, da prostor izgleda lepo.",
+      "hypothesis": "Priznam, da prostor izgleda lepo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dobra volja pol življenja hrani.",
+      "hypothesis": "Dobra volja použivljenja hrani.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Morda sem preslišal nekaj podrobnosti.",
+      "hypothesis": "Morda sem preslišal neke podrobnosti.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Ali lahko definiraš parametre poljuba?",
+      "hypothesis": "Ali lahko definiraš parametre poljuba?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ena od Saturnovih lun se imenuje Helena.",
+      "hypothesis": "Ena od Saturnovih lun se imenuje Helena.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj je z njo?",
+      "hypothesis": "Kaj je z njo?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Tega sem se bal.",
+      "hypothesis": "Tega sem sebal.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Šole za ženske ne učijo samo čara in miline.",
+      "hypothesis": "Šole za ženske naučijo samo čara in miline.",
+      "wer": 22.22
+    },
+    {
+      "reference": "Kam pa greš?",
+      "hypothesis": "Kam pa greš?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Veliko ljudi zna blebetati, le znanja v njih je malo.",
+      "hypothesis": "Veliko ljudi zna blebetati, le znanja v njih je malo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ojoj, nisem hotel, da bi se zaljubila vate!",
+      "hypothesis": "Ojoj, nisem hotel, da bi se zaljubila vate.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Kjer dvom korenine požene, ljubezen ovene.",
+      "hypothesis": "Kjer dvom korinine požene ljubezen novene.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Hudič tja, kamor ne more sam, pošlje vino.",
+      "hypothesis": "Hudič tja, kamor ne more sam, pošlje vino.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ali ti tega ne veš?",
+      "hypothesis": "Ali ti tega ne veš?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pogledal sem jo.",
+      "hypothesis": "Pogledal sem jo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Je kaj rekel?",
+      "hypothesis": "Je kaj rekel?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kakšno je njegovo drugo ime?",
+      "hypothesis": "Kakšno je njegovo drugo imen?",
+      "wer": 20.0
+    },
+    {
+      "reference": "Tega pa ne morem reči.",
+      "hypothesis": "Tega pa ne morem reči.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj je bilo tako pomembno?",
+      "hypothesis": "Kaj je bilo tako pomembno?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne vem, rjave?",
+      "hypothesis": "Ne vem, rjave?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Občudujem tvoje delo s prsti.",
+      "hypothesis": "Občudujem tvoje delo s prsti.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mislim, da imam manjši pretres.",
+      "hypothesis": "Mislim, da imam manjši pretres.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Sreča na račun drugih je tatvina.",
+      "hypothesis": "Sreča na račun drugih je zatvina.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Pita se deli na velike kose.",
+      "hypothesis": "Pita se deli na velike kose.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To je tudi moje stanovanje.",
+      "hypothesis": "To je tudi moje stanovanje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ti hočeš, da zapustim stanovanje?",
+      "hypothesis": "Ti hočeš, ne zapusti vstanovanje!",
+      "wer": 60.0
+    },
+    {
+      "reference": "Naj začnem znova.",
+      "hypothesis": "Naj začnem znova.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vino je zjutraj svinec, popoldne srebro, zvečer zlato.",
+      "hypothesis": "Vino je zjutraj svinjec, popodne sredro zvečer zlato.",
+      "wer": 37.5
+    },
+    {
+      "reference": "Brez milosti za morilce otrok!",
+      "hypothesis": "Brez milosti zamorilce otrok.",
+      "wer": 60.0
+    },
+    {
+      "reference": "Saj veš kaj to pomeni, kajneda?",
+      "hypothesis": "Psaj veš, kaj to pomeni, kaj ne da?",
+      "wer": 83.33
+    },
+    {
+      "reference": "Nesreče se bodo zgodile na tej cesti.",
+      "hypothesis": "Nesreča se bodo zgodila na tej cesti.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Moram reči, da sem spal čudovito.",
+      "hypothesis": "Moram reči, da sem spol čudovito.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Odsotnost povzroči, da srce raste.",
+      "hypothesis": "Odsotnost povzroči, da srce raste.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Času je treba dati čas.",
+      "hypothesis": "Času je treba dati čas.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Delo ima grenke korenine in sladke sadove.",
+      "hypothesis": "Delo ima grenke korenine in sladke sadove.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne moreš vlomiti sredi noči in začeti pospravljati.",
+      "hypothesis": "Ne moreš vlomiti stredi noči in začuti jo pospravljati.",
+      "wer": 37.5
+    },
+    {
+      "reference": "Torej, koliko otrok misliš, da bi morala imeti?",
+      "hypothesis": "Toraj, koliko otrok misliš, da bi morala imeti?",
+      "wer": 12.5
+    },
+    {
+      "reference": "Paket porabi manj prostora kot prtljaga.",
+      "hypothesis": "Paket porab imam prostorak od prtljaga.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Pridi pome preden odbije ura dvanajst.",
+      "hypothesis": "Pridi po me preden odbije ura dvanajst.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Oči iščejo, kar je srcu všeč.",
+      "hypothesis": "Oči išča, kar je srcevšeč.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Ok, torej, obe teoriji imata svoje prednosti in slabosti.",
+      "hypothesis": "Ok, toraj, obete orji imata svoje prednosti in slabosti.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Tigri in levi so prestrašeni.",
+      "hypothesis": "Tigri in levi so prestrašeni.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mletje je potekalo po programu.",
+      "hypothesis": "Mletje je potekalo po programu.",
+      "wer": 0.0
+    },
+    {
+      "reference": "V vsakem primeru, pa se možnosti ne morejo zmanjšati.",
+      "hypothesis": "V vsakem premiero pa se možnosti ne morejo zmanjšati.",
+      "wer": 11.11
+    },
+    {
+      "reference": "Mir je prišel šele leta po vojni.",
+      "hypothesis": "Mir je prišel šele leta po vojnje.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Ne morete kuhati čaja v hladnem loncu.",
+      "hypothesis": "Ne morete kuhati čajo v hladnem loncu.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Če ti dolgujem sto dolarjev, je to moj problem.",
+      "hypothesis": "Če ti dolgujem sto dolarjev, je to moj problem.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Koliko jih pa je?",
+      "hypothesis": "Koliko jih pa je?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne poskušaj pihati proti vetru.",
+      "hypothesis": "Ne poskušaj pihati proti vetru.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kmetje so prišli, da bi poželi ovseni pridelek.",
+      "hypothesis": "Kmetje so prišli, da bi poželijo vse ni pridelek.",
+      "wer": 37.5
+    },
+    {
+      "reference": "Gospodinja je poučevala služkinjo.",
+      "hypothesis": "Gospodinja je poučevala služkinjo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Narišite črto na severni strani zemljevida.",
+      "hypothesis": "Narišite črto na severni strani zemljevida.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Si ti to videl?",
+      "hypothesis": "Si ti to videl?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Izrežite trak, ki bo tesno ovil škatlo.",
+      "hypothesis": "Izrežite trak, ki bo tesno ovil škatla.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Mislim, da sem se prehladil.",
+      "hypothesis": "Mislim, da sem se prehladil.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor ne zoba, je že zobal.",
+      "hypothesis": "Kdor ne zoba, je že zobal.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Lepi in slepi ne vidita kod hodita skupaj.",
+      "hypothesis": "Lepi in slepi ne vidita, kot hodita skupaj.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Jezik je ključ do srca.",
+      "hypothesis": "Jezik je ključ do srca.",
+      "wer": 0.0
+    },
+    {
+      "reference": "V ljubezni je celo devet deset.",
+      "hypothesis": "Ljubezni je celo devet deset.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Andrej je dobil gripo.",
+      "hypothesis": "Andre je dobil gripo.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Gorsko reševalna ekipa se je odrekla svojemu delu.",
+      "hypothesis": "Gorsko razševalna ekipa se je odretla svojemu delu.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Leva krava je ležala v hladni travi.",
+      "hypothesis": "Leva krava je ležala v hladni travi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ljubezen gre skozi želodec.",
+      "hypothesis": "Njubezen gre skozi želodec.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Obeduj s prijatelji, toda ne sklepaj kupčij z njimi.",
+      "hypothesis": "Obeduj s prijateljic, da ne sklepaj kupči z njimi.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Lažje je besedo zadržati, kakor nazaj vzeti.",
+      "hypothesis": "Lažje je besedo zadržati, kakor nazaj vzeti.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Bi šla z menoj?",
+      "hypothesis": "Bišla z menoj?",
+      "wer": 50.0
+    },
+    {
+      "reference": "Ema danes vodi tretjo tekmo.",
+      "hypothesis": "Ema danes vodi trečo tekmo.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Uran in plutonij sta radioaktivna.",
+      "hypothesis": "Uran in plutonista radioaktivna.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Dolga ljubezen, gotova bolezen.",
+      "hypothesis": "Dolga ljubezen, gotova bolezen.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Natočil je kozarec in je ga izpil.",
+      "hypothesis": "Nato človek-ozarec in je ga izpil.",
+      "wer": 42.86
+    },
+    {
+      "reference": "Krčmar pa se je zasmejal naglas.",
+      "hypothesis": "Krčmar pa se je zasnel na glas.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Zaradi ene muhe si pajek ne splete mreže.",
+      "hypothesis": "Zaradi ene muhe si pajek naspleten mriže.",
+      "wer": 37.5
+    },
+    {
+      "reference": "Zlato daje sijaj, ne pa sreče.",
+      "hypothesis": "Zlato daje sijaj, ne pa sariče.",
+      "wer": 16.67
+    },
+    {
+      "reference": "V sanjah smo vsi enako bogati.",
+      "hypothesis": "V sanjah smo vsi enako bogati.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Prošnja je vroča, zahvala pa hladna.",
+      "hypothesis": "Prošnja je vroča, zahvala pa hladna.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Verjetno se ne bom.",
+      "hypothesis": "Verjetno se ne bom.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Žice je treba pokriti z gumo.",
+      "hypothesis": "Žice je treba pokriti z gumo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj je smešno? To ni bil sarkazem?",
+      "hypothesis": "Kaj je smešna?To ni bil sarkazem?",
+      "wer": 28.57
+    },
+    {
+      "reference": "In tudi jaz sem prišel.",
+      "hypothesis": "In tu dias sem prišel.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Moramo oditi zdaj!",
+      "hypothesis": "Moramo oditi zdaj.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Kako je kaj vaša nečakinja?",
+      "hypothesis": "Kako je kaj vaše načakinja?",
+      "wer": 40.0
+    },
+    {
+      "reference": "Ne vem, kaj naj naredim.",
+      "hypothesis": "Ne vem, kaj naj naredim.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Spomin je zaklad uma.",
+      "hypothesis": "Spominje zaklad uma.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Sheldon, rotim te.",
+      "hypothesis": "Sheldon rutinte.",
+      "wer": 100.0
+    },
+    {
+      "reference": "Vedno me žgečka, ko me objame.",
+      "hypothesis": "Vedno me žgečka, ko me objame.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Česar v glavi ni, peta nadomesti.",
+      "hypothesis": "Česar v glavi ni, peta nadamesti.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Nesite smeti, da boste lahko nato šli spat.",
+      "hypothesis": "Nesite smeti, da boste lahko nato šli spat.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vojna zahteva pamet starca, moč mladeniča in pogum norca.",
+      "hypothesis": "Vojna zahteva pamet starca, moč mladeniča in pogum mnorca.",
+      "wer": 11.11
+    },
+    {
+      "reference": "Mislim, da sva kar dobro začela.",
+      "hypothesis": "Mislim, da sva kar dobra začela.",
+      "wer": 16.67
+    },
+    {
+      "reference": "K laži pelje tisoč poti, k resnici - samo ena.",
+      "hypothesis": "Klaži pelje tisoč poti, k resnici samo ena.",
+      "wer": 30.0
+    },
+    {
+      "reference": "Kristjan je skomignil z rameni.",
+      "hypothesis": "Kristjen je skomignil z rameni.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Vzgoja je najboljša dediščina.",
+      "hypothesis": "Vzgoja je najboljša dediščina.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Bila je edina, ki sem jo ljubil.",
+      "hypothesis": "Bila je edina, ki sem jo ljubil.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ampak kaj lahko storim?",
+      "hypothesis": "Ampak kaj lahko storim?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Enostavno ne vem, kaj naj.",
+      "hypothesis": "Enostavno ne vem, kaj naj.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor podcenjuje, kupuje.",
+      "hypothesis": "Kdor pocenjuje, kupuje.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Naj bo on preprosto glavni direktor in je to, to.",
+      "hypothesis": "Naj bo on preprosto glavni direktor in to je to, to.",
+      "wer": 10.0
+    },
+    {
+      "reference": "Ljubezen, ki jo vodi razum, se le redko posreči.",
+      "hypothesis": "Ljubezen, ki jo vodi razumce, le redko posreči.",
+      "wer": 22.22
+    },
+    {
+      "reference": "Ne verjamem v voodoo.",
+      "hypothesis": "Ne verjamem v Woodu.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Ne bodi no smešen.",
+      "hypothesis": "Ne bodi nosnejšen.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Upanje je kot mleko: če predolgo traja, se skisa.",
+      "hypothesis": "Upanje je kot mleko, čeprav dolgotraja, se skisa.",
+      "wer": 44.44
+    },
+    {
+      "reference": "Vse ure ranijo, a zadnja ubije.",
+      "hypothesis": "Vse ure ranijo, a zadnja ubije.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zora, me lahko naučiš jodlati?",
+      "hypothesis": "Zora, me lahko naučiš jodljati?",
+      "wer": 20.0
+    },
+    {
+      "reference": "Vsi so dobri.",
+      "hypothesis": "Vsi so dobri.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vsako delo brez zabave je dolgočasno.",
+      "hypothesis": "Vsako delo brez zabave je dolgočasno.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Tako je rekel župan in vstal.",
+      "hypothesis": "Tako je rekel župan in vstal.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zamuda je tako dobra, kot je dober človek.",
+      "hypothesis": "Zamuda je tako dobra kot je dober človek.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Praproti rastejo na visokih skalah.",
+      "hypothesis": "Praproti rastejo na visokih skalah.",
+      "wer": 0.0
+    },
+    {
+      "reference": "On je tvoj prijatelj?",
+      "hypothesis": "On je tvoj prijatelj?",
+      "wer": 0.0
+    },
+    {
+      "reference": "V mladosti so solze brez bolečin, v starosti bolečine brez solz.",
+      "hypothesis": "V mladosti so solze brez bolečin, v starosti bolečine brez solz.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Predpostavljam, da če bi me hotel ubiti, bi to storil že zdavnaj.",
+      "hypothesis": "Predpostavljam, da če bi me hotel ubiti, bi to storil že zdavnaj.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Se vidimo naslednji teden.",
+      "hypothesis": "Se vidimo naslednji teden.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Le kar dobro?",
+      "hypothesis": "Lekar dobro?",
+      "wer": 66.67
+    },
+    {
+      "reference": "Kaj je mislila s tem?",
+      "hypothesis": "Kaj je mislila s tem?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Šivanka oblači druge, sama pa ostaja naga.",
+      "hypothesis": "Pšivanka oblači druge, sama pa ostaja naga.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Ali sploh imaš bratranca Leopolda?",
+      "hypothesis": "Ali sploh imaš bratranca Leopolda?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Sladka beseda in sladko vino po navadi nista naravna.",
+      "hypothesis": "Sladka beseda in sladko vino ponavadi nista naravna.",
+      "wer": 22.22
+    },
+    {
+      "reference": "Ne, bili so izbrani naključno.",
+      "hypothesis": "Ne, bili so izbrani naključno.",
+      "wer": 0.0
+    },
+    {
+      "reference": "V resnici mi ni všeč ta obleka.",
+      "hypothesis": "V resnici minilši čta obleka.",
+      "wer": 57.14
+    },
+    {
+      "reference": "Prazna posoda povzroča največ hrupa.",
+      "hypothesis": "Prazna posoda povzroča najmeč hrupa.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Pogum življenje krajša, previdnost ga pa daljša.",
+      "hypothesis": "Pogum življenje krajša, previdnost go padaljša.",
+      "wer": 42.86
+    },
+    {
+      "reference": "Znanstvenik je napisal svoj članek.",
+      "hypothesis": "Znanstvenik je napisal svoj članek.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vem, ljudje ne morejo leteti.",
+      "hypothesis": "Vem, ljudje ne morejo leteti.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj bi lahko storil?",
+      "hypothesis": "Kaj bi lahko storil?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Iskra lahko začne velik požar.",
+      "hypothesis": "Iskra pozačne velik požar.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Črn paket je padel ob pristanku.",
+      "hypothesis": "Črm paket je padel ob pristanku.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Sprejmem izziv.",
+      "hypothesis": "Sprejme miziv.",
+      "wer": 100.0
+    },
+    {
+      "reference": "Para je izhlapela iz zlomljenega ventila.",
+      "hypothesis": "Para je izhlapela izlomljenega ventila.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Išči napake, pa boš našel skrbi!",
+      "hypothesis": "Išči napake, pa boš našel skrbi.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Saj sva fizika.",
+      "hypothesis": "Saj sva fizika.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dobro jutro.",
+      "hypothesis": "Dobro jutro.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Danes si pa res tečen.",
+      "hypothesis": "Danes si pa res tečen.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Velike besede, majhna dejanja.",
+      "hypothesis": "Relike besede – majhna dejanja.",
+      "wer": 75.0
+    },
+    {
+      "reference": "Seveda je prišla.",
+      "hypothesis": "Seveda je prišla.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ali trenutno dežuje?",
+      "hypothesis": "Ali trenutno dežuje?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ali lahko že enkrat vstopimo?",
+      "hypothesis": "Ali lahko že enkrat vstopimo?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Modri se opira na svoja dejanja, bedak na upanje.",
+      "hypothesis": "Modri se opire na svoje dejanja, bedak na upanje.",
+      "wer": 22.22
+    },
+    {
+      "reference": "Nekaj te moram vprašati.",
+      "hypothesis": "Nikaj te moram vprašati.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Dolga pot domov je trajala eno leto.",
+      "hypothesis": "Dolga pot domov je trajala eno leto.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To ni bila moja mačka.",
+      "hypothesis": "To ni bila moja mačka.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne nabijaj nam pod nos.",
+      "hypothesis": "Ne nabijaj nam podnos!",
+      "wer": 40.0
+    },
+    {
+      "reference": "Ne beli si las, kje boš dobil uzdo, ko še nimaš konja.",
+      "hypothesis": "Nebeli si las, ki je boš dobil vzdo, ko še nimaš konja.",
+      "wer": 41.67
+    },
+    {
+      "reference": "Kaj boš naredil z mano?",
+      "hypothesis": "Kaj boš naredil z mano?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vojna prinese hitro škodo in pozno korist.",
+      "hypothesis": "Vojna prinese hitro škodo in pozno korist.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Današnja beseda je jutrišnji most.",
+      "hypothesis": "Današnja beseda je jutrišnji most.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Takrat je prišla.",
+      "hypothesis": "Takrat je prišla.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Začel se je voziti vzdolž pobočja.",
+      "hypothesis": "Sajčal se je voziti vzdolž pobočja.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Otroci dobijo udarce, ki pripadajo staršem.",
+      "hypothesis": "Otroci dobijo udarce, ki pripadajo staršem.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Za stare ljudi je vse leto zima.",
+      "hypothesis": "Za stare ljudi je vse leto zima.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Listi so jeseni rjavi in rumeni.",
+      "hypothesis": "Listi so jeseni aljavi in rumeni.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Človek brez domovine je kot zemlja brez semena.",
+      "hypothesis": "Človek brez domovine je kot zemlja brez semena.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ljubezen je kot ogenj: kolikor je večja, toliko bolj se kadi.",
+      "hypothesis": "Ljubezen je kot ogenj — kolikor je večja, toliko bolj se kadi.",
+      "wer": 18.18
+    },
+    {
+      "reference": "Ne morem verjeti, da je že december.",
+      "hypothesis": "Ne moreš verjeti, da je že decembar.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Kdor z mečem ubija, od meča umira.",
+      "hypothesis": "Kdor z mečem ubija, odmeča umira.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Daj no, samo nehaj razmišljati o tem.",
+      "hypothesis": "Daj no, samo neha razmišljati o tem.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Še lonci na polici se skregajo, pa bi se ljudje ne.",
+      "hypothesis": "Šelonci na polici se skregajo, pa bi se ljudje ne.",
+      "wer": 18.18
+    },
+    {
+      "reference": "Vojna ima lepe cvetove in ostudne plodove.",
+      "hypothesis": "Vojna ima lepe cvetove in ostudne plodove.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vodo se naučimo ceniti šele, ko se vodnjak posuši.",
+      "hypothesis": "Vodo se naučimo ceniti šele, ko se vodnjak posuši.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Si me kdaj videl v gledališču?",
+      "hypothesis": "Si me kdaj videl v gledališču?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nekdo je po naključju prekinil misijo.",
+      "hypothesis": "Nakdo je pa naključil prekinjo misijo.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Tega ne vem.",
+      "hypothesis": "Tega ne vem.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Človek je vaba za človeka.",
+      "hypothesis": "Človek je vamba za človeka.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Več časa živite, več vidite.",
+      "hypothesis": "Več časa živite, več vidite.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Prehitra ženitev, gotova streznitev.",
+      "hypothesis": "Prehitra ženitev gotova streznitev.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Vojna je sod brez dna.",
+      "hypothesis": "Vojna je sod brez dna.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Veliko je šahov, mat pa je samo en.",
+      "hypothesis": "Veliko je šahov, mat pa je samo en.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Strma pot je boleča za naše noge.",
+      "hypothesis": "Strma pot je voliča za naše noge.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Narodno zabavna glasba ni moj najljubši glasbeni žanr.",
+      "hypothesis": "Narodna zabavna glasba ni moj najljubši glasbeni žanr.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Večino novic je enostavno slišati.",
+      "hypothesis": "Vačino novicija enostavno slišati.",
+      "wer": 60.0
+    },
+    {
+      "reference": "Očitno ni poslušala.",
+      "hypothesis": "Očitno ni poslušala.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Hočeš videti nekaj dobrega?",
+      "hypothesis": "Hočeš videti nekaj dobrega?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne, seveda ni.",
+      "hypothesis": "Ne, sveda ni.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Ali nisi vedel tega?",
+      "hypothesis": "Ali nisem vedel tega?",
+      "wer": 25.0
+    },
+    {
+      "reference": "Pokupil je prodajalno strojno opremo.",
+      "hypothesis": "Pokupil je prodajalno strojno opremo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj še želite?",
+      "hypothesis": "Kaj še želite?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Tvoja starša sta se prav odločila.",
+      "hypothesis": "Tvoja starša sta se prav odločila.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Od besed do dejanja se človeku mnogo sanja.",
+      "hypothesis": "Od besedo dejanja se človeku mnogo sanja.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Ne, to me še najmanj skrbi.",
+      "hypothesis": "Ne, to me še najmanj skrbi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor ljubi, se težko pretvarja.",
+      "hypothesis": "Kdor ljubi, se težko pretvaja.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Da, bolje je počakati in upati.",
+      "hypothesis": "Da, bolje je počakati in upati.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Morda bova morala ponovno naseliti Zemljo.",
+      "hypothesis": "Morda bomo morala ponovno naseliti Zemljo.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Resnica je grenčica, ki je ne smemo ponuditi brez sladkorja.",
+      "hypothesis": "Resnica je grenčica, ki ne smemo ponuditi brez sladkorja.",
+      "wer": 10.0
+    },
+    {
+      "reference": "Če izgubite temperament, ga ne iščite.",
+      "hypothesis": "Če izgubite temperament, ga naiščite.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Njegov lajež je glasnejši od njegovega ugriza.",
+      "hypothesis": "Njegov lajež je glasnejša od njegovega ugriza.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Naslednjič me ob padcu prosim pokliči!",
+      "hypothesis": "Nasledeč me opacu prosim pokliči!",
+      "wer": 50.0
+    },
+    {
+      "reference": "Ali veste, kakšen paket je bil?",
+      "hypothesis": "Ali veste, kakšen paket je bil?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Boš prišel z menoj?",
+      "hypothesis": "Boš prišel z menoj?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ja, ampak zakaj sediš ravno tukaj?",
+      "hypothesis": "Ja, ampak zakaj sediš rano tukaj?",
+      "wer": 16.67
+    },
+    {
+      "reference": "Oh, moj dragi otrok!",
+      "hypothesis": "Ah, maj dragi otrok!",
+      "wer": 50.0
+    },
+    {
+      "reference": "Popolna blaženost raste samo v mirnem srcu.",
+      "hypothesis": "Popolna blaženost raste samo v mirnem srcu.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če hočeš spoznati človeka, si poglej njegova dejanja.",
+      "hypothesis": "Če hočeš spoznati človeka, si popljen jebava dejanja.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Dolga ljubezen redko na hitro umre.",
+      "hypothesis": "Prodolga ljubezen redko nahitro umre.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Veliki oblaki so lebdeli z vetričem.",
+      "hypothesis": "Veliki oblaki so levdeli z vetričem.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Mladi otrok se je zaletel v zarjavela vrata.",
+      "hypothesis": "Mladi otrok se je zaletel zarjavela vrata.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Ne poskušaj leteti, dokler ti ne zrastejo krila!",
+      "hypothesis": "Ne poskušaj leteti, dokler ti ne zrastejo krila.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Oblačimo se tako, da ustreza vremenu.",
+      "hypothesis": "Oblačimo se tako, da streza vremenu.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Kaj boš naredil gospod?",
+      "hypothesis": "Kaj boš naredil, gospod?",
+      "wer": 25.0
+    },
+    {
+      "reference": "Človeška pomlad pride le enkrat.",
+      "hypothesis": "Človeška pomlad pride lejenkrat.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Odpadli cvet se ne vrne več na vejo.",
+      "hypothesis": "Odpadli cvet se ne vrne več novejo.",
+      "wer": 25.0
+    },
+    {
+      "reference": "No, bomo videli.",
+      "hypothesis": "No, bomo videli.Baga, da?",
+      "wer": 66.67
+    },
+    {
+      "reference": "Kako je izgledal?",
+      "hypothesis": "Kako je izgledal?Mogar je izgledal moj.",
+      "wer": 133.33
+    },
+    {
+      "reference": "Napravili ste posteljo, zdaj pa morate ležati v njej.",
+      "hypothesis": "Napravili ste posteljo, zdaj pa morete ležati v njej.",
+      "wer": 11.11
+    },
+    {
+      "reference": "Ali ste vedeli, da je bil papež nekoč varnostnik?",
+      "hypothesis": "Ali ste vedeli, da je bil papež nekoč varnostnik?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oba sta izgubila življenje v nevihti.",
+      "hypothesis": "Obasta izgubila življenje v nevihti.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Niti dejanja niso govorila.",
+      "hypothesis": "Niči dejanja niso govorila.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Kdor neprestano opazuje oblake, ne bo nikoli žel.",
+      "hypothesis": "Kdor ne prestano opazuje oblake, ne bo nikoli žel.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Dvaintrideset zob ne opravi nič proti enemu samemu jeziku.",
+      "hypothesis": "Dvaintrideset zob ne opravi nič proti enemu samemu jeziku.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ko zlato govori, beseda več ne drži.",
+      "hypothesis": "Ko zlato govori, beseda več ne drži.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Potrpežljivost je vrlina.",
+      "hypothesis": "Potrpežljivost je vrklina.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Ko ljubezen govori, razum molči.",
+      "hypothesis": "Ko ljubezen govori, razum molči.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor nič ne naredi, nič ne ve in nič ne more, ostane vedno zadaj.",
+      "hypothesis": "Kdor nič ne naredi, nič ne ve in nič ne more, ostane vedno zadaj.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Jutri bo deževalo?",
+      "hypothesis": "Jutri bo deževalo?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Prepričan sem, da Cene ni strahopetec.",
+      "hypothesis": "Prepričan sem, da cene ni strahopetec.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Za dosego konca potrebujemo veliko poguma.",
+      "hypothesis": "Za dosego konca potrebujemo veliko poguma.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Imam video posnetek mojega včerajšnjega pevskega nastopa.",
+      "hypothesis": "Imam video posnetek mojega večerejšnega pevskega nastopa.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Čast in korist nista spravljena v isti vreči.",
+      "hypothesis": "Čast in korist nista spravljena v isti vreči.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Hitrost se obnese le tedaj, ko loviš bolhe.",
+      "hypothesis": "Hitrost se obnese le tedaj, ko loviš bolje.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Branje ni enako razumevanju.",
+      "hypothesis": "Branje ni enako razumevanju.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mislil sem, da je imun na gripo.",
+      "hypothesis": "Mislil sem, da je imun na gripo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če sem čisto odkrit, mislim, da se ne bo izšlo.",
+      "hypothesis": "Če sem čisto odkrit, mislim, da se ne bo išlo.",
+      "wer": 10.0
+    },
+    {
+      "reference": "Ne išči sreče v oblakih; skloni se in jo poberi!",
+      "hypothesis": "Ne išči sreče v oblakih, skloni se in jo poberi.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Pridi z mano.",
+      "hypothesis": "Pridi z mano!",
+      "wer": 33.33
+    },
+    {
+      "reference": "Kdo je tvoj oče?",
+      "hypothesis": "Kdo je tvoj oče?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Saj veš kako je v restavraciji.",
+      "hypothesis": "Vse veš, kako je v restavraciji.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Ljudje so cvetje zemlje.",
+      "hypothesis": "Ljudje so cvetje zemlje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "V tej pisarni ne izdajajo nobenih računov.",
+      "hypothesis": "Tej pisarni naj zdajo namenih računov.",
+      "wer": 71.43
+    },
+    {
+      "reference": "Dokler sreča pomaga, se da tudi proti toku plavati.",
+      "hypothesis": "Dokler sreča pomaga, se da tudi protitoku plavati.",
+      "wer": 22.22
+    },
+    {
+      "reference": "Kaj bi ti storil?",
+      "hypothesis": "Kaj bi ti storil?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kako se je končalo?",
+      "hypothesis": "Kako se je končalo?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor zgodaj vstaja, mu časa preostaja.",
+      "hypothesis": "Kdor zgodaj vstaja, mu časa preostaja.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Torej, zakaj pa bi moral oditi jaz?",
+      "hypothesis": "Torej, zakaj pa bi moral oditi jaz?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vsak človek ima svojo ceno.",
+      "hypothesis": "Vsak človek ima svojo ceno.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj je z mano?",
+      "hypothesis": "Kaj je z mano?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Tako, da nikoli ne veš.",
+      "hypothesis": "Tako, da nikoli ne veš.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Koliko hočeš?",
+      "hypothesis": "Koliko hočeš?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Najprej pometi pred svojim pragom.",
+      "hypothesis": "Najprej pometi pred svojim pragom.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Bilo bi neuporabno.",
+      "hypothesis": "Bilo bi neuporabno.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dimitrij mi je pomagal pri domačih nalogah.",
+      "hypothesis": "Dimitri mi je pomagal pri domačih nalogah.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Neumen je tisti ptič, ki se sramuje svojega gnezda.",
+      "hypothesis": "Na umen je tisti ptič, ki se sramuje svojega gnezda.",
+      "wer": 22.22
+    },
+    {
+      "reference": "Resnica ne potrebuje veliko besed, laž jih nima nikoli dovolj.",
+      "hypothesis": "Resnica ne potrebuje veliko besed, laž jih nima nikoli dovolj.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ja, to je odlično.",
+      "hypothesis": "Ja, to je odlično.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Otroci v juniju skoraj nič niso v šoli.",
+      "hypothesis": "Otroci v juniju skoraj nič niso v šoli.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Si prepričan?",
+      "hypothesis": "Si prepričan?",
+      "wer": 0.0
+    },
+    {
+      "reference": "No, ne vem.",
+      "hypothesis": "No, ne vem.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Navedeni so v izvirni obliki.",
+      "hypothesis": "Navedeni so v izbirni obliki.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Bolje je, da se rodimo srečni kot bogati.",
+      "hypothesis": "Bolje je, da se rodimo srečni kot bogati.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Posest je devet desetin naša.",
+      "hypothesis": "Posest je devetdesetin naša.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Hvala, enako.",
+      "hypothesis": "Hvala, enako.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Jutri se morava vrniti.",
+      "hypothesis": "Jutri se morava vrniti.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj si si mislil o tem potovanju?",
+      "hypothesis": "Kaj si si mislil o tem potovanju?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Fanta, saj sem zrasla na kmetiji.",
+      "hypothesis": "Fanta, saj sem zrasla na komitiji.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Ne bodi norec!",
+      "hypothesis": "Ne bodi norec.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Izbrali ste nezdružljivo kodiranje.",
+      "hypothesis": "Izbrali ste nezdružljivo kodiranje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Bolje je malo lastnega, kakor mnogo tujega.",
+      "hypothesis": "Bolje je malo lastnega kakor mnogo tujega.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Šla je v park, da bi posnela nekaj posnetkov.",
+      "hypothesis": "Šla je v park, da bi posnela nekaj posnetkov.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Steznik jo je stisnil.",
+      "hypothesis": "S tednika je stisnil.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Kaj sem naredil?",
+      "hypothesis": "Kaj sem naredil?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nehajte že ves čas govoriti!",
+      "hypothesis": "Nehajte že vaš čas govoriti!",
+      "wer": 20.0
+    },
+    {
+      "reference": "Preveč je ogrožen, da bi govoril.",
+      "hypothesis": "Reveč je odrožen, da bi govoril.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Naj vam pomagam.",
+      "hypothesis": "Me vam pomagam.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Dvignila se je na zadnje noge.",
+      "hypothesis": "Vitmila se je nazadnja noge.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Pavla je bila pozno v razredu.",
+      "hypothesis": "Pavla je bila pozna v razredu.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Predvsem mi je všeč penasta voda.",
+      "hypothesis": "Prod sem njevšeč penasto vodo.",
+      "wer": 100.0
+    },
+    {
+      "reference": "Hitri plezalci so nenadoma počakali.",
+      "hypothesis": "Hitli plazavci so na nadamo počakali.",
+      "wer": 80.0
+    },
+    {
+      "reference": "Tako je rekel župan in se vstal.",
+      "hypothesis": "Tako je rekel župan in se je vstal.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Nihče ne ve, kaj je za temi vrati.",
+      "hypothesis": "Nihče ne ve, kaj za temi vrati.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Obrnil sem se za njo.",
+      "hypothesis": "Obrnil sem se za njo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ljubezen se opazi kot luknja v nogavicah.",
+      "hypothesis": "Ljubezen se opazi kot luknja v nogavicah.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor se zadnji smeje, se najslajše smeje.",
+      "hypothesis": "Kdor svi zadnji smeje, se najslajše smeje.",
+      "wer": 14.29
+    },
+    {
+      "reference": "In kako je bilo na zmenku?",
+      "hypothesis": "In, kako je bilo na zmenku?",
+      "wer": 16.67
+    },
+    {
+      "reference": "Enkrat jo je povabil ven.",
+      "hypothesis": "Enkrat jo je povabil ven.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nisi prebral življenjepisa, ali pač?",
+      "hypothesis": "Ni si prebral življenje pisa ali pač?",
+      "wer": 80.0
+    },
+    {
+      "reference": "Kdaj imaš zmenek?",
+      "hypothesis": "Kdaj imaš zmenek?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ta zgodba je čudovita!",
+      "hypothesis": "Ta zgodba je čudovita.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Čakaj, a me vabiš na zmenek?",
+      "hypothesis": "Čakaj, a me vabiš na zminek?",
+      "wer": 16.67
+    },
+    {
+      "reference": "Vse mačke so sive v temi.",
+      "hypothesis": "Vse mačke so sive v temi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Na moji tabli ni nobenih nepravilnih enačb.",
+      "hypothesis": "Na moji tabli ni nobenih nepravilnih enačb.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nekomu potone pluta, drugemu plava svinec na vodi.",
+      "hypothesis": "Nekomu poto ne pluta, drugemu plava svinjec na vodi.",
+      "wer": 37.5
+    },
+    {
+      "reference": "Na voljo sem samo v sredo.",
+      "hypothesis": "Navoljal sem samo v sredo.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Ne, simpozij je ta petek.",
+      "hypothesis": "Ne, simpozije tapitek.",
+      "wer": 80.0
+    },
+    {
+      "reference": "Tara se je poskušala ukiniti.",
+      "hypothesis": "Tara se je poskušala ukiniti.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pripravi se in streljaj.",
+      "hypothesis": "Pripravi se in streljaj!",
+      "wer": 25.0
+    },
+    {
+      "reference": "Vrlina ne cveti, a bogate sadove rodi.",
+      "hypothesis": "Vrlina ne cveti, a bogate sadove rodi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj naj naredim z njim?",
+      "hypothesis": "Kaj naj naredim z njim?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Jutri bom šel v Azijo.",
+      "hypothesis": "Jutri bom šel v Azijo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pozor, vojska naprej!",
+      "hypothesis": "Pozor, vojska naprej!",
+      "wer": 0.0
+    },
+    {
+      "reference": "Adijo, fantje.",
+      "hypothesis": "Adi o fantje!",
+      "wer": 150.0
+    },
+    {
+      "reference": "Na starem ognjišču rado gori.",
+      "hypothesis": "Na starem ognišču rado gori.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Vse se zmore, če se hoče.",
+      "hypothesis": "Vse se zmore, če se hoče.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oh, kaj je to?",
+      "hypothesis": "Oh, kaj je to?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Tatovi, ki oropajo prijatelje, zaslužijo zapor.",
+      "hypothesis": "Tatovi, ki orupajo prijatelje, zaslužijo zapor.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Te dni je piščančja noga redka jed.",
+      "hypothesis": "Te dni je piščančja noga redka jed.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Rad imam karamelne bombone.",
+      "hypothesis": "Rad imam karamelne bombone.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dobro storiti, pa ne okrog zvoniti.",
+      "hypothesis": "Dobro storiti, pa ne okrog zvoniti.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj je v njej?",
+      "hypothesis": "Kaj je v njej?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oh, v redu, vidim.",
+      "hypothesis": "Oh, v redu, vidim!",
+      "wer": 25.0
+    },
+    {
+      "reference": "Kako to misliš?",
+      "hypothesis": "Kako to misliš?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ni mu mogel pomagati.",
+      "hypothesis": "Nimu mogel pomagati.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Kdaj boš pa plačal?",
+      "hypothesis": "Kdaj boš pa plačal?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ni bilo odgovora.",
+      "hypothesis": "Ni bilo odgovora.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Slab kot pokvarjeno zelje.",
+      "hypothesis": "Slab kot pokvarjeno zelje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zakaj mi nisi povedal tega prej?",
+      "hypothesis": "Zakaj mi nisi povedal tega prej?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oh, to je hudo!",
+      "hypothesis": "Ah, to je hudo.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Nisem prepričan.",
+      "hypothesis": "Nisem prepričan.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nobena pesem ni tako dolga, da se ne bi izpela.",
+      "hypothesis": "Nobena pesem ni tako dolga, da se ne bi izpela.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pričakoval sem odgovor.",
+      "hypothesis": "Pričakoval sem odgovor.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Odprite okno.",
+      "hypothesis": "Odprite okno.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To je enostavno povedati.",
+      "hypothesis": "To je enostavno povedati.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Čeprav čudovita, je vseeno brezčutna prasica.",
+      "hypothesis": "Čeprav čudovita, je vseeno brezčutna prasica.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Črno na belem nikdar ne izgine.",
+      "hypothesis": "Črno na belem nikdar ne izgine.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Naredite kot jaz rečem.",
+      "hypothesis": "Naredite kot jaz rečam.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Krzno je zelo elegantno.",
+      "hypothesis": "Krsno je zelo elegantno.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Imam diplomo in dva doktorata.",
+      "hypothesis": "Imam diplomo in dva doktorata.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nesreča nikoli ne počiva.",
+      "hypothesis": "Nesreča nikoli ne počiva.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ko ni več ljubezni, ni več zaupanja.",
+      "hypothesis": "Ko ni več ljubezni, ni več zaupanja.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Java ni enako kot JavaScript.",
+      "hypothesis": "Java ni enako kot java skript.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Te moti le najin vdor v stanovanje, ali tudi njegova nova urejenost?",
+      "hypothesis": "Temu ti le najinudorno stanovanje ali tudi njegova nova urejenost.",
+      "wer": 58.33
+    },
+    {
+      "reference": "Moj zmenek prihaja na obisk.",
+      "hypothesis": "Moj zmenek prihaja nov obisk.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Kjer je žgal ogenj, ostane brazgotina.",
+      "hypothesis": "Kjer je žgal ogenj, ostane brazgotina.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Sijaj na plastenki je neprimeren za branje.",
+      "hypothesis": "Sijaj na plastenki je neprimeren za branje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mojstrova roka je najboljše orodje pri hiši.",
+      "hypothesis": "Mojstrova roka je najboljše orodje pri hiši.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Morala sva poslati nekaj pisem.",
+      "hypothesis": "Morala sva poslati nekaj pisem.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ničesar ni videti!",
+      "hypothesis": "Ničesar ni videti!",
+      "wer": 0.0
+    },
+    {
+      "reference": "Razen, če Superman izenači njeno hitrost in potem zavira.",
+      "hypothesis": "Razen če Superman izenačenino hitrost in potem zavira.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Do zdaj še nisem nič čul o njem.",
+      "hypothesis": "V zdajši mislim nič čuo o njem.",
+      "wer": 62.5
+    },
+    {
+      "reference": "Hvala, dobro sem.",
+      "hypothesis": "Hvala, dober sem.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Nujnost je mati izuma.",
+      "hypothesis": "Nujnost je mati iz zuma.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Imenujeta se zasebni in javni ključ.",
+      "hypothesis": "Imenujeta se zasebni in javni ključ.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dobro jutro, kako si?",
+      "hypothesis": "Dobro jutro, kako si?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Strela ne razkolje mehkega lesa.",
+      "hypothesis": "Strela ne razkolje mehega lesa.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Karl je tam.",
+      "hypothesis": "Karol je tam.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Povedali so mu nore zgodbice, da bi ga prestrašili.",
+      "hypothesis": "Povedali sem mu nore zgodbice, da bi ga prestrašili.",
+      "wer": 11.11
+    },
+    {
+      "reference": "Tako si nesramen!",
+      "hypothesis": "Tako si nesramen!",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oči so prvi sel ljubezni.",
+      "hypothesis": "Oči so prvi sel ljubezni.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ta je bila moja najljubša!",
+      "hypothesis": "Ta je bila moja najljubša.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Kako to misliš, s katero besedo bi to najbolje opisal?",
+      "hypothesis": "Kako to misliš, s katero besedo bi to najbolje vpisal?",
+      "wer": 10.0
+    },
+    {
+      "reference": "Kar gola sreča prinese, naslednja že luna odnese.",
+      "hypothesis": "Krgona sreča prinese, naslednja želuna odnese.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Stresen skedenj je padel z glasnim pompom.",
+      "hypothesis": "Stresen skaden je padel z glasnim pompom.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Kateri zdravnik pa odstranjuje čevlje iz riti?",
+      "hypothesis": "Kateri zdravnik po odstranjuje čijolje izriti?",
+      "wer": 57.14
+    },
+    {
+      "reference": "Vsaka reč ima svoj čas.",
+      "hypothesis": "Vsaka reč ima svoj čas.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Se hecaš?",
+      "hypothesis": "Psehicaš?",
+      "wer": 100.0
+    },
+    {
+      "reference": "Ne, ne moreš imeti tega ženskarja.",
+      "hypothesis": "Ne, ne moreš imeti tega ženskarja.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Natančno za pol.",
+      "hypothesis": "Natančno zapol.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Se mi samo zdi, ali že dolgo nikogar ni bilo?",
+      "hypothesis": "Se mi samo zdi, ali že dolgo nikogar ni bilo?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor je slep od ljubezni, vidi povsod same zidove.",
+      "hypothesis": "Kdor je slep od ljubezni, vidi povsod same zidove.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Hitra lisica je skočila na mačko.",
+      "hypothesis": "Hitra lisica je skučila na mačko.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Ne strinjam se.",
+      "hypothesis": "Ne strinjam se.",
+      "wer": 0.0
+    },
+    {
+      "reference": "O tem se bova pogovorila zjutraj.",
+      "hypothesis": "O tem se bomo pogovorila zjutraj.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Življenje zajemaj s polno žlico.",
+      "hypothesis": "Življenje zajima izpolnožlico.",
+      "wer": 80.0
+    },
+    {
+      "reference": "Letos smo imeli veliko orkanov.",
+      "hypothesis": "Letos smo imeli veliko arkanov.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Resnici, moči in navadi se je težko upreti.",
+      "hypothesis": "Resnici moči in navadi sedežko upreti.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Kaj se je zgodilo?",
+      "hypothesis": "Kaj se je zgodilo?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Noben dan ni tako dolg, da ne bi bilo večera.",
+      "hypothesis": "Noben dan ni tako dolg, da ne bi bilo večera.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nihče še ni nikoli tega storil.",
+      "hypothesis": "Nihče že ni nikoli tega storil.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Zate ni pomoči.",
+      "hypothesis": "Zade ni pomoči.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Ne se hecat.",
+      "hypothesis": "Ne se hitel.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Ni mi mar.",
+      "hypothesis": "Ni mimar.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Čudno je.",
+      "hypothesis": "Čudno je.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Grozdje je bilo stisnjeno v vino.",
+      "hypothesis": "Grozde je bilo stisnjeno v vino.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Pojdite na prelaz številka sedem.",
+      "hypothesis": "Pojdite na prelaz čevilka sedem.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Ribiška palica se uporablja za ulov roza lososa.",
+      "hypothesis": "Ribiška palica se uporablja za oloj roza losusa.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Nisem v redu.",
+      "hypothesis": "Nisem v redu.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To je bila seveda metafora.",
+      "hypothesis": "To je bila seveda metafora.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne, toda lepo te je bilo spoznati.",
+      "hypothesis": "Ne, toda lepota je bilo spoznati.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Bolje stare modrosti, kot nove norosti.",
+      "hypothesis": "Bolje stare modrosti kot nove norosti.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Jeza nima oči.",
+      "hypothesis": "Je zanima oči.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Osvetlitev je ustvarila prijetno vzdušje.",
+      "hypothesis": "Osvetlite je ustvarila prijetno vzdušje.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Najboljše stvari niso kupljene ali prodane.",
+      "hypothesis": "Najboljše stvari niso kupljene ali prodane.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Bi verjeli, da me je to dejansko vprašal?",
+      "hypothesis": "Bi verjeli, da me je to dejansko vprašal?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ko se star panj vname, dolgo ogenj drži.",
+      "hypothesis": "Ko se star panj v name, dolgo ogenj drži.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Zdravnik Krajnc je prispel prejšnji teden.",
+      "hypothesis": "Zdravnik trajnic je prispel prejšnji teden.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Gospod Lincoln je moj mentor.",
+      "hypothesis": "Gospod Lincoln je moj mentor.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ksenofobi imajo predsodke proti tujcem.",
+      "hypothesis": "Xenofobi imajo predsodke proti tujcem.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Kako velika je ta omara?",
+      "hypothesis": "Kako velika je ta omara?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Visoki sedeži so najboljši za nogometne navijače.",
+      "hypothesis": "Visoki sedeži so najboljši za nogometne nadijače.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Kdor dvomi, je izgubljen.",
+      "hypothesis": "Kdor dvomi je izgubljen.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Policisti v tem primeru preiskujejo tebe.",
+      "hypothesis": "Policisti v tem primeru preiskujejo tebe.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kjer vlada ljubezen, ni treba dosti zakonov.",
+      "hypothesis": "Kjer vlada ljubezen, ni treba dosti zakonov.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Marija bo pripeljala njenega prijatelja Vida.",
+      "hypothesis": "Marija bo pripeljala njenega prijatelja Vita.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Njegov širok nasmeh je zaslužil veliko prijateljev.",
+      "hypothesis": "Njegoši rok na smeh je zaslužil veliko prijateljev.",
+      "wer": 57.14
+    },
+    {
+      "reference": "Osem bitov je en bajt.",
+      "hypothesis": "Osem pitev je en bajt.",
+      "wer": 20.0
+    },
+    {
+      "reference": "On je zelo preprost.",
+      "hypothesis": "On je zelo preprost.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kako si prišel sem?",
+      "hypothesis": "Kako si prišel sem?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Jeza in sovraštvo ovirata dobro svetovanje.",
+      "hypothesis": "Jezra in sovraštvo ovirata dobro svetovanje.",
+      "wer": 16.67
+    },
+    {
+      "reference": "In tako se je izkazalo.",
+      "hypothesis": "In tako se je skazalo.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Prevelika ponudba lahko prestraši kupca.",
+      "hypothesis": "Prevelika ponudba lahko prestraši kupca.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Sprašuješ napačno dekle.",
+      "hypothesis": "Sprašuješ napadčno, da kle?",
+      "wer": 100.0
+    },
+    {
+      "reference": "Otrok je ihtel in se tresel.",
+      "hypothesis": "Otrok je jih tel in se tresel.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Bolje pozno kot nikoli.",
+      "hypothesis": "Bolje pozno kot nikoli.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Šla je v lekarno, da ji je vzela tablete.",
+      "hypothesis": "Šla je v lekarno, da je odzira tabletem.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Izklopite ventil in sprostite vročo paro.",
+      "hypothesis": "Izklopite ventil in spustite vročo paro.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Videla sem, da so se ti zenice razširile, ko si jo gledal.",
+      "hypothesis": "Videla sem, da so se ti zenice razširile, ko si jo gledal.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Si lahko bolj natančen?",
+      "hypothesis": "Si lahko bolj natančen?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Bojevniki, izvlecite svoje orožje.",
+      "hypothesis": "Bojevniki, izvlecite svoje orože!",
+      "wer": 25.0
+    },
+    {
+      "reference": "Kaj pa naj bi po tvojem rekel?",
+      "hypothesis": "Kaj pa naj bi po tvojem reku?",
+      "wer": 14.29
+    },
+    {
+      "reference": "Paradižnikova omaka je bila odlična.",
+      "hypothesis": "Paradižnikova umanka je bila odlična.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Kdor pije, ne da bi bil žejen in je, ne da bi bil lačen, zgodaj umre.",
+      "hypothesis": "Kdor pije, ne da bi bil žejen in nje, ne da bi bil lačen, zgodaj umre.",
+      "wer": 6.25
+    },
+    {
+      "reference": "Bit ni kratica za binarno številko.",
+      "hypothesis": "Bit ni kritica za binarno število.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Sledila je ena jed za drugo.",
+      "hypothesis": "Sladila je ena jed za drugo.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Ne, izmislil sem si ga.",
+      "hypothesis": "Ne, izmislil sem nasiga.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Naj slišijo tvoja ušesa, kaj govorijo tvoja usta.",
+      "hypothesis": "Naj slišijo tvoja ušesa, kaj govorijo tvoja usta?",
+      "wer": 12.5
+    },
+    {
+      "reference": "Na suhega bivola še muhe ne letijo.",
+      "hypothesis": "Na suhega bivola še muhe ne letijo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To je bilo sedemsto evrov več kot lani.",
+      "hypothesis": "To je bilo 700 evrov več kot lani.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Filozofija je moj najljubši predmet.",
+      "hypothesis": "Filozofija je moj najljubši predmet.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ljubezen ima veliko moč, a denar vse naredi.",
+      "hypothesis": "Ljubezen ima veliko moč, a denar vse naredi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ali veš kdo sem?",
+      "hypothesis": "Ali veš, kdo sem?",
+      "wer": 25.0
+    },
+    {
+      "reference": "Ugani rezultat v prvem poskusu.",
+      "hypothesis": "Uganje rezultat v prvem poskusu.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Hiše so zgrajene iz rdečih glinenih opek.",
+      "hypothesis": "Hiše so zgrajena iz rdiči glinjenih opek.",
+      "wer": 42.86
+    },
+    {
+      "reference": "Zabit kot žeblji v lesu.",
+      "hypothesis": "Zabitko drže bli v lesu.",
+      "wer": 60.0
+    },
+    {
+      "reference": "Spustite pepel kar na obrabljeno staro preprogo.",
+      "hypothesis": "Spustite pepevkarna obrabljeno staro preprogo.",
+      "wer": 42.86
+    },
+    {
+      "reference": "Kar človek sam prisluži, najbolje obrne.",
+      "hypothesis": "Kar človek sam prisluži, najbolje obrne.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Najboljše stvari v življenju niso zastonj.",
+      "hypothesis": "Majboljše stvari v življenju niso zaston.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Mošt smo naredili šele avgusta.",
+      "hypothesis": "Mošt smo naredili šele avgusta.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Moram uporabiti stranišče.",
+      "hypothesis": "Moram uporabiti stranišče.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kako je to mogoče?",
+      "hypothesis": "Kako je to mogoče?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Legel je, zaspati ni mogel.",
+      "hypothesis": "Lekel je, zaspati ni mogel.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Življenje je kot blisk; oba hitro mineta.",
+      "hypothesis": "Življenje kot blisk, oba hitro mineta.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Če kruhek pade ti na tla, poberi in poljubi ga.",
+      "hypothesis": "Če kruhek padeti na tla, poberi in poljubila.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Učeni naj pijejo vino, neuki pivo, vse druge živali pa vodo.",
+      "hypothesis": "Včerji naj pijejo vino, ne uki pivo, vse druge živali po vodo.",
+      "wer": 36.36
+    },
+    {
+      "reference": "Bolezen ga je zadržala že tretji teden doma.",
+      "hypothesis": "Bolezen ga zadržala že tretji teden doma.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Prodajte svoje darilo kupcu z dobičkom.",
+      "hypothesis": "Prodajte svoje darilo kupcu z dobičkom.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Siva kobila je hodila pred kolesom.",
+      "hypothesis": "Siva kobila je hodila pred kolesom.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če bi palica koga naučila pameti, bi bili vsi ljudje pametni.",
+      "hypothesis": "Če bi palica kuga naučila pameti, bi bili vsi ljudje pametni.",
+      "wer": 9.09
+    },
+    {
+      "reference": "Enako velja za živali.",
+      "hypothesis": "Enako velja zaživali.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Račun trgovine dodajte na zadnji strani.",
+      "hypothesis": "Račun trgovine dodajte na zadnji strani.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Seme je potrebno za pridelovanje spomladanske koruze.",
+      "hypothesis": "Sema je potrebna za pridelovanje spomladanske koruze.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Vijolična barva se je raztezala kilometre.",
+      "hypothesis": "Vijolična barva se je raztezala kilometre.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ko volk zavija, obrne glavo proti nebu.",
+      "hypothesis": "Ko volk zavija, obrne glavo proti nebu.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Izkušnja je mati modrosti.",
+      "hypothesis": "Izkušnja je mati modrosti.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mali otroci so prišli k njemu.",
+      "hypothesis": "Mali otroci so prišli k njemu.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne moremo verjeti, da smo izgubili.",
+      "hypothesis": "Ne moremo verjeti, da smo izkupili.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Sok limon nas odlično osveži.",
+      "hypothesis": "Sok limon nas odlično osveži.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ekipa za nujne primere je prišla hitro.",
+      "hypothesis": "Ekipa za nujne primere je prišla hitro.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Stara ljubezen ne izgubi korenin.",
+      "hypothesis": "Stara ljubezen ne izgubi korenin.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Izbriši to datoteko.",
+      "hypothesis": "Izbriši to datoteko.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Izdelano v Tajvanu.",
+      "hypothesis": "Izdelano v trevanu.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Misliš tako ali tako?",
+      "hypothesis": "Misliš tako ali tako?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Molk je zlato.",
+      "hypothesis": "Molk je zlato.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nebo je bilo jasno.",
+      "hypothesis": "Nebo je bilo jasno.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Življenje je zapleteno.",
+      "hypothesis": "Življenje je zapleteno.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Gregor se zasmejal naglas.",
+      "hypothesis": "Gregor se je zasnijal na glas.",
+      "wer": 100.0
+    },
+    {
+      "reference": "Kam gremo?",
+      "hypothesis": "Kam gremo?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne misliš tako, no!",
+      "hypothesis": "Ne misliš tako, no!",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dobro mi gre.",
+      "hypothesis": "Dobra, mi gre.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Vsak pes ima svoj rojstni dan.",
+      "hypothesis": "Vzak pes ima svoj rojstni dan.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Zakaj to praviš?",
+      "hypothesis": "Zakaj to praviš?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ni mu odgovorila.",
+      "hypothesis": "Ni mu odgovorila.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vedno je bilo tako.",
+      "hypothesis": "Vedno je bilo tako.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zvonil sem na zvonec.",
+      "hypothesis": "Svonje sem na svonec.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Koga ali kaj?",
+      "hypothesis": "Koga ali kaj?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Siva palica je ostala v jami.",
+      "hypothesis": "Siva palica je ostala v jami.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Tukaj je pismo.",
+      "hypothesis": "Tukaj je pismo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nikoli več mi ne delaj tega.",
+      "hypothesis": "Nikoli veš mi, ne delaj tega.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Oh, ne vem.",
+      "hypothesis": "O, ne vem!",
+      "wer": 66.67
+    },
+    {
+      "reference": "No, kaj potem?",
+      "hypothesis": "No, kaj po tem?",
+      "wer": 66.67
+    },
+    {
+      "reference": "Ali to vem?",
+      "hypothesis": "Ali to vem?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Imela je srečo.",
+      "hypothesis": "Imela je srečo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pridem nazaj.",
+      "hypothesis": "Pridem nazaj.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oh, mislim, da je šlo kar v redu.",
+      "hypothesis": "O, mislim, da je šlo kar v redu.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Ali te kaj boli?",
+      "hypothesis": "Ali te kaj boli?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kakorkoli, to je Leo.",
+      "hypothesis": "Kakorkoli, to je leo.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Stara ljubezen ne zarjavi; če ne gori, pa tli.",
+      "hypothesis": "Stara ljubezen ne zarjavi, če ne gori, patlji.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Mislim, da nimaš šans.",
+      "hypothesis": "Mislim, da nimaš šans.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mačka ima devet življenj.",
+      "hypothesis": "Mačka ima devet življenj.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj svetujete, gospod?",
+      "hypothesis": "Kaj svetujete, gospod?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Srečen človek je ladjica, ki pluje pod ugodnim vetrom.",
+      "hypothesis": "Srečen človek je ladica, ki pluje pod ugodnim vetrom.",
+      "wer": 11.11
+    },
+    {
+      "reference": "Kaj je hotel?",
+      "hypothesis": "Kaj je hotel?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Je to vredu?",
+      "hypothesis": "Je to v redu?",
+      "wer": 66.67
+    },
+    {
+      "reference": "Upam, da si dobro!",
+      "hypothesis": "Upam, da si dobro.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Riba pri glavi smrdi.",
+      "hypothesis": "Riba pri glavi smrdi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Sreča in pamet se redko srečata.",
+      "hypothesis": "Sreča in pamet se redko srečata.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ljubo doma, kdor ga ima; kdor ga nima, pa za njim kima.",
+      "hypothesis": "Ljubo doma, kdor ga ima, kdor ga nima, pa zanim, ki ima.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Zataknil se je z glavo med vrata.",
+      "hypothesis": "Zataknil se je z glavo med urata.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Kako se povezujete z Islandijo?",
+      "hypothesis": "Kako se povezujete z Islandijo?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ni še vklesano v kamen.",
+      "hypothesis": "Niša je oklesana v kamen.",
+      "wer": 60.0
+    },
+    {
+      "reference": "Moder človek v svojih ustih nima dveh jezikov.",
+      "hypothesis": "Moder človek v svojih ustih nima dveh jezikov.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ničesar ne odneseš s seboj na drugi svet.",
+      "hypothesis": "Ničesar ne odneseš s seboj na drugi svet.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor želi vrtnico sprejeti, mora sprejemati tudi trnje.",
+      "hypothesis": "Kdor želi vrtnico sprejeti, mora sprejemati tudi trnje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dobro, potem pa razreši naslednjo uganko.",
+      "hypothesis": "Dobro, potem pa razreši naslednjo uganko.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kako veste, da je to res?",
+      "hypothesis": "Kako veste, da je toliz?",
+      "wer": 33.33
+    },
+    {
+      "reference": "Samo neumni je vedno zadovoljen s seboj.",
+      "hypothesis": "Samo neumni je vedno zadovoljen s seboj.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ljubezen ni šprint, ampak maraton.",
+      "hypothesis": "Ljubezen ni šprint, ampak maraton.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Boste kar odšli?",
+      "hypothesis": "Boste kaj odšli?",
+      "wer": 33.33
+    },
+    {
+      "reference": "Počakaj, kaj si rekel?",
+      "hypothesis": "Počakaj, kaj si rekel?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Jaz sem zraven.",
+      "hypothesis": "Jesen zraven!",
+      "wer": 100.0
+    },
+    {
+      "reference": "S kom bi lahko govoril o stalni rezervaciji te mize?",
+      "hypothesis": "S kom bi lahko govoril o stalni rezervaciji te mize?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kar za lešnik pridobiš, za oreh izgubiš.",
+      "hypothesis": "Kaj zaležnik pridobiš, za oreh izgubiš.",
+      "wer": 42.86
+    },
+    {
+      "reference": "Kaj so rekli?",
+      "hypothesis": "Kaj so rekli?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Leo, ti si zares zelo ljubek, resnično prav smešen fant.",
+      "hypothesis": "Leo, ti si zares ljubek, resnično prav smešen fant.",
+      "wer": 10.0
+    },
+    {
+      "reference": "Ker nimava nobene izmerljive moči v zgornjem delu telesa.",
+      "hypothesis": "Ker nimava nobene iznaljive moči v zgodnjem delu telesa?",
+      "wer": 33.33
+    },
+    {
+      "reference": "Lahko spravim tole olivo v kozarec brez, da se je dotaknem.",
+      "hypothesis": "Lahko spravim tole olivo v kozalec, brez da se je dotaknem.",
+      "wer": 18.18
+    },
+    {
+      "reference": "Kaj, a se hecaš?",
+      "hypothesis": "Kaj, a se hecaš?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Veš, kaj mislim.",
+      "hypothesis": "Veš, kaj mislim?",
+      "wer": 33.33
+    },
+    {
+      "reference": "Rana ura, zlata ura.",
+      "hypothesis": "Žala ura, zlata ura.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Smem vstopiti?",
+      "hypothesis": "Smim stopiti?",
+      "wer": 100.0
+    },
+    {
+      "reference": "Koliko je logična, bo razsodila porota, sestavljena iz tebi enakih.",
+      "hypothesis": "Koliko je logična bo razcudila porota, sestavljena iz trebi enakih?",
+      "wer": 40.0
+    },
+    {
+      "reference": "Moramo evakuirati dvorišče.",
+      "hypothesis": "Mojmo jeva kurilati dvorišče.",
+      "wer": 100.0
+    },
+    {
+      "reference": "Si prepričan, da nočeš na urgenco?",
+      "hypothesis": "Si prepričan, da nočeš na urbenico?",
+      "wer": 16.67
+    },
+    {
+      "reference": "Če kaj, bi tam lahko točili neke vrste odišavljeno vino.",
+      "hypothesis": "Če kaj, bi tam lahko točili neke vrste odišavljeno vino.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Fant mu dolguje trideset centov.",
+      "hypothesis": "Fant mu dolguje trideset centov.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Izposodili so si čoln in se spustili po reki.",
+      "hypothesis": "Izposodili so se čoln in zaspestili porjetnik.",
+      "wer": 55.56
+    },
+    {
+      "reference": "Domišljavost hodi po hoduljah.",
+      "hypothesis": "Višljamo se pohodimo pod milijo.",
+      "wer": 125.0
+    },
+    {
+      "reference": "Preverite glavne funkcije aplikacije na spletni strani.",
+      "hypothesis": "Preverite glavni funkcije aplikacije na splikli strani.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Ema je videla meduzo.",
+      "hypothesis": "Ema je videla meduzo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Srečen si, če si ne želiš, česar ne moreš imeti.",
+      "hypothesis": "Srečan si, če si me želiš, česar me ne moreš imeti.",
+      "wer": 30.0
+    },
+    {
+      "reference": "Ne moremo verjeti, da smo zmagali.",
+      "hypothesis": "Ne moremo verjeti, da smo zmagali.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Posvetoval se je s svojo mamo.",
+      "hypothesis": "Posvetoval se je svojo mamo.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Kako veš?",
+      "hypothesis": "Tako veš?",
+      "wer": 50.0
+    },
+    {
+      "reference": "Se še nisem odločil.",
+      "hypothesis": "Se še nisem odločil.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zdravi mislijo na druge reči kot bolni.",
+      "hypothesis": "Zdravje mislo na drugi roči kot boln.",
+      "wer": 71.43
+    },
+    {
+      "reference": "Kolikor prej se začne vzgoja, toliko boljši je sad.",
+      "hypothesis": "Koliko prej se začnem zgoja, toliko boljši je sad.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Poslal bom nekaj pošte svoji družini.",
+      "hypothesis": "Poslal bom nekaj pošte svoji družini.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne smeš prevoziti dvojne črte.",
+      "hypothesis": "Ne smeš prevoziti dvoje črte.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Če bi vedel, bi ti prej povedal.",
+      "hypothesis": "Če bi vedel, bi ti prekovidel.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Drevo se po sadu spozna.",
+      "hypothesis": "Tremo se po sadu spozna.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Da, bilo je težko.",
+      "hypothesis": "Da, bilo je težko.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Želim jo videti.",
+      "hypothesis": "Želijo videti.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Delo je najboljša prikuha starosti.",
+      "hypothesis": "Delo je najboljša prikuha starosti.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To je dobro!",
+      "hypothesis": "To je dobro!",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zmago je divje odletel s helikopterjem visoko v zrak.",
+      "hypothesis": "Zmago je bil je odletel s helikopterem visoko v zrak.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Lakota je najboljša kuharica.",
+      "hypothesis": "Lakota je najboljša kuharica.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ste spoznali Katarino?",
+      "hypothesis": "Ste spoznali Katalino?",
+      "wer": 33.33
+    },
+    {
+      "reference": "Ostrina vida je presenetljiva.",
+      "hypothesis": "Ostrina vida je presenetljiva.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne more nič reči.",
+      "hypothesis": "Ne more nič reči.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Uganil sem toliko, več pa ne vem.",
+      "hypothesis": "Uganil sem toliko, več pa ne vem.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj se je zgodilo z njim?",
+      "hypothesis": "Kaj se je zgodilo z njim?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Luči so se zatemnile in glasba se je začela.",
+      "hypothesis": "Noči so se zatemnile in glasba se je začela.",
+      "wer": 11.11
+    },
+    {
+      "reference": "Niti trenutek ni bil izgubljen.",
+      "hypothesis": "Niti trenutek ni bil izgubljen.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Teleta ležijo v travi.",
+      "hypothesis": "Teleta ležijo v travi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Iz osla ne narediš jahalnega konja, če ga še tako dresiraš.",
+      "hypothesis": "Iz osla ne narediš jahalnega konja, če ga še tako dresiraš.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Napišite ji to takoj ali pa jo pozabite.",
+      "hypothesis": "Napišite ji to takoj ali pa jo pozabite.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ukazi naredijo človeka.",
+      "hypothesis": "Ukazi naredijo človeka.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne, ti si mamim sinko.",
+      "hypothesis": "Ne, ti si mamin sinko.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Stranka ima vedno prav.",
+      "hypothesis": "Stranka ima vedno prav.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Naš vpliv na njihov monopol je majhen.",
+      "hypothesis": "Naš vpliv na njihov monopol je majhen.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ena lastovka še ne prinese pomladi.",
+      "hypothesis": "Ena lastoka še ne prinese po mladi.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Ne verjamem ti!",
+      "hypothesis": "Ne verjamem ti.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Zastavica je plapolala, ko je pihal vetra.",
+      "hypothesis": "Zastavica je plapolala, ko je pihal vetra.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Z letalom smo strmoglavili v ledeno goro!",
+      "hypothesis": "Z letalom smo stramoglavili v ledeno goro.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Ta trak je iz jekla in je širok tri centimetre.",
+      "hypothesis": "Ta trak je izjekla in je širok tri centimetre.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Ta balada je tako privlačna, všeč mi je!",
+      "hypothesis": "Ta balada je tako privlačna, všeč mi je.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Nekateri oglasi služijo za goljufanju kupcev.",
+      "hypothesis": "Nekateri oglasi služijo zagoljovanju kupcev.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Ne zaupajte nasmejanemu pingvinu.",
+      "hypothesis": "Ne zaupajte nasmejanjemu pinguinu.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Veselje gladi cesto življenja.",
+      "hypothesis": "Veselje gladi cesto življenja.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Blato lahko umaže dragulj, ne more pa ga spremeniti v blato.",
+      "hypothesis": "Blato lahko maže dragul, ne more pa ga spremeniti v blato.",
+      "wer": 18.18
+    },
+    {
+      "reference": "Strani vezano skupaj naredijo knjigo.",
+      "hypothesis": "Stranji vezano skupaj naredijo knjigo.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Poglej s svetle strani.",
+      "hypothesis": "Poglej svetle strani!",
+      "wer": 50.0
+    },
+    {
+      "reference": "Mia se je danes stara sedem.",
+      "hypothesis": "Mija se je danes stara sedem.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Besede so kot jajca: brž, ko se odpro, dobijo krila.",
+      "hypothesis": "Besede so kot jajca — brž, ko se odpro, dobijo krila.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Ali tega ne veš?",
+      "hypothesis": "Ali tega ne veš?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Tega mi ni potrebno delati.",
+      "hypothesis": "Tega mi ni potrebno delati.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pridite, naj vas objemam!",
+      "hypothesis": "Pridite, naj vas obijemam!",
+      "wer": 25.0
+    },
+    {
+      "reference": "Starih šeg ne vseh zatreti, novih pa ne vseh sprejeti.",
+      "hypothesis": "Starih šeg nevseh zatreti, novih pa nevseh sprejeti.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Komur ni mogoče svetovati, mu ni mogoče pomagati.",
+      "hypothesis": "Komur ni mogoče svetovati, mu ni mogoče pomagati.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ljubezen je kot vojna, začneš, kadar hočeš in nehaš, kadar moraš.",
+      "hypothesis": "Ljubezen je kot vojna — začneš, kadar hočeš in nehaš, kadar moraš.",
+      "wer": 18.18
+    },
+    {
+      "reference": "Nobena ljubezen ni tako vroča, da bi je zakon ne ohladil.",
+      "hypothesis": "Nobena ljubezen ni tako vroča, da bi je zakon neohladil.",
+      "wer": 18.18
+    },
+    {
+      "reference": "Tudi to je ena možnost.",
+      "hypothesis": "Tudi to je ena možnost.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To pa nima nobenega smisla.",
+      "hypothesis": "To pa nima nobenega smisla.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Veš, kaj naredimo s takimi?",
+      "hypothesis": "Veš, kaj naredimo s takimi?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Potrebujem astrofizika.",
+      "hypothesis": "Potrebujem astrofizika.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Saj nisi tako umazana.",
+      "hypothesis": "Saj nisi tako umazana.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vojna ima dolg hrbet.",
+      "hypothesis": "Vojna ima dolg hrbet.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Jezik z mošnjo raste.",
+      "hypothesis": "Jezik z mošnjo raste.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Repa, korenje, dolgo življenje.",
+      "hypothesis": "Repa korenje – dolgo življenje.",
+      "wer": 75.0
+    },
+    {
+      "reference": "Če slabega soseda ne moreš odseliti, se odseli sam.",
+      "hypothesis": "Če slabega soseda ne moreš odseliti, se odseli sam.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne bodi smešen.",
+      "hypothesis": "Ne bodi smešen.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Znano zdravilo za nespečnost je, vdiranje v sosedovo stanovanje.",
+      "hypothesis": "Znano zdravilo za nespečnost je vdiranje v sosedovo stanovanje.",
+      "wer": 11.11
+    },
+    {
+      "reference": "A si znorel?",
+      "hypothesis": "A si znorel?",
+      "wer": 0.0
+    },
+    {
+      "reference": "To bi bilo pa smešno.",
+      "hypothesis": "To bi bilo pa smešno.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ni pomembno.",
+      "hypothesis": "Ni pomembno.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Jezero je rdeče od vročega sonca.",
+      "hypothesis": "Jezero je redče od vrotkega sonca.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Sovražnik opažen!",
+      "hypothesis": "Sovražnik opažen.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Si videl kakšne duhove?",
+      "hypothesis": "Si videl kakšne duhove?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če bi bila, bi bila hrana veliko boljša.",
+      "hypothesis": "Če bi bila, bi bila hrana veliko boljša.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zgleda, da je vajina soseda doma.",
+      "hypothesis": "Zgleda, da je vajna soseda doma.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Hvala, moja mama mi ga je naredila.",
+      "hypothesis": "Hvala, moja mama mi ga je naredila.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dajva jima nekaj zasebnosti.",
+      "hypothesis": "Dajva ima nekaj zasebnosti.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Bil sem ljubosumen, razumeta?",
+      "hypothesis": "Bil sem ljubosumen, razumeta?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nihče ni rekel, da bi tako lahko bilo.",
+      "hypothesis": "Nihče ni rekel, da bi tako lahko bilo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kakšen je bil?",
+      "hypothesis": "Kakšen je bil?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Odložiti moramo to potovanje.",
+      "hypothesis": "Odložiti moramo to potovanje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Plaža je suha in peščena.",
+      "hypothesis": "Plaža je suha in peščena.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zaklenjeni smo.",
+      "hypothesis": "Zaklenjeni smo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pa smo tam.",
+      "hypothesis": "Pa smo tam.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Glede na to kar sta mi povedala, nisem presenečena.",
+      "hypothesis": "Glede na to, kar sta mi povedala, nisem presenečena.",
+      "wer": 11.11
+    },
+    {
+      "reference": "Ne Miha, ne želim se zaročiti.",
+      "hypothesis": "Ne, Miha, ne želim se zaročiti.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Po toči zvoniti je prepozno.",
+      "hypothesis": "Potoči zvoniti je prepozno.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Kapitan, dobivam čudne signale.",
+      "hypothesis": "Kapitan, dobivam čudne signale.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zanimivo vprašanje.",
+      "hypothesis": "Zanimivo vprašanje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Poznamo začetek, poznamo konec, sredina pa je neznanka.",
+      "hypothesis": "Poznamo začetek, poznamo konec, sredina pa je neznanka.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Rakuni so tudi sesalci.",
+      "hypothesis": "Rakoni so tudi sesalci.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Tukaj prideš na vrsto ti.",
+      "hypothesis": "Tukaj prideš na vrsto ti.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Želve so plazilci, ne dvoživke.",
+      "hypothesis": "Želve so plazilci, ne dvožilke.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Zmago je divje odletel z helikopterjem visoko v zrak.",
+      "hypothesis": "Zmago je divje odletel s helikopterjem visoko vzrak.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Umestite računalnik v čudovito tanko ohišje.",
+      "hypothesis": "Vmestite računalnik v čudovito tanko ohišje.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Težki pacienti so lahki pritožniki.",
+      "hypothesis": "Težki pacienti so lahki pritožniki.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Lepota ni le lep obraz.",
+      "hypothesis": "Nepota ni le lep obraz.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Kmetje so se spogledali in molčali.",
+      "hypothesis": "Kmetje so se spogledali in molčali.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Varnostna ekipa je na poti.",
+      "hypothesis": "Varnostna ekipa je na poti.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Sardele so majhne ribe, pogosto ujete v mrežah.",
+      "hypothesis": "Cardele so majhne ribe, pogosto ujete v mrežah.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Težko je izbrisati modro ali rdečo barvo.",
+      "hypothesis": "Težko je izbrisati modro amjordečo barvo.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Ampak ne za dolgo.",
+      "hypothesis": "Ampak ne za dolgo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Privila se je k njemu in ga prijela trdno za obe roki.",
+      "hypothesis": "Privila se je k njemu in ga prijela trdno za obe roki.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Že dolgo sem te čakal!",
+      "hypothesis": "Že dolgo sem te čakal!",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj je to pomenilo?",
+      "hypothesis": "Kaj je to pomenilo?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zastava je rdeča, modra in rumena.",
+      "hypothesis": "Zastava je rdeča, modra in rumena.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nato je ponudil otrokom velik sladoled.",
+      "hypothesis": "Nato je ponudil otrokom velik sladoled.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Medeninasta cev je obkrožala visoko steno.",
+      "hypothesis": "Medenina star cev je obkrožala visoko steno.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Star mož in staro vino sta najboljša prijatelja.",
+      "hypothesis": "Star mož in staro vino sta najboljša prijatelja.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Všeč mi je Norveška zaradi fjordov.",
+      "hypothesis": "Všeč mi je Norveška zaradi fiordov.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Boljše bo kot prej.",
+      "hypothesis": "Boljše bo kot prej.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Z glavo je pokimal.",
+      "hypothesis": "Glavo je pokimal.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Termin se je končal konec junija istega leta.",
+      "hypothesis": "Termin se je končal konec junija istega leta.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj delaš?",
+      "hypothesis": "Kaj delaš?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj bodo mislili?",
+      "hypothesis": "Kaj bo domislili?",
+      "wer": 66.67
+    },
+    {
+      "reference": "V redu je.",
+      "hypothesis": "V redu je.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Lahko to spravim v garažo.",
+      "hypothesis": "Nahko to spravim v garažo.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Ne prečkajte rumene črte.",
+      "hypothesis": "Ne prečkajte rumene črte.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Napolnite črnilo s lepljivim lepilom.",
+      "hypothesis": "Napolnite črnilo z lepljivim lepilom.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Norec izreče vse svoje misli.",
+      "hypothesis": "Norec izreča vse svoje misli.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Banka je pritisnila na plačilo dolga.",
+      "hypothesis": "Banka je pritisnila na plačilo dolga.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Bila sta že pred notarjevim stanovanjem.",
+      "hypothesis": "Bila sta že pred notarjevin stanovanjem.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Preventiva je boljša od kurative.",
+      "hypothesis": "Preventiva je boljša od kurative.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Knjiga je bila v preteklosti bogokletna.",
+      "hypothesis": "Knjiga je bila v preteklosti bogokletna.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Modrost je bogastvo starejših.",
+      "hypothesis": "Modrost je bogast v starajših.",
+      "wer": 75.0
+    },
+    {
+      "reference": "Človekova veličina je v njegovih rokah.",
+      "hypothesis": "Človekova veličina je v njegovih rokah.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zaljubljenci imajo tudi pozimi pomlad.",
+      "hypothesis": "Zadljubljenci imajo sodi pozemi pomlad.",
+      "wer": 60.0
+    },
+    {
+      "reference": "Čas pokrije in odkrije vse.",
+      "hypothesis": "Čas pokrije in odkrije vse.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Naročnik je tako slab kot tat.",
+      "hypothesis": "Narušnik je tako slab kot tat.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Tisti denar je resničen, ki ga človek v pesti drži.",
+      "hypothesis": "Tisti denar je resničen, ki ga človek v testi drži.",
+      "wer": 10.0
+    },
+    {
+      "reference": "Godalni kvartet fizikov potrebuje novega čelista.",
+      "hypothesis": "Godanji kvartet fizikov potrebuje novega čelista.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Kaj pa naj ji rečem?",
+      "hypothesis": "Kaj pa naj ji rečem?",
+      "wer": 0.0
+    },
+    {
+      "reference": "To je bilo malce nenadno.",
+      "hypothesis": "To je bilo malce nenadno.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mislil sem, da sem ga videl z Ahmedom.",
+      "hypothesis": "Mislil sem, da sem ga videl z Ahmedom.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor hoče druge vneti, mora sam goreti.",
+      "hypothesis": "Kdor hoče drugo vneti, mora sam goreti.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Se kaj dogaja med vama?",
+      "hypothesis": "Vse, kaj dogaja med vama?",
+      "wer": 20.0
+    },
+    {
+      "reference": "Kdor sne ljubezen pred poroko, mu je za zakon ne ostane nič.",
+      "hypothesis": "Kdor sne ljubezen pred poroko, mu je zazakov, ne ostane nič.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Preberite samo to, kar pravi meter.",
+      "hypothesis": "Preberite samo to, kar pravi meter.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oglate oklepaje je težko vtipkati.",
+      "hypothesis": "Oglata oklepaje je težko vtipkati.",
+      "wer": 20.0
+    },
+    {
+      "reference": "To sem videl samo enkrat.",
+      "hypothesis": "To sem videl samo enkrat.",
+      "wer": 0.0
+    },
+    {
+      "reference": "V vodi je lahko utoniti, še lažje pa v vinu.",
+      "hypothesis": "V vodi je lahko utoniti, če lažje pa v vinu.",
+      "wer": 10.0
+    },
+    {
+      "reference": "Sreča ni slepa, ampak celo oslepi tiste, ki jih je objela.",
+      "hypothesis": "Sreča ni slepa, ampak celo slepi tiste, ki jih je objela.",
+      "wer": 9.09
+    },
+    {
+      "reference": "Kako pogosto je vlak zamujal?",
+      "hypothesis": "Kako pogosto je vlak zamujal?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nikoli ne porabite svojega denarja, preden ga dobite.",
+      "hypothesis": "Nikoli ne porabite svojega denarja, pridanjga dobite.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Vedno sem to pravil.",
+      "hypothesis": "Vedno sem to pravil.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To pa pomeni razdor zveze.",
+      "hypothesis": "To pa pomeni razdor zveze.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pokliči jo in odpovej.",
+      "hypothesis": "Pokličijo in odpovej.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Tako je govoril hlapec.",
+      "hypothesis": "Tako je govoril hlapec.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nimam več nič reči.",
+      "hypothesis": "Nimam več nič reči.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pokosi visoko travo.",
+      "hypothesis": "Pokosi visoko travo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kdor se je naredil za osla, naj se ne čudi, če ga drugi jahajo.",
+      "hypothesis": "Kdor se je naredil za osla, naj se ne čudi, če ga drugi jahajo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Preveč sem vam dolžan.",
+      "hypothesis": "Prevečam vam dolžan.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Kaj boš naredil?",
+      "hypothesis": "Kaj boš naredil?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Človek je trši od kamna, pa krhkejši od jajca.",
+      "hypothesis": "Človek trši od kamna, pa krh greši od jajca.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Kaj si naredil?",
+      "hypothesis": "Kaj si naredil?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Soba je bila polna mafije.",
+      "hypothesis": "Soba je bila polna mafije.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj lahko naredim zate?",
+      "hypothesis": "Kaj lahko naredim zate?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oglejte si mačko, ki čuti strah ob miški.",
+      "hypothesis": "Oglejte si mačko, ki čuti strah ob miški.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pravkar sva prinesla pohištvo.",
+      "hypothesis": "Pravkar sva prinesla pohištvo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mlademu konju starega konjenika.",
+      "hypothesis": "Mlademu konju, starega konjenika.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Na žlico medu se ujame več muh kot v sod kisa.",
+      "hypothesis": "Na žlicu medu se ujame več muh kot vasod kisa.",
+      "wer": 27.27
+    },
+    {
+      "reference": "Ti ni všeč?",
+      "hypothesis": "Ti ni všeč?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ženske sestavljajo manj kot polovico skupine.",
+      "hypothesis": "Ženske sestalajo manj kot polovico skupine.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Vsak oblak ima srebrno podlogo.",
+      "hypothesis": "Vsak oblak ima srebrno podlovo.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Komur se sreča jahati pusti, ga nese, kamor ona želi.",
+      "hypothesis": "Komor se sreča jahati pusti, ga nese, kamor ona želi.",
+      "wer": 10.0
+    },
+    {
+      "reference": "Tajiti zmoto, je dvojna zmota.",
+      "hypothesis": "Tajiti zmoto je dvojna zmota.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Veliko besed malo naredi.",
+      "hypothesis": "Veliko besed malo naredi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zdravo Benjamin.",
+      "hypothesis": "Zdrav, Benjamin!",
+      "wer": 100.0
+    },
+    {
+      "reference": "Kri ni voda.",
+      "hypothesis": "Kri ni voda.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Označite mesto z rdečim znakom.",
+      "hypothesis": "Oznočite mesto z rdečim znakom.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Nova ljubezen pride in gre, stara se obdrži.",
+      "hypothesis": "Nova ljubezen pride in gre, stara se vdrži.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Kralj je vladal v težkih dneh.",
+      "hypothesis": "Kralj je vladal v težkih dneh.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Robert je vznemirjen.",
+      "hypothesis": "Robert je vznemirjen.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Moja teta je delala tudi v tem podjetju.",
+      "hypothesis": "Moja teta je delala tudi v tem podjetju.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mnoge roke pomagajo hitreje opraviti delo.",
+      "hypothesis": "Mnoge roge pomagajo hitre opraviti delo.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Bil je samomorilski akt.",
+      "hypothesis": "Bil je samomorilski akt.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mlado drevo se obrezuje, staro ne.",
+      "hypothesis": "Mlado drevo se ubrizuje starone.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Ljubezen je kot solza; rodi se v očeh, pade pa v srce.",
+      "hypothesis": "Ljubezne kot sol zarodi se v očeh, pade pa v srce.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Kdor se smeje zadnji, se smeje najslajše.",
+      "hypothesis": "Dors se smeje zadnji, se smeje najslajše.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Hipertrofija pomeni, da srce raste.",
+      "hypothesis": "Hipertrofija pomeni, da srce raste.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Videti je zadovoljna!",
+      "hypothesis": "Videti je zadovoljno.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Škatla je bila poleg parkiranega tovornjaka.",
+      "hypothesis": "Škatla je bila poleh parkiranega tovornjaka.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Hitro je bil na kolesu in izginil.",
+      "hypothesis": "Hitro je bil na kolesu in izginil.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne more biti moder, kdor ne zna sebe skrivati.",
+      "hypothesis": "Ne more biti moder, kdor ne zna sebe skrivati.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ni mogoče najti hujšega norca, kot je stari bedak.",
+      "hypothesis": "Ni mogoče najti hujšega norca kot je stari bedak.",
+      "wer": 11.11
+    },
+    {
+      "reference": "Kdaj zapuščamo zabavo?",
+      "hypothesis": "Prodaj zapuščamo zabavo.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Ljubezen je kot oreh; kdor ga ne stre, ga ne more užiti.",
+      "hypothesis": "Ljubezni je kot oreh, kdor ga ne stre, ga ne more užiti.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Tukaj nastavi kost in nič ne reči.",
+      "hypothesis": "Tukaj nastavi kost in nič ne reči.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Poznam le refren.",
+      "hypothesis": "Poznam le refren.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dovolj tega, dovolj!",
+      "hypothesis": "Dovolj tega, dovolj!",
+      "wer": 0.0
+    },
+    {
+      "reference": "Suženj ne izbira gospodarja.",
+      "hypothesis": "Suženj ne izbira gospodarja.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj je danes?",
+      "hypothesis": "Kaj je danes?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ker še ni sezona čebel, lahko vzameš moj epinefrin.",
+      "hypothesis": "Ker še ni sezona čebel, lahko vzameš moj epinefrin.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Padel sedemkrat. Vstal osemkrat.",
+      "hypothesis": "Padel sedemkrat, stal osemkrat.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Najmanj, kar lahko storite je, da pokličite ena ena tri.",
+      "hypothesis": "Najman, kar lahko storite, je, da pokličeta 113.",
+      "wer": 60.0
+    },
+    {
+      "reference": "Poslušaj in tiho nista anagrama.",
+      "hypothesis": "Poslušaj in tiho, nista anagrama.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Odvisno od globine. Lahko je proktolog ali kirurg.",
+      "hypothesis": "Odvisno od globine lahko je proktolog ali kirurg.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Če ne začneš, tudi končal ne boš.",
+      "hypothesis": "Če ne začneš, tudi končal ne boš.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zdravo, fantje.",
+      "hypothesis": "Zdrava fantje!",
+      "wer": 100.0
+    },
+    {
+      "reference": "Suh vosek ščiti globoko praske.",
+      "hypothesis": "Suh vasek ščiti globake praske.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Rad bi ti povedal, da ti ni treba živeti v tem.",
+      "hypothesis": "Rad bi ti povedal, da ti ni treba živeti v tem.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Napravo smo našli v omari.",
+      "hypothesis": "Napravo smo našli v omariji!",
+      "wer": 20.0
+    },
+    {
+      "reference": "Ne bi bilo to malo preveč?",
+      "hypothesis": "Ne bi bilo to malo preveč?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dobro, je odgovoril.",
+      "hypothesis": "Dobro, je odgovoril.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Čeprav je težko verjeti, večina ljudi nima zloženih kosmičev glede na vsebnost vlaknin.",
+      "hypothesis": "Čeprav je težko verjeti, večina ljudi nima zloženih kosmičev glede na osebnost vlaknin.",
+      "wer": 7.69
+    },
+    {
+      "reference": "Poskus je postal nesreča.",
+      "hypothesis": "Poskus je postal nesreča.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne prepusti se jezi, saj te bo zapeljala!",
+      "hypothesis": "Ne prepusti se jezi, saj te bo zapeljala.",
+      "wer": 12.5
+    },
+    {
+      "reference": "To bo še hudo.",
+      "hypothesis": "To bo še hudo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oblak prahu je zakril njene nežne oči.",
+      "hypothesis": "Oblak prahu je zakril njene nežne oči.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Jutri mi bodo pripeljali pohištvo, mene pa ne bo doma...",
+      "hypothesis": "Jutri mi bodo priprljali pohištvo, mene pa ne bo doma.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Sveta pomagalka, poglej si ta prostor.",
+      "hypothesis": "Svetla pomagalka, poglej si ta prostor!",
+      "wer": 33.33
+    },
+    {
+      "reference": "Zdi se, da je Matjaž vse razmislil.",
+      "hypothesis": "Zdi se, da je Matjaž vsaj razmislil.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Vojna prinese enemu bogastvo in jih sto pahne v bedo.",
+      "hypothesis": "Mojna prenese enemu bogastvo in jih sto pahne obedo.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Ni bilo zabavno.",
+      "hypothesis": "Ni bilo zabavno.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj mu daje moč, da leti ponoči?",
+      "hypothesis": "Kaj mu daje moč, da leti ponoči?",
+      "wer": 0.0
+    },
+    {
+      "reference": "To je smešno!",
+      "hypothesis": "To je smešno.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Pol dneva sva bila na občini in nič uredila.",
+      "hypothesis": "Poldnjeva sva bila na občini in nič urodila.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Izvršni direktor japonske družbe je odstopil.",
+      "hypothesis": "Izvršenji direktor japonske družbe je odstopil.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Midva govoriva o nepreizkušenih hipotezah.",
+      "hypothesis": "Midva govoriva o nepreizkušenih hipotezah.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Preberite nekaj knjig in boste tudi vi pametni.",
+      "hypothesis": "Preberite nekaj knjig in boste tudi vi pametni.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kura tehta pet kilogramov.",
+      "hypothesis": "Kura tehta pet kilogramov.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Saj pa ni pretežko.",
+      "hypothesis": "Saj pa ni praj težko.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Kaj je bilo z njim?",
+      "hypothesis": "Kaj je bilo z njim?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj lahko spim na delovnem mestu?",
+      "hypothesis": "Kaj, lahko spim na delavnem mestu?",
+      "wer": 33.33
+    },
+    {
+      "reference": "Kdor ne uboga, ga tepe nadloga.",
+      "hypothesis": "Kdor ne oboga, ga tepe nadloga.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Govori z nižjim glasom.",
+      "hypothesis": "Govori z nižjim glasom.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Janez je svetovni teniški igralec.",
+      "hypothesis": "Janez je svetovni teniški igralec.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Hvala, to pa je zelo pozorno.",
+      "hypothesis": "Hvala, to pa je zelo pozorno.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oh, seveda!",
+      "hypothesis": "Ah, seveda?",
+      "wer": 100.0
+    },
+    {
+      "reference": "Poklicala sem Benjamina.",
+      "hypothesis": "Poklicala sem Benjamina.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dekla se po gospodinji vrže, ne gospodinja po dekli.",
+      "hypothesis": "Dekla se po gospodinji varže, naj gospodinja podekle.",
+      "wer": 44.44
+    },
+    {
+      "reference": "Zakaj se moram samo jaz prilagajati?",
+      "hypothesis": "Zakaj se moram samo jaz prilagajati?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Prepozno je bilo.",
+      "hypothesis": "Prepozno je bilo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mogoče poznata Sheldona Cooperja?!",
+      "hypothesis": "Mogoče poznata Sheldona Cooperja?",
+      "wer": 25.0
+    },
+    {
+      "reference": "Dvignite kamen čez ograjo.",
+      "hypothesis": "Dvignite kamen čez ograjo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ti gangsterji dobijo tisto, kar si zaslužijo.",
+      "hypothesis": "Ti gangsterji dobijo tisto, kar si zaslužijo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Tuširal si se v najini hiši?",
+      "hypothesis": "Tuširal si se v najini hiši?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Poglejte Janeza, njega ne morem podpreti.",
+      "hypothesis": "Oglejte Janeza, njega ne morem podpreti.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Kaj bova storila?",
+      "hypothesis": "Kaj bova storila?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Prav imate.",
+      "hypothesis": "Prav imate.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Torej, kako predlagaš, da nadaljujeva?",
+      "hypothesis": "Torej, kako predlagaš, da nadaljujeva?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Otroka, zabavajta se.",
+      "hypothesis": "Otroka, zabavajta se!",
+      "wer": 33.33
+    },
+    {
+      "reference": "Jaz ti to omogočam.",
+      "hypothesis": "Jaz ti to omogočam.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nastopi na TV so zavajajoči.",
+      "hypothesis": "Nastopi na TV so zavajojoči.",
+      "wer": 20.0
+    },
+    {
+      "reference": "To se ne spodobi.",
+      "hypothesis": "To se ne spodobi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Moja kosilnica je pokvarjena.",
+      "hypothesis": "Moja kosilnica je pokvarjena.",
+      "wer": 0.0
+    },
+    {
+      "reference": "V modrem nebu je visel oblak.",
+      "hypothesis": "V modrem nebu je visel oblak.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Padla mu je sekira v med.",
+      "hypothesis": "Padla mu je sekiral med.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Nekoč je bila neka resnica, a jo je rja požrla.",
+      "hypothesis": "Nekoč je bila neka resnica, a jo je rja požrla.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zakaj kriviš mene?",
+      "hypothesis": "Zakaj pribliš mene?",
+      "wer": 33.33
+    },
+    {
+      "reference": "No, to mi je všeč!",
+      "hypothesis": "No, to mi je všeč.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Pojdi zdaj in pridi nazaj kasneje.",
+      "hypothesis": "Pojdi zdaj in pridi nazaj kasneje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Moja železna srajca se mi je zapletla v moje spodnjice.",
+      "hypothesis": "Moja železna srajca se mi je zapletla v moje spodnjice.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če on dela zate, delaš tudi ti zanj.",
+      "hypothesis": "Če on dela zate, delaš tudi ti zanj.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če v svoji sreči visoko prilezeš, lahko tudi globoko padeš.",
+      "hypothesis": "Če v svoji sreči visoko prilezeš, lahko tudi globoko padeš.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mi lahko zapoješ uspavanko?",
+      "hypothesis": "Mi lahko zapoješ uspavanjko?",
+      "wer": 25.0
+    },
+    {
+      "reference": "Poslal je fanta, da je opravil nalogo.",
+      "hypothesis": "Poslal je fanta, da je opravil nalogo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kovino se spozna v ognju, človeka v vinu.",
+      "hypothesis": "Ko vino se spozna v ognju, človeka v vinu.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Ko zleze ljubezen v oči, zleze tudi v srce.",
+      "hypothesis": "Ko zleze ljubezen v oči, zleze tudi v srce.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne, on je zvest kot pes gospodarju.",
+      "hypothesis": "Ne, on je zvezd kot pes gospodarju.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Kaj pa zdaj?",
+      "hypothesis": "Kaj pa zdaj?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Bolje je malo ognja, ki nas greje, kot velik plamen, ki nas žge.",
+      "hypothesis": "Bolje je malo ognja, ki nas greje, kot velik plamen, ki nas žge.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj pa sedaj?",
+      "hypothesis": "Kaj pa sedaj?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne sme z lepimi ženskami, ali v tvojem primeru, sirovo boginjo.",
+      "hypothesis": "Ne sme z lepimi ženskami ali v tvojem primeru sirovo boginjo?",
+      "wer": 27.27
+    },
+    {
+      "reference": "Resnica zmeraj naleti na zaprta vrata.",
+      "hypothesis": "Resnica zmeraj naletina zaprta vrata.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Ne moreš nesti kamna na vrh Triglava.",
+      "hypothesis": "Ne moreš nesti kamna na vrh triglava.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Njegov dedek je bil zlorabljen alkoholik.",
+      "hypothesis": "Njegov dedek je bil zlorabljen alkoholik.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zato, ker ljubezen premaga sovraštvo.",
+      "hypothesis": "Zato, ker ljubezen premaga sovraštvo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Toliko bolje.",
+      "hypothesis": "Toliko bolje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "On ni utegnil premišljati o tem.",
+      "hypothesis": "On ni utegnil premišljati o tem.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ni je bilo tam.",
+      "hypothesis": "Ni je bilo tam.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Spal sem na delu.",
+      "hypothesis": "Spal sem na delu.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Boj se človeka, ki se lahko v jezi smehlja!",
+      "hypothesis": "Boj se človeka, ki se lahko ujizi smehlja.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Otrok je skoraj poškodoval majhnega psa.",
+      "hypothesis": "Otrok je skoraj poškodoval majhnega psa.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Luč je ugasnila med oblaki.",
+      "hypothesis": "Luč je ugasnila med oblaki.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vojaki gredo mimo naslednjega hriba.",
+      "hypothesis": "Pojak je gredo mimo naslednjegah riba.",
+      "wer": 80.0
+    },
+    {
+      "reference": "Laž je debela, dokler je sama, a brž, ko dobi priče, so posuši.",
+      "hypothesis": "Taž je debela dokler je sama, a brž kot bi priče, so posuši.",
+      "wer": 38.46
+    },
+    {
+      "reference": "Ona podcenjuje moje raziskave.",
+      "hypothesis": "Ona pocenjuje moje raziskave.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Dokler lipa cvete, ji ne manjka čebel.",
+      "hypothesis": "Od gled lipa cvete in amanjka čebel.",
+      "wer": 85.71
+    },
+    {
+      "reference": "Zapomnite si velikost rezervoarja za plin.",
+      "hypothesis": "Zapamnite, si beliko star rezervoarja za plen.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Ali so otroci bolj ustvarjalni kot odrasli?",
+      "hypothesis": "Ali so otroci bolj ustvarjani kot odrasli?",
+      "wer": 14.29
+    },
+    {
+      "reference": "Torej, lepo vaju je bilo spoznati.",
+      "hypothesis": "Torej, lepova jo je bilo spoznati.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Raztrgala je plašč.",
+      "hypothesis": "Raztrgala je plašč.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj hočeš?",
+      "hypothesis": "Kaj hočeš?",
+      "wer": 0.0
+    },
+    {
+      "reference": "In tako je živel srečno do konca svojih dni.",
+      "hypothesis": "In tako je živel srečno do konca svojih dni.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ko citre najlepše pojejo, poči struna.",
+      "hypothesis": "Kocitre najlepše pojajo po oči struna.",
+      "wer": 83.33
+    },
+    {
+      "reference": "Sreče se ne da kupiti.",
+      "hypothesis": "Sreče se me ba kupiti.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Berači ne morejo biti izbirčni.",
+      "hypothesis": "Berači ne morejo biti izbirčni.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne ploskaj svojim otrokom!",
+      "hypothesis": "Ne ploskaj svojim otrokom.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Redek obisk prijateljstvo poveča.",
+      "hypothesis": "Redek obisk prijateljstvo poveča.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dobro vino dela dobro kri.",
+      "hypothesis": "Dobro vino dela dobro kri.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To ni tvoje stanovanje.",
+      "hypothesis": "To ni tvoje stanovanje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zdravnik vas bo videl jutri.",
+      "hypothesis": "Zdravnik vas bo videl jutri.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Žaga je orodje za izdelavo lesenih plošč.",
+      "hypothesis": "Žaga je orodje za izdelavo lesenih plošč.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ta hrana je precej neokrnjena, vendar draga.",
+      "hypothesis": "Ta hrana je precej neukornjena, vendar draga.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Pomagaj mi povleči in obrniti.",
+      "hypothesis": "Pomaga mi pogleči in obrniti.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Imel sem odličen izlet v tovarno kakava.",
+      "hypothesis": "Jemel sem odličen izgled v tovarno kakava.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Vedel sem, da boš prepričan.",
+      "hypothesis": "Vedel sem, da boš prepričan.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ok, kaj pa praviš na to?",
+      "hypothesis": "Okej, kaj pa praviš nato?",
+      "wer": 50.0
+    },
+    {
+      "reference": "Vesel sem, da smo se tako odločili.",
+      "hypothesis": "Vesel sem, da smo se tako odločili.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Fosfor ni polprevodnik.",
+      "hypothesis": "Fosfor ni polprevodnik.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj pravi?",
+      "hypothesis": "Kaj pravi?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oh, kakšna škoda!",
+      "hypothesis": "O, kakšna škoda!",
+      "wer": 33.33
+    },
+    {
+      "reference": "Lačni niso izbirčni.",
+      "hypothesis": "Lačni niso izbirčni.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nekaj kostanja bom spekel na veselici.",
+      "hypothesis": "Nekar kostanja bom spekel na veselici.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Ste vedeli, da so januarja zaprti?",
+      "hypothesis": "Ste videli, da so januarje zaprti?",
+      "wer": 33.33
+    },
+    {
+      "reference": "Paket je označen kot zastarel.",
+      "hypothesis": "Paket je označen kot zastarjev.",
+      "wer": 20.0
+    },
+    {
+      "reference": "In kaj je rekla?",
+      "hypothesis": "In kaj je rekla?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Toda kaj to pomeni?",
+      "hypothesis": "Toda kaj to pomeni?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Napad je najboljše obrambno sredstvo.",
+      "hypothesis": "Napad je najboljše obramno sredstvo.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Kdor živi brez upanja, ne ve, kaj je radost.",
+      "hypothesis": "Kdor živi brez upanja, ne vekaja radost.",
+      "wer": 33.33
+    },
+    {
+      "reference": "V takšni obliki ga ne potrebujemo na zabavi.",
+      "hypothesis": "V takšni obliki ga ne potrebujemo na zabavi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ženo izbiraj z ušesi, ne z očmi.",
+      "hypothesis": "Ženo izbiraj z ušesi, ne z očmi.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nikoli se ne prepirajte s kruhom in maslom.",
+      "hypothesis": "Nikoli se ne pripirati s kruhom in maslom.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Nikoli mu ne dovolite, da bi spal na jezu.",
+      "hypothesis": "Nikoli mu ne dovolite, da bi spal na jezu.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Živi in se uči.",
+      "hypothesis": "Živi in se uči.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Razumnemu poslušalcu je dovolj malo besed.",
+      "hypothesis": "Razumnemu poslušalcu je dovolj malo besed.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ljubezen je trpljenje, življenje brez ljubezni pa je pekel.",
+      "hypothesis": "Ljubezen je trpljenje, življenje brez ljubezni pa je peko.",
+      "wer": 11.11
+    },
+    {
+      "reference": "Sem alergičen na penicilin.",
+      "hypothesis": "Sem alergičen na penicilin.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Rekla je, da mi ti poveš, kje je.",
+      "hypothesis": "Rekla je, da mi ti poveš, ki je.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Lažni prijatelji so slabši od odprtih sovražnikov.",
+      "hypothesis": "Lažni prijatelji so slabši od odprtih sovražnikov.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Greta je vozila lepo jadrnico.",
+      "hypothesis": "Greta je vozila lepo jadrnico.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Iskrenost je najboljša politika.",
+      "hypothesis": "Iskrenost je najboljša politika.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Janez se je hudo začudil.",
+      "hypothesis": "Janec se je hodo začudil.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Daj mi nekaj minut.",
+      "hypothesis": "Daj mi nekaj minut.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Učenci so barvali s svojimi barvicami.",
+      "hypothesis": "Učenci so barvali s svojimi barvicami.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Vzel sem številko in našel svoj sedež.",
+      "hypothesis": "Vzel sem številko in našel svoj sedež.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Papirja je malo, zato pišite zelo pozorno.",
+      "hypothesis": "Papira je mala, zato pišite zelo pozorno.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Dodajte stolpec in vnesite znesek tukaj.",
+      "hypothesis": "Dodajte stolpeč in nesite znesek tukaj.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Če si sam neizučen, se ne lotevaj poučevanja drugih.",
+      "hypothesis": "Če si sam naj iz učens, ne lutivaj poučevanja drugih.",
+      "wer": 44.44
+    },
+    {
+      "reference": "Hvala Bogu za to!",
+      "hypothesis": "Hvala Bogu za to.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Mož je glava družine, žena pa krona – zlata ali trnova.",
+      "hypothesis": "Mož je glava družine, žena pa krona, zlata ali crnova.",
+      "wer": 27.27
+    },
+    {
+      "reference": "Lepe besede dajo še dimu težo.",
+      "hypothesis": "Lepe besede dajo še dimu tižo.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Darilo je ribolov.",
+      "hypothesis": "Darilo je ribolov.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Od kod so prišli?",
+      "hypothesis": "Od kod so prišli?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Sreča je opoteča; k enim prihaja, ko od drugih odhaja.",
+      "hypothesis": "Sreča je opoteča, kjer jim prihaja, od drugih odhaja.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Povej mi in to bom storil.",
+      "hypothesis": "Povej mi in to bom storil.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Težki pacienti se zelo radi pritožijo.",
+      "hypothesis": "Težki pacienti se zelo radi pritožijo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Šildkapa je bila široka in preveč napeta.",
+      "hypothesis": "Šiltkapa je bila široka in preveč napeta.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Kadar konj teče, ne uporabljaj ostrog.",
+      "hypothesis": "Kadar konj teče, ne uporabljaj ostruh.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Dekle je nosilo elegantno obleko.",
+      "hypothesis": "Dekle je nosilo elegantno obliko.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Nikoli ga ne bom pozabil.",
+      "hypothesis": "Nikoli ga ne bom pozabil.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pozabi, take stvari ni.",
+      "hypothesis": "Pozabi take stvarini!",
+      "wer": 75.0
+    },
+    {
+      "reference": "Hopsanje je čudna beseda.",
+      "hypothesis": "Hopsanje je čudna beseda.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Iz kante se je videl ogenj.",
+      "hypothesis": "Iz kante se je videl ogenj.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dobra jed se sama ponuja.",
+      "hypothesis": "Dobra jeca sama ponuja.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Čas je zdravilo za jezo.",
+      "hypothesis": "Čas je zdravilo za jezo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Izkoristite priložnost in osvojite lutko iz Kitajske.",
+      "hypothesis": "Izkoristite priložnost in osvojite lutko iz Kitajske.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Fino milo rešuje kožo.",
+      "hypothesis": "Fino milo rešuje kožo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Bila je tišina.",
+      "hypothesis": "Bila je tišina.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Prestrašena se je ozrla vanj.",
+      "hypothesis": "Prestrašena si je vzrla van.",
+      "wer": 60.0
+    },
+    {
+      "reference": "Ljubezni in rdečega nosu ne moreš skriti.",
+      "hypothesis": "Ljubezni in rdečega nosu ne more skriti.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Če ti hoče sreča znesti zlata jajca, ji hitro spleti gnezdo.",
+      "hypothesis": "Četikoča sreča znesči zlata jajca in hitro spleti gnezdo.",
+      "wer": 54.55
+    },
+    {
+      "reference": "Ugasnite luči, ki nam dajejo svetlobo.",
+      "hypothesis": "Ugasnite luči, ki nam dajejo svetlovo.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Kar v breznu zraste, april pobrije.",
+      "hypothesis": "Kar bo brezno zraste, apel pobrije.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Več glav več ve.",
+      "hypothesis": "Več glav, več ve.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Če je april deževen, kmet ne bo reven.",
+      "hypothesis": "Če je prilj teževan, kmet ne bo reven.",
+      "wer": 25.0
+    },
+    {
+      "reference": "V tujini je človeku od vsega najljubša domovina.",
+      "hypothesis": "Potojeni je človeku od vsega najljubša domovila.",
+      "wer": 37.5
+    },
+    {
+      "reference": "Grajati je lahko, bolje narediti pa težko.",
+      "hypothesis": "Graja ti je lahko, bolje narediti pa težko.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Ne daj znati kmetu, da se štruklji jedo s sirom.",
+      "hypothesis": "Ne daj znati kmetu, da se štrukli jedo s suserom.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Živeti moraš tako, kot moreš, če ne moreš, kakor hočeš.",
+      "hypothesis": "Živeti moreš tako, kot moreš, če ne moreš, kakor hočeš.",
+      "wer": 10.0
+    },
+    {
+      "reference": "Imaš prav, lahko počaka do jutra.",
+      "hypothesis": "Imaš prav, lahko počaka do jutra.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Brezen je desetkrat na dan jezen.",
+      "hypothesis": "Brezen je desetkratna danj jeze.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Pojdi ven.",
+      "hypothesis": "Pojdi ven!",
+      "wer": 50.0
+    },
+    {
+      "reference": "Preveč sreče je lahko vzrok za strah.",
+      "hypothesis": "Preveč sreče je lahko vzrok za strah.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Reci temu kakor hočeš.",
+      "hypothesis": "Reči temu, kakor hočeš.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Dvema pastirjema volk lažje ovco ukrade kot enemu.",
+      "hypothesis": "Dvema pastirjema volk lažje ovce ukrade kot enemu.",
+      "wer": 12.5
+    },
+    {
+      "reference": "Lima je glavno mesto Peruja.",
+      "hypothesis": "Lima je glavno mesto Peruja.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kislina hudo opeče kožo.",
+      "hypothesis": "Kislina hudo opeče kožo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Bogataš planira za jutri, siromak za danes.",
+      "hypothesis": "Bogataž planera za jutri si romak sedanes.",
+      "wer": 85.71
+    },
+    {
+      "reference": "Je že v redu.",
+      "hypothesis": "Je že v redu.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Za trgovca je domovina njegov žep.",
+      "hypothesis": "Sotrgovca je domovila, njegov žep.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Oglejte si plavajoči dnevnik v široki reki.",
+      "hypothesis": "Oglejte si plavajoči dnevnik v šironki reti.",
+      "wer": 28.57
+    },
+    {
+      "reference": "To je dejstvo.",
+      "hypothesis": "To je dejstvo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne prodaj kože, dokler medved v brlogu spi.",
+      "hypothesis": "Ne prodaj kože, dokler medvet v berlogu spi.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Zakaj nisi prišla na zabavo?",
+      "hypothesis": "Zakaj nisi prišla na zapavo?",
+      "wer": 20.0
+    },
+    {
+      "reference": "Najmanj dela, največ govori.",
+      "hypothesis": "Najmanj dela, največ govori.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dejstva ne kažejo vedno, kdo ima prav.",
+      "hypothesis": "Dejstva ne kažejo vedno, dojma prav.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Zakaj je to pomembno?",
+      "hypothesis": "Zakaj je to pomembno?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne, nič ne vidim.",
+      "hypothesis": "Ne, nič ne vidim.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če želiš biti ljubljen – ljubi.",
+      "hypothesis": "Če želiš biti ljubljen, ljubi.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Tvoje življenje je krasno.",
+      "hypothesis": "Moje življenje je krasno.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Denar težko naredi luknjo v žepu.",
+      "hypothesis": "Tenar težko naredi lukno v žepu.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Čas zaceli vse rane.",
+      "hypothesis": "Čas za cedi vse rane.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Pitje in vožnja sta neodgovorni dejanji.",
+      "hypothesis": "Pitja in vožna sta neodgovorni dejanji.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Vidre imajo zanimive značilnosti.",
+      "hypothesis": "Vitre imajo zanimive značilnosti.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Niti malo.",
+      "hypothesis": "Nič imalo.",
+      "wer": 100.0
+    },
+    {
+      "reference": "Ljudje so kot rastline v polju; ene cvetijo, druge venejo.",
+      "hypothesis": "Ljudje so kot rastline v polju — ene cvetijo, druge venajo.",
+      "wer": 30.0
+    },
+    {
+      "reference": "Kdor ljubi denar kakor obraz, izgubi oboje.",
+      "hypothesis": "Kdor ljubi denar kakor obraz, izgubi oboje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Odložite svinčnik, čas je potekel.",
+      "hypothesis": "Odložite svinčnik, čas je potekel.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kakršen oče, takšen sin.",
+      "hypothesis": "Kakršen oče, takšen sin.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kako dolgo pa bo ostal tukaj?",
+      "hypothesis": "Kako dolgo pa bo vstal tukaj?",
+      "wer": 16.67
+    },
+    {
+      "reference": "Moški se trudijo, a se redko obogatijo.",
+      "hypothesis": "Moški se trudijo, a se redko obogatijo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Prašna klop je stala ob kamnitem zidu.",
+      "hypothesis": "Porašna klop je stala ob kamitem zidu.",
+      "wer": 28.57
+    },
+    {
+      "reference": "V Egipt sem šel z babico.",
+      "hypothesis": "V Egipt sem išel s babico.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Izgleda že tako.",
+      "hypothesis": "Izgleda že tako.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Zelo so impresivni, priznam.",
+      "hypothesis": "Zelo so impresivni, priznam.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Razpustite se na takšen dan.",
+      "hypothesis": "Razpustite se na takšen dan.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Sovraštvo je tako slepo kot ljubezen.",
+      "hypothesis": "Sovraštvo je tako slepo kot ljubezen.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Slaba novica potuje hitro.",
+      "hypothesis": "Slaba novica potuje hitro.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ne, ali si preveril na pultu?",
+      "hypothesis": "Ne, ali si preveril na pultu?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ko se ena vrata zaprejo, se druga odprejo.",
+      "hypothesis": "Ko se ena vrata zaprejo, se druga odprejo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To je zelo zanimivo.",
+      "hypothesis": "To je zelo zanimivo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ljubezen do denarja je temelj vsega zla.",
+      "hypothesis": "Ljubezen do denarja je temelj vsega zla.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Naši načrti so zdaj končani.",
+      "hypothesis": "Naši načrti so zdaj končani.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Slab kot pokvarjeno zeljo.",
+      "hypothesis": "Slab kot pokvarjeno zelje.",
+      "wer": 25.0
+    },
+    {
+      "reference": "Zdravo, moje ime je Brenda.",
+      "hypothesis": "Zdravo, moje ime je Brinda.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Vsak otrok ljubi igrače.",
+      "hypothesis": "Vsak otrok ljubi igrače.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Janko je pokusil žganje in molčal.",
+      "hypothesis": "Janko je poskusil žganje in molčal.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Podkupnine ne dosežejo svojega namena, če tam delajo iskreni ljudje.",
+      "hypothesis": "Podkupnine ne dosežejo svojega namena, če tam delajo iskreni ljudje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Otroci so radi poslušali njene zgodbe.",
+      "hypothesis": "Otroci so radi poslušali njene zgodbe.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Občutite lahko vročino šibkega plamena.",
+      "hypothesis": "Občutite lahko vročino šibkega plamena.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To je neugoden položaj.",
+      "hypothesis": "To je neugoden položaj.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Pozabil sem vozovnico za vlak.",
+      "hypothesis": "Pozabil sem vozovnico za vlak.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Elza je bila šokirana pri razkritju.",
+      "hypothesis": "Elza je bila šokirana pri razkritju.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Tu imaš!",
+      "hypothesis": "Kdor imaš?",
+      "wer": 100.0
+    },
+    {
+      "reference": "Oh, kaj pa vem!",
+      "hypothesis": "Oh, kaj pa vem?",
+      "wer": 25.0
+    },
+    {
+      "reference": "Vrata so bila odprta.",
+      "hypothesis": "Vrata so bila odprta.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Breza je izgledala bela in osamljena.",
+      "hypothesis": "Vreza je izgledala bela in osamljena.",
+      "wer": 16.67
+    },
+    {
+      "reference": "Kdo je blondinka z rdečim krilom?",
+      "hypothesis": "Kdo je blondinka z rdečim krilom?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Nariši sliko s črnimi črtami.",
+      "hypothesis": "Nariši sliko s črnimi črtami.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kaj počneš tukaj?",
+      "hypothesis": "Kaj počneš tukaj?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Te tablete naredijo manj dobrega kot slabega.",
+      "hypothesis": "Te tableta naredijo manj dobrega kot slabega.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Popotniku se je zdelo, da ga nekdo kliče.",
+      "hypothesis": "Popotniku se je zdelo, da ga nekdo kliče.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Človeška narava ima svoje meje.",
+      "hypothesis": "Človeška narava ima svoje meje.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če klobuk ustreza, ga nosite.",
+      "hypothesis": "Če plovok ustreza, ga nosite.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Fant je zavpil na ves glas.",
+      "hypothesis": "Fant je zavpil na ves glas.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Primarna tuljava ima petdeset obratov.",
+      "hypothesis": "Primarna toljaba ima petdeset obratov.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Kje pa je Egipt?",
+      "hypothesis": "Kje pa je Egipt?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ja, govorim s tabo.",
+      "hypothesis": "Ja, govorim s tabo.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Ljubimec je ljubosumen na ljubimca, ne na moža.",
+      "hypothesis": "Ljubimec je ljubosumen na ljubimca, ne na moža.",
+      "wer": 0.0
+    },
+    {
+      "reference": "V življenju ni ravnih poti.",
+      "hypothesis": "V življenju ni ravnih poti.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Oko za oko in zob za zob.",
+      "hypothesis": "Oko za oko in zob za zob.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kako si rekel, da ti je ime?",
+      "hypothesis": "Kako si rekel, da ti je imi?",
+      "wer": 14.29
+    },
+    {
+      "reference": "Tiho, kajne?",
+      "hypothesis": "Tiho, kajne?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Samo živali rade umirajo v samoti.",
+      "hypothesis": "Samoživali rada umirajo v samoti.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Si bil kdaj v Singapurju?",
+      "hypothesis": "Si bil kdaj v Singapurju?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Življenje je dolgočasno, če v njem ni boja.",
+      "hypothesis": "Življenje je dolgočasno, če v njem ni boja.",
+      "wer": 0.0
+    },
+    {
+      "reference": "To je bilo pa preveč.",
+      "hypothesis": "To je bilo pa preveč.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Užaljena ljubezen nikoli ne oprošča.",
+      "hypothesis": "Užaljena ljubezen nikoli ne oprošča.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če že ne moreš kaj dobrega napraviti, vsaj govori lepo!",
+      "hypothesis": "Če že ne moreš kaj dobrega napraviti, vsaj govori lepo.",
+      "wer": 10.0
+    },
+    {
+      "reference": "V mladosti je bil moj oče huligan.",
+      "hypothesis": "V mladosti je bil moj oče huligani.",
+      "wer": 14.29
+    },
+    {
+      "reference": "Najslabše kolo vedno najbolj potegne.",
+      "hypothesis": "Najslabše kolo vidno najbolj potigne.",
+      "wer": 40.0
+    },
+    {
+      "reference": "Dvainštirideset ni naključna številka.",
+      "hypothesis": "Dvainštiridesetnina ključna številka.",
+      "wer": 75.0
+    },
+    {
+      "reference": "Kjer obstaja volja, obstaja pot.",
+      "hypothesis": "Kjer obstaja volja, obstaja pot.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Jeza v nemoči doživlja posmeh.",
+      "hypothesis": "Jezav ne moči doživlja posmeh.",
+      "wer": 60.0
+    },
+    {
+      "reference": "Ceste so tlakovane z lepljivim katranom.",
+      "hypothesis": "Ceste so tlakovane z lepljivim katranom.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Čustvo rodi vero.",
+      "hypothesis": "Čustvo rodi vero.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kakšna so dejstva?",
+      "hypothesis": "Kakšna so dejstva?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Kje si to dobil?",
+      "hypothesis": "Kje si to dobil?",
+      "wer": 0.0
+    },
+    {
+      "reference": "Veliko resničnih besed se govori v šoli.",
+      "hypothesis": "Veliko resničnih besed se govori v šoli.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Če daš prst, ti bodo vzeli roko.",
+      "hypothesis": "Če daš prst, ti bodo vzeli roko.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Mesar mi je dal kilo šunke brezplačno!",
+      "hypothesis": "Mesar mi je dolg kilo šumke brezplačna.",
+      "wer": 42.86
+    },
+    {
+      "reference": "Pomakni to stikalo zame, prosim.",
+      "hypothesis": "Pomaknite osti kalo zame prosim.",
+      "wer": 80.0
+    },
+    {
+      "reference": "Nikogar ni na ulici.",
+      "hypothesis": "Nikogar ni na ulici.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Tiha voda mostove podira.",
+      "hypothesis": "Tiha vada mostave podira.",
+      "wer": 50.0
+    },
+    {
+      "reference": "Ti ljudje so plesalci samba!",
+      "hypothesis": "Ti ljudje so plesalci samba.",
+      "wer": 20.0
+    },
+    {
+      "reference": "Mehka blazina je olajšala padec moškega.",
+      "hypothesis": "Mehka blazina je olajšala padec moškega.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Upala sva, da boste vi to preverili.",
+      "hypothesis": "Upala sva, da boste vi to preverili.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Takoj boš odkorakal tja in se opravičil.",
+      "hypothesis": "Tako je boš odkorakal tja in se opravičil.",
+      "wer": 28.57
+    },
+    {
+      "reference": "Moral bi biti tukaj.",
+      "hypothesis": "Moral bi biti tukaj.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Dejstvo je, da leti zaradi moči.",
+      "hypothesis": "Dejstvo je deliti zaradi močiji.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Resnica je kot olje: zmeraj priplava na vrh.",
+      "hypothesis": "Resnica je kot olje, z miri priplava na vrh.",
+      "wer": 37.5
+    },
+    {
+      "reference": "En cvet še ne naredi pomladi.",
+      "hypothesis": "En svečen je naredi pomladeje.",
+      "wer": 66.67
+    },
+    {
+      "reference": "Dobra vojna ustvarja dober mir.",
+      "hypothesis": "Dobra vojna ustvarja dober mir.",
+      "wer": 0.0
+    },
+    {
+      "reference": "Hotela sva počistiti.",
+      "hypothesis": "Hotela so počistiti.",
+      "wer": 33.33
+    },
+    {
+      "reference": "Daj mi primeren vzvod in premaknil bom Zemljo.",
+      "hypothesis": "Dej mi primiran vzvod in premaknil bom zemljo.",
+      "wer": 37.5
+    }
+  ],
+  "num_samples": 1242,
+  "inference_time_seconds": 36.5,
+  "model": "whisper-large-v3",
+  "model_path": "./results/whisper_models/whisper-large-v3-cv_synth_all_sl-seed42",
+  "language": "sl",
+  "test_set": "cv17_test",
+  "timestamp": "2026-02-19T21:43:01.843537+00:00"
+}

@@ -1,0 +1,11 @@
+You are a native {language} speaker tasked with correcting a rejected sentence in an ASR data augmentation pipeline.
+
+GOAL: Fix the specific issue identified by the quality assessor and produce a corrected {language} sentence that will pass validation. The corrected sentence will be synthesized into speech and used to train Automatic Speech Recognition models.
+
+MOTIVATION: A candidate sentence was generated for our synthetic speech corpus but was rejected by a quality assessor for a specific reason (grammatical error, unnatural phrasing, wrong length, or code-switching). Rather than discarding the sentence entirely — which wastes the thematic and structural intent behind it — you must produce a corrected version that addresses the identified flaw while preserving the original meaning and domain. This implements corrective rejection sampling: each failed sentence gets a targeted fix attempt informed by the specific failure reason, producing higher-quality corrections than blind regeneration.
+
+CONSTRAINTS:
+- You MUST write exclusively in {language}.
+- The corrected sentence must directly address the rejection reason — do not introduce new errors while fixing the identified one.
+- The sentence must be 5-20 words, grammatically correct, and natural-sounding to a native {language} speaker.
+- Preserve the general topic and intent of the original sentence where possible.

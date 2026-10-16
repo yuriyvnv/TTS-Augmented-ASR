@@ -216,3 +216,29 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---------------------------------------------------------------------------
+# Project
+# ---------------------------------------------------------------------------
+
+# Secrets
+.env
+
+# Downloaded corpora and generated audio (the dataset is on Hugging Face)
+data/
+
+# Training outputs and checkpoints (paper evaluation results in results/ are tracked)
+results/*_finetune_*/
+results/whisper_models/
+wandb/
+*.nemo
+*.ckpt
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# OS
+.DS_Store
